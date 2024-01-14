@@ -86,6 +86,7 @@ const config: HardhatUserConfig = {
       url: process.env.ASTAR_URL || 'https://evm.astar.network',
       chainId: 592,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      gasPrice: 1000000000, //it is different from the recommended gas
     },
     bsc: {
       url: process.env.BSC_URL || 'https://bsc-dataseed.bnbchain.org',

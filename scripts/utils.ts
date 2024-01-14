@@ -1,67 +1,369 @@
 import { ethers, run } from 'hardhat';
 import { BigNumber } from 'ethers';
-import { Chunky, ChunkyItem, ChunkyCatalog } from '../typechain-types';
+import {
+  TimeSquadCatalogAria,
+  TimeSquadCatalogLuna,
+  TimeSquadCatalogRyker,
+  TimeSquadCatalogThaddeus,
+  ItemsAriaArmor,
+  ItemsAriaCap,
+  ItemsAriaLeftHand,
+  ItemsAriaRightHand,
+  ItemsLunaArmor,
+  ItemsLunaCap,
+  ItemsLunaLeftHand,
+  ItemsLunaRightHand,
+  ItemsRykerArmor,
+  ItemsRykerCap,
+  ItemsRykerLeftHand,
+  ItemsRykerRightHand,
+  ItemsThaddeusArmor,
+  ItemsThaddeusCap,
+  ItemsThaddeusLeftHand,
+  ItemsThaddeusRightHand
+} from '../typechain-types';
+
 import * as C from './constants';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 
 async function deployContracts(): Promise<{
-  chunkies: Chunky;
-  items: ChunkyItem;
-  catalog: ChunkyCatalog;
+  timeSquadKai:TimeSquadKai,
+  timeSquadLuna:TimeSquadKai,
+  timeSquadAria:TimeSquadKai,
+  timeSquadFelix:TimeSquadKai,
+  
+  itemsAriaArmor: ItemsAriaArmor;
+  itemsAriaCap: ItemsAriaCap;
+  itemsAriaLeftHand: ItemsAriaLeftHand;
+  itemsAriaRightHand: ItemsAriaRightHand;
+  itemsLunaArmor: ItemsLunaArmor;
+  itemsLunaCap: ItemsLunaCap;
+  itemsLunaLeftHand: ItemsLunaLeftHand;
+  itemsLunaRightHand: ItemsLunaRightHand;
+  itemsRykerArmor: ItemsRykerArmor;
+  itemsRykerCap: ItemsRykerCap;
+  itemsRykerLeftHand: ItemsRykerLeftHand;
+  itemsRykerRightHand: ItemsRykerRightHand;
+  itemsThaddeusArmor: ItemsThaddeusArmor;
+  itemsThaddeusCap: ItemsThaddeusCap;
+  itemsThaddeusLeftHand: ItemsThaddeusLeftHand;
+  itemsThaddeusRightHand: ItemsThaddeusRightHand;
+
+  timeSquadCatalogAria: TimeSquadCatalogAria;
+  timeSquadCatalogLuna: TimeSquadCatalogLuna;
+  timeSquadCatalogRyker: TimeSquadCatalogRyker;
+  timeSquadCatalogThaddeus: TimeSquadCatalogThaddeus;
+
 }> {
   const deployerAddress = (await ethers.getSigners())[0].address;
+  
+  const timeSquadAriaFactory = await ethers.getContractFactory('TimeSquadAria');
+  const timeSquadLunaFactory = await ethers.getContractFactory('TimeSquadLuna');
+  const timeSquadRykerFactory = await ethers.getContractFactory('TimeSquadRyker');
+  const timeSquadThaddeusFactory = await ethers.getContractFactory('TimeSquadThaddeus');
 
-  const chunkyFactory = await ethers.getContractFactory('Chunky');
-  const itemFactory = await ethers.getContractFactory('ChunkyItem');
-  const catalogFactory = await ethers.getContractFactory('ChunkyCatalog');
+  const itemsAriaArmorFactory = await ethers.getContractFactory('ItemsAriaArmor');
+  const itemsAriaCapFactory = await ethers.getContractFactory('ItemsAriaCap');
+  const itemsAriaLeftHandFactory = await ethers.getContractFactory('ItemsAriaLeftHand');
+  const itemsAriaRightHandFactory = await ethers.getContractFactory('ItemsAriaRightHand');
+  const itemsLunaArmorFactory = await ethers.getContractFactory('ItemsLunaArmor');
+  const itemsLunaCapFactory = await ethers.getContractFactory('ItemsLunaCap');
+  const itemsLunaLeftHandFactory = await ethers.getContractFactory('ItemsLunaLeftHand');
+  const itemsLunaRightHandFactory = await ethers.getContractFactory('ItemsLunaRightHand');
+  const itemsRykerArmorFactory = await ethers.getContractFactory('ItemsRykerArmor');
+  const itemsRykerCapFactory = await ethers.getContractFactory('ItemsRykerCap');
+  const itemsRykerLeftHandFactory = await ethers.getContractFactory('ItemsRykerLeftHand');
+  const itemsRykerRightHandFactory = await ethers.getContractFactory('ItemsRykerRightHand');
+  const itemsThaddeusArmorFactory = await ethers.getContractFactory('ItemsThaddeusArmor');
+  const itemsThaddeusCapFactory = await ethers.getContractFactory('ItemsThaddeusCap');
+  const itemsThaddeusLeftHandFactory = await ethers.getContractFactory('ItemsThaddeusLeftHand');
+  const itemsThaddeusRightHandFactory = await ethers.getContractFactory('ItemsThaddeusRightHand');
+  
+  const timeSquadCatalogAriaFactory = await ethers.getContractFactory('TimeSquadCatalogAria');
+  const timeSquadCatalogLunaFactory = await ethers.getContractFactory('TimeSquadCatalogLuna');
+  const timeSquadCatalogRykerFactory = await ethers.getContractFactory('TimeSquadCatalogRyker');
+  const timeSquadCatalogThaddeusFactory = await ethers.getContractFactory('TimeSquadCatalogThaddeus');
+  
 
-  const chunkyArgs = [
-    C.CHUNKY_METADATA,
+  const squadArgs = [
+    C.SQUAD_METADATA,
     BigNumber.from(100),
     deployerAddress,
     500, // 5%
   ] as const;
 
+  const timeSquadAria: TimeSquadKai = await timeSquadCatalogAriaFactory.deploy(...squadArgs);
+  await timeSquadAria.deployed();
+  
+  const timeSquadLuna: TimeSquadKai = await timeSquadCatalogLunaFactory.deploy(...squadArgs);
+  await timeSquadLuna.deployed();
+  
+  const timeSquadRyker: TimeSquadKai = await timeSquadCatalogRykerFactory.deploy(...squadArgs);
+  await timeSquadRyker.deployed();
+  
+  const timeSquadThaddeus: TimeSquadKai = await timeSquadCatalogThaddeusFactory.deploy(...squadArgs);
+  await timeSquadThaddeus.deployed();
+
+  // Deployment script for Catalog Contracts
+  const catalogRykerArgs = [C.SQUAD_CATALOG_RYKER_METADATA, 'image/*'] as const;
+  const catalogLunaArgs = [C.SQUAD_CATALOG_LUNA_METADATA, 'image/*'] as const;
+  const catalogAriaArgs = [C.SQUAD_CATALOG_ARIA_METADATA, 'image/*'] as const;
+  const catalogThaddeusArgs = [C.SQUAD_CATALOG_THADDEUS_METADATA, 'image/*'] as const;
+
+
+  const timeSquadCatalogAria = await timeSquadCatalogAriaFactory.deploy(...catalogAriaArgs);
+  await timeSquadCatalogAria.deployed();
+
+  const timeSquadCatalogLuna = await timeSquadCatalogLunaFactory.deploy(...catalogLunaArgs);
+  await timeSquadCatalogLuna.deployed();
+
+  const timeSquadCatalogRyker = await timeSquadCatalogRykerFactory.deploy(...catalogRykerArgs);
+  await timeSquadCatalogRyker.deployed();
+
+  const timeSquadCatalogThaddeus = await timeSquadCatalogThaddeusFactory.deploy(...catalogThaddeusArgs);
+  await timeSquadCatalogThaddeus.deployed();
+
+
+  // Deployment script for Item Contracts
+
   const itemArgs = [
-    C.CHUNKY_ITEM_METADATA,
+    C.SQUAD_ITEM_METADATA,
     BigNumber.from(200),
     deployerAddress,
     500, // 5%
   ] as const;
 
-  const catalogArgs = [C.CHUNKY_CATALOG_METADATA, 'image/*'] as const;
+  const itemsAriaArmor = await itemsAriaArmorFactory.deploy(...itemArgs);
+  await itemsAriaArmor.deployed();
 
-  const chunkies: Chunky = await chunkyFactory.deploy(...chunkyArgs);
-  await chunkies.deployed();
+  const itemsAriaCap = await itemsAriaCapFactory.deploy(...itemArgs);
+  await itemsAriaCap.deployed();
 
-  const items: ChunkyItem = await itemFactory.deploy(...itemArgs);
-  await items.deployed();
+  const itemsAriaLeftHand = await itemsAriaLeftHandFactory.deploy(...itemArgs);
+  await itemsAriaLeftHand.deployed();
 
-  const catalog: ChunkyCatalog = await catalogFactory.deploy(...catalogArgs);
-  await catalog.deployed();
+  const itemsAriaRightHand = await itemsAriaRightHandFactory.deploy(...itemArgs);
+  await itemsAriaRightHand.deployed();
 
+  const itemsLunaArmor = await itemsLunaArmorFactory.deploy(...itemArgs);
+  await itemsLunaArmor.deployed();
+
+  const itemsLunaCap = await itemsLunaCapFactory.deploy(...itemArgs);
+  await itemsLunaCap.deployed();
+
+  const itemsLunaLeftHand = await itemsLunaLeftHandFactory.deploy(...itemArgs);
+  await itemsLunaLeftHand.deployed();
+
+  const itemsLunaRightHand = await itemsLunaRightHandFactory.deploy(...itemArgs);
+  await itemsLunaRightHand.deployed();
+
+  const itemsRykerArmor = await itemsRykerArmorFactory.deploy(...itemArgs);
+  await itemsRykerArmor.deployed();
+
+  const itemsRykerCap = await itemsRykerCapFactory.deploy(...itemArgs);
+  await itemsRykerCap.deployed();
+
+  const itemsRykerLeftHand = await itemsRykerLeftHandFactory.deploy(...itemArgs);
+  await itemsRykerLeftHand.deployed();
+
+  const itemsRykerRightHand = await itemsRykerRightHandFactory.deploy(...itemArgs);
+  await itemsRykerRightHand.deployed();
+
+  const itemsThaddeusArmor = await itemsThaddeusArmorFactory.deploy(...itemArgs);
+  await itemsThaddeusArmor.deployed();
+
+  const itemsThaddeusCap = await itemsThaddeusCapFactory.deploy(...itemArgs);
+  await itemsThaddeusCap.deployed();
+
+  const itemsThaddeusLeftHand = await itemsThaddeusLeftHandFactory.deploy(...itemArgs);
+  await itemsThaddeusLeftHand.deployed();
+
+  const itemsThaddeusRightHand = await itemsThaddeusRightHandFactory.deploy(...itemArgs);
+  await itemsThaddeusRightHand.deployed();
+
+  
   // So holders do not need to accept each item
-  await chunkies.setAutoAcceptCollection(items.address);
+// Aria
+await timeSquadAria.setAutoAcceptCollection(itemsAriaArmor.address);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaCap.address);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaLeftHand.address);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaRightHand.address);
 
+// Luna
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaArmor.address);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaCap.address);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaLeftHand.address);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaRightHand.address);
+
+// Ryker
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerArmor.address);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerCap.address);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerLeftHand.address);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerRightHand.address);
+
+// Thaddeus
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusArmor.address);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusCap.address);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusLeftHand.address);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusRightHand.address);
+
+  
   const chainId = (await ethers.provider.getNetwork()).chainId;
   if (chainId !== 31337) {
     // Skip verification on local chain
-    await run('verify:verify', {
-      address: chunkies.address,
-      constructorArguments: chunkyArgs,
-    });
-    await run('verify:verify', {
-      address: items.address,
-      constructorArguments: itemArgs,
-    });
-    await run('verify:verify', {
-      address: catalog.address,
-      contract: 'contracts/ChunkyCatalog.sol:ChunkyCatalog', // Needed so hardhat can distinguish it from RMRKCatalogImpl
-      constructorArguments: catalogArgs,
-    });
-  }
+// Verification for timeSquadAria
+await run('verify:verify', {
+  address: timeSquadAria.address,
+  constructorArguments: squadArgs,
+});
 
-  return { chunkies, items, catalog };
+// Verification for timeSquadLuna
+await run('verify:verify', {
+  address: timeSquadLuna.address,
+  constructorArguments: squadArgs,
+});
+
+// Verification for timeSquadRyker
+await run('verify:verify', {
+  address: timeSquadRyker.address,
+  constructorArguments: squadArgs,
+});
+
+// Verification for timeSquadThaddeus
+await run('verify:verify', {
+  address: timeSquadThaddeus.address,
+  constructorArguments: squadArgs,
+});
+
+// Verification for Aria items
+await run('verify:verify', {
+  address: itemsAriaArmor.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsAriaCap.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsAriaLeftHand.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsAriaRightHand.address,
+  constructorArguments: itemArgs,
+});
+
+// Verification for Luna items
+await run('verify:verify', {
+  address: itemsLunaArmor.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsLunaCap.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsLunaLeftHand.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsLunaRightHand.address,
+  constructorArguments: itemArgs,
+});
+
+// Verification for Ryker items
+await run('verify:verify', {
+  address: itemsRykerArmor.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsRykerCap.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsRykerLeftHand.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsRykerRightHand.address,
+  constructorArguments: itemArgs,
+});
+
+// Verification for Thaddeus items
+await run('verify:verify', {
+  address: itemsThaddeusArmor.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsThaddeusCap.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsThaddeusLeftHand.address,
+  constructorArguments: itemArgs,
+});
+await run('verify:verify', {
+  address: itemsThaddeusRightHand.address,
+  constructorArguments: itemArgs,
+});
+
+// Verification for timeSquadCatalogAria
+await run('verify:verify', {
+  address: timeSquadCatalogAria.address,
+  contract: 'contracts/TimeSquadCatalogAria.sol:TimeSquadCatalogAria',
+  constructorArguments: catalogAriaArgs,
+});
+
+// Verification for timeSquadCatalogLuna
+await run('verify:verify', {
+  address: timeSquadCatalogLuna.address,
+  contract: 'contracts/TimeSquadCatalogLuna.sol:TimeSquadCatalogLuna',
+  constructorArguments: catalogLunaArgs,
+});
+
+// Verification for timeSquadCatalogRyker
+await run('verify:verify', {
+  address: timeSquadCatalogRyker.address,
+  contract: 'contracts/TimeSquadCatalogRyker.sol:TimeSquadCatalogRyker',
+  constructorArguments: catalogRykerArgs,
+});
+
+// Verification for timeSquadCatalogThaddeus
+await run('verify:verify', {
+  address: timeSquadCatalogThaddeus.address,
+  contract: 'contracts/TimeSquadCatalogThaddeus.sol:TimeSquadCatalogThaddeus',
+  constructorArguments: catalogThaddeusArgs,
+});
+
+  }
+  
+  return {
+    timeSquadAria,
+    timeSquadLuna,
+    timeSquadRyker,
+    timeSquadThaddeus,
+    itemsAriaArmor,
+    itemsAriaCap,
+    itemsAriaLeftHand,
+    itemsAriaRightHand,
+    itemsLunaArmor,
+    itemsLunaCap,
+    itemsLunaLeftHand,
+    itemsLunaRightHand,
+    itemsRykerArmor,
+    itemsRykerCap,
+    itemsRykerLeftHand,
+    itemsRykerRightHand,
+    itemsThaddeusArmor,
+    itemsThaddeusCap,
+    itemsThaddeusLeftHand,
+    itemsThaddeusRightHand,
+    timeSquadCatalogAria,
+    timeSquadCatalogLuna,
+    timeSquadCatalogRyker,
+    timeSquadCatalogThaddeus
+  };
+  
 }
 
 async function configureCatalog(catalog: ChunkyCatalog, itemsAddress: string) {

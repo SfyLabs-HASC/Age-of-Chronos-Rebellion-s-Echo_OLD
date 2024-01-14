@@ -1,0 +1,19 @@
+parameters = [
+    ("itemsRykerLeftHand", "Ryker Items Left Hand", "RYKERITEMLH"),
+    ("itemsRykerRightHand", "Items Ryker Right Hand", "RYKERITEMRH"),
+    ("itemsRykerCap", "Items Ryker Cap", "RYKERITEMCAP"),
+    ("itemsRykerArmor", "Items Ryker Armor", "RYKERITEMARMOR"),
+    ("itemsAriaLeftHand", "Aria Items Left Hand", "ARIAITEMLH"),
+    ("itemsAriaRightHand", "Items Aria Right Hand", "ARIAITEMRH"),
+    ("itemsAriaCap", "Items Aria Cap", "ARIAITEMCAP"),
+    ("itemsAriaArmor", "Items Aria Armor", "ARIAITEMARMOR"),
+    ("itemsThaddeusLeftHand", "Thaddeus Items Left Hand", "THADDEUSITEMLH"),
+    ("itemsThaddeusRightHand", "Items Thaddeus Right Hand", "THADDEUSITEMRH"),
+    ("itemsThaddeusCap", "Items Thaddeus Cap", "THADDEUSITEMCAP"),
+    ("itemsThaddeusArmor", "Items Thaddeus Armor", "THADDEUSITEMARMOR"),
+    ("itemsLunaLeftHand", "Luna Items Left Hand", "LUNAITEMLH"),
+    ("itemsLunaRightHand", "Items Luna Right Hand", "LUNAITEMRH"),
+    ("itemsLunaCap", "Items Luna Cap", "LUNAITEMCAP"),
+    ("itemsLunaArmor", "Items Luna Armor", "LUNAITEMARMOR")
+]
+python ./naming/naming.py
