@@ -207,7 +207,8 @@ await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusCap.address);
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusLeftHand.address);
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusRightHand.address);
 
-  
+  /*
+  NEL TESTING NON METTERE QUESTA PARTE!!!!
   const chainId = (await ethers.provider.getNetwork()).chainId;
   if (chainId !== 31337) {
     // Skip verification on local chain
@@ -336,7 +337,7 @@ await run('verify:verify', {
 });
 
   }
-  
+  */
   return {
     timeSquadAria,
     timeSquadLuna,
