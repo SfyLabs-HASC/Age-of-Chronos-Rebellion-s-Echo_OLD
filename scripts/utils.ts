@@ -372,15 +372,15 @@ await run('verify:verify', {
 }
 
 // Configure TimeSquadCatalogAria
-await configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
+async function configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
   // Slots
-  let tx1 = await catalog.addPartList([
+  let tx1:any = await catalog.addPartList([
     {
       partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_LEFT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [itemAddress],
         metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
@@ -389,7 +389,7 @@ await configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_RIGHT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [itemAddress],
         metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
       },
     },
@@ -399,7 +399,7 @@ await configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_CAP_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [itemAddress],
         metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
       },
     },
@@ -408,12 +408,13 @@ await configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_ARMOR_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [itemAddress],
         metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
-    await Promise.all([tx1.wait()]);
+    
   ]);
+  await Promise.all([tx1.wait()]);
 }
 
 // Configure TimeSquadCatalogLuna
@@ -549,7 +550,7 @@ async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, items
 }
 
 async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCatalogRyker: string, mintTo: SignerWithAddress) {
-  txRyker = await timeSquadRyker.mintWithEquippableAsset(
+  let txRyker = await timeSquadRyker.mintWithEquippableAsset(
     mintTo.address, // To
     `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`, // TokenURI
     C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, // Equippable group
@@ -557,10 +558,10 @@ async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCat
     `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
     [
       // slots part ids:
-      C.SQUAD_LEFT_HAND_SLOT_PART_ID;
-      C.SQUAD_RIGHT_HAND_SLOT_PART_ID;
-      C.SQUAD_CAP_SLOT_PART_ID;
-      C.SQUAD_ARMOR_SLOT_PART_ID;
+      C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+      C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+      C.SQUAD_CAP_SLOT_PART_ID,
+      C.SQUAD_ARMOR_SLOT_PART_ID,
     ],
   );
   await txRyker.wait();
@@ -623,7 +624,7 @@ async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, tim
 
 async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddress: string) {
 
-  tx = await items.addTwoItemAssets(
+  let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
  `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
  `${C.BASE_IPFS_URI}/items/armor/SecondAsset.json`,
@@ -886,7 +887,7 @@ async function mintItemsAriaArmor(itemsAriaArmor: ItemsAriaArmor, TimeSquadAriaA
   const [deployer] = await ethers.getSigners();
 
   // Sending a armor NFT to the first parent squad, with 2 assets
-  tx = await itemsAriaArmor.nestMintWithAssets(
+  let tx = await itemsAriaArmor.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId il primo nft parent
     `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, // TokenURI del child nft,
