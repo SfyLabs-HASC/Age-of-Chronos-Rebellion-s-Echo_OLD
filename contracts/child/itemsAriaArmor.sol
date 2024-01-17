@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: Apache-2.0
 
 pragma solidity ^0.8.21;
@@ -22,6 +21,32 @@ contract itemsAriaArmor is RMRKEquippablePreMint {
         )
     {}
 
+    /*
+3. inserire due asset per ogni child, il primo è l'asset principale visualizzabile, 
+il secondo è il thumbnail dell'immagine. aggiusta la funzione di smart contract di nestmintwithasset
+ dove inserisci due asset, uno buono e l'altro thumbnail
+ The ID of the asset is automatically assigned to be the next available asset ID.
+ il secondo asset lo inserisci da script oppure modifichi la funzione solidity nestMintWithAssets
+*/
+    function addTwoItemAssets(
+        uint64 slotForArmor,
+        string memory assetForArmor,
+        string memory secondAssetForArmor
+    ) public {
+        addEquippableAssetEntry(
+            slotForArmor,
+            address(0),
+            assetForArmor,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForArmor,
+            address(0),
+            secondAssetForArmor,
+            new uint64[](0)
+        );
+    }
+
     function nestMintWithAssets(
         address to,
         uint256 destinationId,
@@ -32,7 +57,7 @@ contract itemsAriaArmor is RMRKEquippablePreMint {
         uint256 length = assetIds.length;
         for (uint256 i = 0; i < length; i++) {
             addAssetToToken(tokenId, assetIds[i], 0);
-            // Only first asset or assets added by token owner are auto-accepted, so we mighty need to accept for the rest of cases
+            // Only first two assets added by token owner are auto-accepted, so we mighty need to accept for the rest of cases
             if (_pendingAssets[tokenId].length != 0) {
                 _acceptAsset(tokenId, 0, assetIds[i]);
             }

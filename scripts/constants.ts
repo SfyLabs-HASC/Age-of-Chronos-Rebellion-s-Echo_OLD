@@ -36,7 +36,7 @@ const Z_INDEX_ARMOR_ITEMS = 4;
 
 
 // Equippable groups
-const EQUIPPABLE_GROUP_FOR_CHUNKIES_DEFAULT = 1; // Only in case we want all chunkies to be later equippable into something
+const EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT = 1; // Only in case we want all chunkies to be later equippable into something
 const EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND = SQUAD_LEFT_HAND_SLOT_PART_ID;
 const EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND = SQUAD_RIGHT_HAND_SLOT_PART_ID;
 const EQUIPPABLE_GROUP_FOR_ITEMS_CAP = SQUAD_CAP_SLOT_PART_ID;

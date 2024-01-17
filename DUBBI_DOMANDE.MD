@@ -1,7 +1,7 @@
 ## DA IMPELMENTARE
 
 1. ogni personaggio ha 4 valori come METADATI che ha "attacco" "difesa" "magia" "fortuna"
-2. naming dei 4 slot equippaggiabili
+2. naming dei 4 slot equippaggiabili DA FARE IN FUTURO!
 HEAD
 BODY
 ARM
@@ -27,6 +27,12 @@ l'owner di un parent che ha un childA si nesta un'altro child (childB) sotto al 
 1. rivediti i catalog, se sono 4 e hai 16 contratti item, puoi aggiungere per ogni catalog 4 contract item ciascuno?
 
 
+## da fare in testing
+
+1. inserire tutti gli asset
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`,
+
 ## da fare in production
 
 1. elimina l'import aggiuntivo nei cataloghi dopo che hai finito di fare tutti i test!
+2. inserisci run verify

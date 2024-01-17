@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: Apache-2.0
 
 pragma solidity ^0.8.21;
@@ -21,6 +20,25 @@ contract itemsLunaRightHand is RMRKEquippablePreMint {
             royaltyPercentageBps
         )
     {}
+
+    function addTwoItemAssets(
+        uint64 slotForArmor,
+        string memory assetForArmor,
+        string memory secondAssetForArmor
+    ) public {
+        addEquippableAssetEntry(
+            slotForArmor,
+            address(0),
+            assetForArmor,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForArmor,
+            address(0),
+            secondAssetForArmor,
+            new uint64[](0)
+        );
+    }
 
     function nestMintWithAssets(
         address to,

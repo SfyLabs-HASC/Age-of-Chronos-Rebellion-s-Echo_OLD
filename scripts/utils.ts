@@ -1,6 +1,10 @@
 import { ethers, run } from 'hardhat';
 import { BigNumber } from 'ethers';
 import {
+TimeSquadRyker,
+TimeSquadLuna,
+TimeSquadAria,
+TimeSquadThaddeus,
   TimeSquadCatalogAria,
   TimeSquadCatalogLuna,
   TimeSquadCatalogRyker,
@@ -27,10 +31,10 @@ import * as C from './constants';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 
 async function deployContracts(): Promise<{
-  timeSquadKai:TimeSquadKai,
-  timeSquadLuna:TimeSquadKai,
-  timeSquadAria:TimeSquadKai,
-  timeSquadFelix:TimeSquadKai,
+  timeSquadRyker:TimeSquadRyker,
+  timeSquadLuna:TimeSquadLuna,
+  timeSquadAria:TimeSquadAria,
+  timeSquadThaddeus:TimeSquadThaddeus,
   
   itemsAriaArmor: ItemsAriaArmor;
   itemsAriaCap: ItemsAriaCap;
@@ -92,16 +96,16 @@ async function deployContracts(): Promise<{
     500, // 5%
   ] as const;
 
-  const timeSquadAria: TimeSquadKai = await timeSquadCatalogAriaFactory.deploy(...squadArgs);
+  const timeSquadAria: TimeSquadAria = await timeSquadCatalogAriaFactory.deploy(...squadArgs);
   await timeSquadAria.deployed();
   
-  const timeSquadLuna: TimeSquadKai = await timeSquadCatalogLunaFactory.deploy(...squadArgs);
+  const timeSquadLuna: TimeSquadLuna = await timeSquadCatalogLunaFactory.deploy(...squadArgs);
   await timeSquadLuna.deployed();
   
-  const timeSquadRyker: TimeSquadKai = await timeSquadCatalogRykerFactory.deploy(...squadArgs);
+  const timeSquadRyker: TimeSquadRyker = await timeSquadCatalogRykerFactory.deploy(...squadArgs);
   await timeSquadRyker.deployed();
   
-  const timeSquadThaddeus: TimeSquadKai = await timeSquadCatalogThaddeusFactory.deploy(...squadArgs);
+  const timeSquadThaddeus: TimeSquadThaddeus = await timeSquadCatalogThaddeusFactory.deploy(...squadArgs);
   await timeSquadThaddeus.deployed();
 
   // Deployment script for Catalog Contracts
@@ -207,7 +211,7 @@ await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusCap.address);
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusLeftHand.address);
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusRightHand.address);
 
-  /*
+/*
   NEL TESTING NON METTERE QUESTA PARTE!!!!
   const chainId = (await ethers.provider.getNetwork()).chainId;
   if (chainId !== 31337) {
@@ -337,7 +341,7 @@ await run('verify:verify', {
 });
 
   }
-  */
+*/
   return {
     timeSquadAria,
     timeSquadLuna,
@@ -367,358 +371,814 @@ await run('verify:verify', {
   
 }
 
-async function configureCatalog(catalog: ChunkyCatalog, itemsAddress: string) {
+// Configure TimeSquadCatalogAria
+await configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
   // Slots
   let tx1 = await catalog.addPartList([
     {
-      partId: C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
+      partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
-        z: C.Z_INDEX_HAND_ITEMS,
+        z: C.Z_INDEX_LEFT_HAND_ITEMS,
         equippable: [itemsAddress],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/slots/left_hand.json`,
+        metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
     {
-      partId: C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
+      partId: C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
-        z: C.Z_INDEX_HAND_ITEMS,
+        z: C.Z_INDEX_RIGHT_HAND_ITEMS,
         equippable: [itemsAddress],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/slots/right_hand.json`,
+        metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
+      },
+    },
+
+    {
+      partId: C.SQUAD_CAP_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_CAP_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
+      },
+    },
+    {
+      partId: C.SQUAD_ARMOR_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_ARMOR_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
+      },
+    },
+    await Promise.all([tx1.wait()]);
+  ]);
+}
+
+// Configure TimeSquadCatalogLuna
+async function configureCatalogLuna(catalog: TimeSquadCatalogLuna, itemsAddress: string) {
+  let tx1 = await catalog.addPartList([
+    {
+      partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_LEFT_HAND_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
+      },
+    },
+    {
+      partId: C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_RIGHT_HAND_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
+      },
+    },
+
+    {
+      partId: C.SQUAD_CAP_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_CAP_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
+      },
+    },
+    {
+      partId: C.SQUAD_ARMOR_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_ARMOR_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
   ]);
-  // Fixed
-  let tx2 = await catalog.addPartList([
+  await Promise.all([tx1.wait()]);
+}
+
+// Configure TimeSquadCatalogRyker
+async function configureCatalogRyker(catalog: TimeSquadCatalogRyker, itemsAddress: string) {
+  let tx1 = await catalog.addPartList([
     {
-      partId: C.CHUNKY_V1_HEAD_FIXED_PART_ID,
+      partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HEAD,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v1/head.json`,
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_LEFT_HAND_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
     {
-      partId: C.CHUNKY_V1_BODY_FIXED_PART_ID,
+      partId: C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
       part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_BODY,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v1/body.json`,
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_RIGHT_HAND_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
+      },
+    },
+
+    {
+      partId: C.SQUAD_CAP_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_CAP_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
       },
     },
     {
-      partId: C.CHUNKY_V1_HANDS_FIXED_PART_ID,
+      partId: C.SQUAD_ARMOR_SLOT_PART_ID,
       part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HANDS,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v1/hand.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V2_HEAD_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HEAD,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v2/head.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V2_BODY_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_BODY,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v2/body.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V2_HANDS_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HANDS,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v2/hand.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V3_HEAD_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HEAD,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v3/head.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V3_BODY_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_BODY,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v3/body.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V3_HANDS_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HANDS,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v3/hand.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V4_HEAD_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HEAD,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v4/head.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V4_BODY_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_BODY,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v4/body.json`,
-      },
-    },
-    {
-      partId: C.CHUNKY_V4_HANDS_FIXED_PART_ID,
-      part: {
-        itemType: C.PART_TYPE_FIXED,
-        z: C.Z_INDEX_HANDS,
-        equippable: [],
-        metadataURI: `${C.BASE_IPFS_URI}/catalog/fixed/v4/hand.json`,
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_ARMOR_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
   ]);
-  await Promise.all([tx1.wait(), tx2.wait()]);
+  await Promise.all([tx1.wait()]);
 }
 
-async function mintChunkies(chunkies: Chunky, catalogAddress: string, mintTo: SignerWithAddress) {
-  // 1st WAY TO DO IT: Step by step
-  let tx = await chunkies.addEquippableAssetEntry(
-    C.EQUIPPABLE_GROUP_FOR_CHUNKIES_DEFAULT, // Equippable group
-    catalogAddress, // Catalog address
-    `${C.BASE_IPFS_URI}/chunkies/full/1.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
-    [
-      // Fixed and slots part ids:
-      C.CHUNKY_V1_HEAD_FIXED_PART_ID,
-      C.CHUNKY_V1_BODY_FIXED_PART_ID,
-      C.CHUNKY_V1_HANDS_FIXED_PART_ID,
-      C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
-      C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
-    ],
-  );
-  await tx.wait();
-  // WARNING: If any asset is added in between, this no longer matches the id of the newly added asset, you can listen to the AssetAdded event and get the assetId from, there.
-  const newAssetId = await chunkies.totalAssets();
-  tx = await chunkies.mint(mintTo.address, 1, `${C.BASE_IPFS_URI}/chunkies/full/1.json`);
-  await tx.wait();
-  // WARNING: If any token is burnt or minted this no longer matches the id of the newly minted token, you can listen to the Transfer event and get the tokenId from, there.
-  const newTokenId = await chunkies.totalSupply();
-  tx = await chunkies.addAssetToToken(newTokenId, newAssetId, 0);
-  await tx.wait();
+// Configure TimeSquadCatalogThaddeus
+async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, itemsAddress: string) {
+  let tx1 = await catalog.addPartList([
+    {
+      partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_LEFT_HAND_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
+      },
+    },
+    {
+      partId: C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_RIGHT_HAND_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
+      },
+    },
 
-  // If there was no auto accept, the holder of the token would have to accept the asset before it can be used.
-  // await chunkies.acceptAsset(newTokenId, 0, newAssetId);
-
-  // 2nd WAY TO DO IT: Custom method on chunkies contract
-  tx = await chunkies.mintWithEquippableAsset(
-    mintTo.address, // To
-    `${C.BASE_IPFS_URI}/chunkies/full/2.json`, // TokenURI
-    C.EQUIPPABLE_GROUP_FOR_CHUNKIES_DEFAULT, // Equippable group
-    catalogAddress, // Catalog address
-    `${C.BASE_IPFS_URI}/chunkies/full/2.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
-    [
-      // Fixed and slots part ids:
-      C.CHUNKY_V2_HEAD_FIXED_PART_ID,
-      C.CHUNKY_V2_BODY_FIXED_PART_ID,
-      C.CHUNKY_V2_HANDS_FIXED_PART_ID,
-      C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
-      C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
-    ],
-  );
-  await tx.wait();
-  tx = await chunkies.mintWithEquippableAsset(
-    mintTo.address, // To
-    `${C.BASE_IPFS_URI}/chunkies/full/3.json`, // TokenURI
-    C.EQUIPPABLE_GROUP_FOR_CHUNKIES_DEFAULT, // Equippable group
-    catalogAddress, // Catalog address
-    `${C.BASE_IPFS_URI}/chunkies/full/3.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
-    [
-      // Fixed and slots part ids:
-      C.CHUNKY_V3_HEAD_FIXED_PART_ID,
-      C.CHUNKY_V3_BODY_FIXED_PART_ID,
-      C.CHUNKY_V3_HANDS_FIXED_PART_ID,
-      C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
-      C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
-    ],
-  );
-  await tx.wait();
-  tx = await chunkies.mintWithEquippableAsset(
-    mintTo.address, // To
-    `${C.BASE_IPFS_URI}/chunkies/full/4.json`, // TokenURI
-    C.EQUIPPABLE_GROUP_FOR_CHUNKIES_DEFAULT, // Equippable group
-    catalogAddress, // Catalog address
-    `${C.BASE_IPFS_URI}/chunkies/full/4.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
-    [
-      // Fixed and slots part ids:
-      C.CHUNKY_V4_HEAD_FIXED_PART_ID,
-      C.CHUNKY_V3_BODY_FIXED_PART_ID,
-      C.CHUNKY_V3_HANDS_FIXED_PART_ID,
-      C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
-      C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
-    ],
-  );
-  await tx.wait();
-  tx = await chunkies.mintWithEquippableAsset(
-    mintTo.address, // To
-    `${C.BASE_IPFS_URI}/chunkies/full/5.json`, // TokenURI
-    C.EQUIPPABLE_GROUP_FOR_CHUNKIES_DEFAULT, // Equippable group
-    catalogAddress, // Catalog address
-    `${C.BASE_IPFS_URI}/chunkies/full/5.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
-    [
-      // Fixed and slots part ids:
-      C.CHUNKY_V3_HEAD_FIXED_PART_ID,
-      C.CHUNKY_V4_BODY_FIXED_PART_ID,
-      C.CHUNKY_V4_HANDS_FIXED_PART_ID,
-      C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
-      C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
-    ],
-  );
-  await tx.wait();
+    {
+      partId: C.SQUAD_CAP_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_CAP_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
+      },
+    },
+    {
+      partId: C.SQUAD_ARMOR_SLOT_PART_ID,
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.Z_INDEX_ARMOR_ITEMS,
+        equippable: [itemsAddress],
+        metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
+      },
+    },
+  ]);
+  await Promise.all([tx1.wait()]);
 }
 
-async function addItemAssets(items: ChunkyItem, chunkiesAddress: string) {
-  // 1st WAY TO DO IT: Adding assets step by step
-  let tx = await items.addEquippableAssetEntry(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND, // Equippable group
-    ethers.constants.AddressZero, // Catalog address
-    `${C.BASE_IPFS_URI}/items/bone/left.json`, // Metadata URI
-    [], // Part ids, none since this is not meant to receive any equippable and it is not composed
+async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCatalogRyker: string, mintTo: SignerWithAddress) {
+  txRyker = await timeSquadRyker.mintWithEquippableAsset(
+    mintTo.address, // To
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`, // TokenURI
+    C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, // Equippable group
+    timeSquadCatalogRyker, // Catalog address
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
+    [
+      // slots part ids:
+      C.SQUAD_LEFT_HAND_SLOT_PART_ID;
+      C.SQUAD_RIGHT_HAND_SLOT_PART_ID;
+      C.SQUAD_CAP_SLOT_PART_ID;
+      C.SQUAD_ARMOR_SLOT_PART_ID;
+    ],
   );
-  await tx.wait();
-  tx = await items.addEquippableAssetEntry(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND, // Equippable group
-    ethers.constants.AddressZero, // Catalog address
-    `${C.BASE_IPFS_URI}/items/bone/right.json`, // Metadata URI
-    [], // Part ids, none since this is not meant to receive any equippable and it is not composed
-  );
-  await tx.wait();
+  await txRyker.wait();
+}
 
-  // 2nd WAY TO DO IT: Custom method on items contract
-  tx = await items.addHandItemAssets(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/flag/left.json`, // Asset for left hand
-    `${C.BASE_IPFS_URI}/items/flag/right.json`, // Asset for left hand
+// Per TimeSquadAria
+async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalogAria: string, mintTo: SignerWithAddress) {
+  let txAria = await timeSquadAria.mintWithEquippableAsset(
+    mintTo.address, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001aria.json`, 
+    C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, 
+    timeSquadCatalogAria, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001aria.json`, 
+    [
+      C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+      C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+      C.SQUAD_CAP_SLOT_PART_ID,
+      C.SQUAD_ARMOR_SLOT_PART_ID
+    ],
   );
-  await tx.wait();
-  tx = await items.addHandItemAssets(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/pencil/left.json`, // Asset for left hand
-    `${C.BASE_IPFS_URI}/items/pencil/right.json`, // Asset for left hand
+  await txAria.wait();
+}
+
+// Per TimeSquadLuna
+async function mintParentSquadLuna(timeSquadLuna: TimeSquadLuna, timeSquadCatalogLuna: string, mintTo: SignerWithAddress) {
+  let txLuna = await timeSquadLuna.mintWithEquippableAsset(
+    mintTo.address,
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001luna.json`, 
+    C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, 
+    timeSquadCatalogLuna,
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001luna.json`, 
+    [
+      C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+      C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+      C.SQUAD_CAP_SLOT_PART_ID,
+      C.SQUAD_ARMOR_SLOT_PART_ID
+    ],
   );
-  await tx.wait();
-  tx = await items.addHandItemAssets(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/spear/left.json`, // Asset for left hand
-    `${C.BASE_IPFS_URI}/items/spear/right.json`, // Asset for left hand
+  await txLuna.wait();
+}
+
+// Per TimeSquadThaddeus
+async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, timeSquadCatalogThaddeus: string, mintTo: SignerWithAddress) {
+  let txThaddeus = await timeSquadThaddeus.mintWithEquippableAsset(
+    mintTo.address,
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001thaddeus.json`, 
+    C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, 
+    timeSquadCatalogThaddeus,
+    `${C.BASE_IPFS_URI}/timeSquad/full/0001thaddeus.json`, 
+    [
+      C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+      C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+      C.SQUAD_CAP_SLOT_PART_ID,
+      C.SQUAD_ARMOR_SLOT_PART_ID
+    ],
+  );
+  await txThaddeus.wait();
+}
+
+
+async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddress: string) {
+
+  tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+ `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
+ `${C.BASE_IPFS_URI}/items/armor/SecondAsset.json`,
   );
   await tx.wait();
 
   // WARNING: This is necessary to show the intention of groups of assets to be equipped into specific collection and slots. This is the reason we have equippable group ids.
   await items.setValidParentForEquippableGroup(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    chunkiesAddress,
-    C.CHUNKY_LEFT_HAND_SLOT_PART_ID,
-  );
-  await items.setValidParentForEquippableGroup(
-    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    chunkiesAddress,
-    C.CHUNKY_RIGHT_HAND_SLOT_PART_ID,
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    TimeSquadAriaAddress,
+    C.SQUAD_ARMOR_SLOT_PART_ID,
   );
 }
 
-async function mintItems(items: ChunkyItem, chunkiesAddress: string) {
-  // By the order we minted assets, we can know that these are the ids. We could have custom methods to assets to names or to set the asset ids ourselves but since only the issuer can add assets, we can trust the order.
-  const boneLeftAssetId = 1;
-  const boneRightAssetId = 2;
-  const flagLeftAssetId = 3;
-  const flagRightAssetId = 4;
-  const pencilLeftAssetId = 5;
-  const pencilRightAssetId = 6;
-  const spearLeftAssetId = 7;
-  const spearRightAssetId = 8;
+// For Aria Cap
+async function addItemAssetsAriaCap(items: ItemsAriaCap, TimeSquadAriaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    TimeSquadAriaAddress,
+    C.SQUAD_CAP_SLOT_PART_ID,
+  );
+}
+
+// For Aria Left Hand
+async function addItemAssetsAriaLeftHand(items: ItemsAriaLeftHand, TimeSquadAriaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    TimeSquadAriaAddress,
+    C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Aria Right Hand
+async function addItemAssetsAriaRightHand(items: ItemsAriaRightHand, TimeSquadAriaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    TimeSquadAriaAddress,
+    C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Ryker Armor
+async function addItemAssetsRykerArmor(items: ItemsRykerArmor, TimeSquadRykerAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/armor/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    TimeSquadRykerAddress,
+    C.SQUAD_ARMOR_SLOT_PART_ID,
+  );
+}
+
+// For Ryker Cap
+async function addItemAssetsRykerCap(items: ItemsRykerCap, TimeSquadRykerAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    TimeSquadRykerAddress,
+    C.SQUAD_CAP_SLOT_PART_ID,
+  );
+}
+
+// For Ryker Left Hand
+async function addItemAssetsRykerLeftHand(items: ItemsRykerLeftHand, TimeSquadRykerAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    TimeSquadRykerAddress,
+    C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Ryker Right Hand
+async function addItemAssetsRykerRightHand(items: ItemsRykerRightHand, TimeSquadRykerAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    TimeSquadRykerAddress,
+    C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Luna Armor
+async function addItemAssetsLunaArmor(items: ItemsLunaArmor, TimeSquadLunaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/armor/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    TimeSquadLunaAddress,
+    C.SQUAD_ARMOR_SLOT_PART_ID,
+  );
+}
+
+// For Luna Cap
+async function addItemAssetsLunaCap(items: ItemsLunaCap, TimeSquadLunaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    TimeSquadLunaAddress,
+    C.SQUAD_CAP_SLOT_PART_ID,
+  );
+}
+
+// For Luna Left Hand
+async function addItemAssetsLunaLeftHand(items: ItemsLunaLeftHand, TimeSquadLunaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    TimeSquadLunaAddress,
+    C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Luna Right Hand
+async function addItemAssetsLunaRightHand(items: ItemsLunaRightHand, TimeSquadLunaAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    TimeSquadLunaAddress,
+    C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Thaddeus Armor
+async function addItemAssetsThaddeusArmor(items: ItemsThaddeusArmor, TimeSquadThaddeusAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/armor/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
+    TimeSquadThaddeusAddress,
+    C.SQUAD_ARMOR_SLOT_PART_ID,
+  );
+}
+
+// For Thaddeus Cap
+async function addItemAssetsThaddeusCap(items: ItemsThaddeusCap, TimeSquadThaddeusAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
+    TimeSquadThaddeusAddress,
+    C.SQUAD_CAP_SLOT_PART_ID,
+  );
+}
+
+// For Thaddeus Left Hand
+async function addItemAssetsThaddeusLeftHand(items: ItemsThaddeusLeftHand, TimeSquadThaddeusAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
+    TimeSquadThaddeusAddress,
+    C.SQUAD_LEFT_HAND_SLOT_PART_ID,
+  );
+}
+
+// For Thaddeus Right Hand
+async function addItemAssetsThaddeusRightHand(items: ItemsThaddeusRightHand, TimeSquadThaddeusAddress: string) {
+  let tx = await items.addTwoItemAssets(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
+    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+  );
+  await tx.wait();
+
+  await items.setValidParentForEquippableGroup(
+    C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
+    TimeSquadThaddeusAddress,
+    C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
+  );
+}
+
+
+async function mintItemsAriaArmor(itemsAriaArmor: ItemsAriaArmor, TimeSquadAriaAddress: string) {
+  const armorFirstAssetId = 1;
+  const armorSecondAssetId = 2;
 
   const [deployer] = await ethers.getSigners();
 
-  // 1st WAY TO DO IT: Step by step
-  // We will send a bone NFT to the first chunky, with 2 assets, one for each hand
-  // We are using left hand asset as tokenURI. This is the simplest path. Alternatively, we could have used a custom implementation which does not require tokenURI on mint, but gets it from the the asset with the highest priority. This can easily be created on wizard.rmrk.dev
-  // We first mint it to ourselves so we can accept both assets. The implementation we are using accepts the first ever asset or any asset added by the token owner, so both will be auto accepted
-  let tx = await items.mint(deployer.address, 1, `${C.BASE_IPFS_URI}/items/bone/left.json`);
-  await tx.wait();
-  const newTokenId = await items.totalSupply();
-  tx = await items.addAssetToToken(newTokenId, boneLeftAssetId, 0);
-  await tx.wait();
-  tx = await items.addAssetToToken(newTokenId, boneRightAssetId, 0);
-  await tx.wait();
-  tx = await items.nestTransferFrom(deployer.address, chunkiesAddress, newTokenId, 1, []);
-  await tx.wait();
-
-  // 2nd WAY TO DO IT: Custom method on items contract
-  // Sending a flag NFT to the second chunky, with 2 assets, one for each hand
-  tx = await items.nestMintWithAssets(
-    chunkiesAddress, // To
-    2, // destinationId
-    `${C.BASE_IPFS_URI}/items/flag/left.json`, // TokenURI,
-    [flagLeftAssetId, flagRightAssetId], // Assets
-  );
-  await tx.wait();
-  // Sending a pencil NFT to the third chunky, with 2 assets, one for each hand
-  tx = await items.nestMintWithAssets(
-    chunkiesAddress, // To
-    3, // destinationId
-    `${C.BASE_IPFS_URI}/items/pencil/left.json`, // TokenURI,
-    [pencilLeftAssetId, pencilRightAssetId], // Assets
-  );
-  await tx.wait();
-  // Sending a spear NFT to the fourth chunky, with 2 assets, one for each hand
-  tx = await items.nestMintWithAssets(
-    chunkiesAddress, // To
-    4, // destinationId
-    `${C.BASE_IPFS_URI}/items/spear/left.json`, // TokenURI,
-    [spearLeftAssetId, spearRightAssetId], // Assets
-  );
-  await tx.wait();
-  // Sending a spear NFT to the fifth chunky, with 2 assets, one for each hand
-  tx = await items.nestMintWithAssets(
-    chunkiesAddress, // To
-    5, // destinationId
-    `${C.BASE_IPFS_URI}/items/spear/left.json`, // TokenURI,
-    [spearLeftAssetId, spearRightAssetId], // Assets
-  );
-  await tx.wait();
-  // Sending a flag NFT to the first chunky, with 2 assets, one for each hand
-  tx = await items.nestMintWithAssets(
-    chunkiesAddress, // To
-    1, // destinationId
-    `${C.BASE_IPFS_URI}/items/flag/left.json`, // TokenURI,
-    [flagLeftAssetId, flagRightAssetId], // Assets
+  // Sending a armor NFT to the first parent squad, with 2 assets
+  tx = await itemsAriaArmor.nestMintWithAssets(
+    TimeSquadAriaAddress, // To
+    1, // destinationId il primo nft parent
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, // TokenURI del child nft,
+    [armorFirstAssetId, armorSecondAssetId], // Assets
   );
   await tx.wait();
 }
 
-export { deployContracts, configureCatalog, mintChunkies, addItemAssets, mintItems };
+// For Aria Left Hand
+async function mintItemsAriaLeftHand(itemsAriaLeftHand: ItemsAriaLeftHand, TimeSquadAriaAddress: string) {
+  const leftHandFirstAssetId = 1;
+  const leftHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsAriaLeftHand.nestMintWithAssets(
+    TimeSquadAriaAddress, // To
+    1, // destinationId of the first parent NFT
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, // TokenURI of the child NFT,
+    [leftHandFirstAssetId, leftHandSecondAssetId], // Assets
+  );
+  await tx.wait();
+}
+
+// For Aria Right Hand
+async function mintItemsAriaRightHand(itemsAriaRightHand: ItemsAriaRightHand, TimeSquadAriaAddress: string) {
+  const rightHandFirstAssetId = 1;
+  const rightHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsAriaRightHand.nestMintWithAssets(
+    TimeSquadAriaAddress, // To
+    1, // destinationId of the first parent NFT
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, // TokenURI of the child NFT,
+    [rightHandFirstAssetId, rightHandSecondAssetId], // Assets
+  );
+  await tx.wait();
+}
+
+// For Aria Cap
+async function mintItemsAriaCap(itemsAriaCap: ItemsAriaCap, TimeSquadAriaAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsAriaCap.nestMintWithAssets(
+    TimeSquadAriaAddress, // To
+    1, // destinationId of the first parent NFT
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, // TokenURI of the child NFT,
+    [capFirstAssetId, capSecondAssetId], // Assets
+  );
+  await tx.wait();
+}
+
+// For Luna Armor
+async function mintItemsLunaArmor(itemsLunaArmor: ItemsLunaArmor, TimeSquadLunaAddress: string) {
+  const armorFirstAssetId = 1;
+  const armorSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsLunaArmor.nestMintWithAssets(
+    TimeSquadLunaAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, 
+    [armorFirstAssetId, armorSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Luna Left Hand
+async function mintItemsLunaLeftHand(itemsLunaLeftHand: ItemsLunaLeftHand, TimeSquadLunaAddress: string) {
+  const leftHandFirstAssetId = 1;
+  const leftHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsLunaLeftHand.nestMintWithAssets(
+    TimeSquadLunaAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, 
+    [leftHandFirstAssetId, leftHandSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Luna Right Hand
+async function mintItemsLunaRightHand(itemsLunaRightHand: ItemsLunaRightHand, TimeSquadLunaAddress: string) {
+  const rightHandFirstAssetId = 1;
+  const rightHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsLunaRightHand.nestMintWithAssets(
+    TimeSquadLunaAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, 
+    [rightHandFirstAssetId, rightHandSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Luna Cap
+async function mintItemsLunaCap(itemsLunaCap: ItemsLunaCap, TimeSquadLunaAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsLunaCap.nestMintWithAssets(
+    TimeSquadLunaAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, 
+    [capFirstAssetId, capSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Ryker Armor
+async function mintItemsRykerArmor(itemsRykerArmor: ItemsRykerArmor, TimeSquadRykerAddress: string) {
+  const armorFirstAssetId = 1;
+  const armorSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsRykerArmor.nestMintWithAssets(
+    TimeSquadRykerAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, 
+    [armorFirstAssetId, armorSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Ryker Left Hand
+async function mintItemsRykerLeftHand(itemsRykerLeftHand: ItemsRykerLeftHand, TimeSquadRykerAddress: string) {
+  const leftHandFirstAssetId = 1;
+  const leftHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsRykerLeftHand.nestMintWithAssets(
+    TimeSquadRykerAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, 
+    [leftHandFirstAssetId, leftHandSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Ryker Right Hand
+async function mintItemsRykerRightHand(itemsRykerRightHand: ItemsRykerRightHand, TimeSquadRykerAddress: string) {
+  const rightHandFirstAssetId = 1;
+  const rightHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsRykerRightHand.nestMintWithAssets(
+    TimeSquadRykerAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, 
+    [rightHandFirstAssetId, rightHandSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Ryker Cap
+async function mintItemsRykerCap(itemsRykerCap: ItemsRykerCap, TimeSquadRykerAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsRykerCap.nestMintWithAssets(
+    TimeSquadRykerAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, 
+    [capFirstAssetId, capSecondAssetId],
+  );
+  await tx.wait();
+}
+
+
+// For Thaddeus Armor
+async function mintItemsThaddeusArmor(itemsThaddeusArmor: ItemsThaddeusArmor, TimeSquadThaddeusAddress: string) {
+  const armorFirstAssetId = 1;
+  const armorSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsThaddeusArmor.nestMintWithAssets(
+    TimeSquadThaddeusAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, 
+    [armorFirstAssetId, armorSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Thaddeus Left Hand
+async function mintItemsThaddeusLeftHand(itemsThaddeusLeftHand: ItemsThaddeusLeftHand, TimeSquadThaddeusAddress: string) {
+  const leftHandFirstAssetId = 1;
+  const leftHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsThaddeusLeftHand.nestMintWithAssets(
+    TimeSquadThaddeusAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, 
+    [leftHandFirstAssetId, leftHandSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Thaddeus Right Hand
+async function mintItemsThaddeusRightHand(itemsThaddeusRightHand: ItemsThaddeusRightHand, TimeSquadThaddeusAddress: string) {
+  const rightHandFirstAssetId = 1;
+  const rightHandSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsThaddeusRightHand.nestMintWithAssets(
+    TimeSquadThaddeusAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, 
+    [rightHandFirstAssetId, rightHandSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Thaddeus Cap
+async function mintItemsThaddeusCap(itemsThaddeusCap: ItemsThaddeusCap, TimeSquadThaddeusAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsThaddeusCap.nestMintWithAssets(
+    TimeSquadThaddeusAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, 
+    [capFirstAssetId, capSecondAssetId],
+  );
+  await tx.wait();
+}
+
+
+
+export {
+  deployContracts,
+  configureCatalogAria,
+  configureCatalogLuna,
+  configureCatalogRyker,
+  configureCatalogThaddeus,
+  mintParentSquadRyker,
+  mintParentSquadAria,
+  mintParentSquadLuna,
+  mintParentSquadThaddeus,
+  addItemAssetsAriaArmor,
+  addItemAssetsAriaCap,
+  addItemAssetsAriaLeftHand,
+  addItemAssetsAriaRightHand,
+  addItemAssetsRykerArmor,
+  addItemAssetsRykerCap,
+  addItemAssetsRykerLeftHand,
+  addItemAssetsRykerRightHand,
+  addItemAssetsLunaArmor,
+  addItemAssetsLunaCap,
+  addItemAssetsLunaLeftHand,
+  addItemAssetsLunaRightHand,
+  addItemAssetsThaddeusArmor,
+  addItemAssetsThaddeusCap,
+  addItemAssetsThaddeusLeftHand,
+  addItemAssetsThaddeusRightHand,
+  mintItemsAriaArmor,
+  mintItemsAriaLeftHand,
+  mintItemsAriaRightHand,
+  mintItemsAriaCap,
+  mintItemsLunaArmor,
+  mintItemsLunaLeftHand,
+  mintItemsLunaRightHand,
+  mintItemsLunaCap,
+  mintItemsRykerArmor,
+  mintItemsRykerLeftHand,
+  mintItemsRykerRightHand,
+  mintItemsRykerCap,
+  mintItemsThaddeusArmor,
+  mintItemsThaddeusLeftHand,
+  mintItemsThaddeusRightHand,
+  mintItemsThaddeusCap
+};
+
