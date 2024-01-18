@@ -19,4 +19,31 @@ parameters = [
 python ./naming/naming.py
 
 
-CREA UNO SCRIPT PYTHON CHE CREA I METADATA DEI PARENT 
+CREA UNO SCRIPT PYTHON CHE CREA I METADATA DEI PARENT in forma random e in base al tipo di personaggio
+FAI 10 AGLI ALTRI ATTRIBUTI E A QUELLO PRINCIPALE FAI DA 50 A 100 RANDOMICO
+"attributes": [
+      {
+        "label": "Attack",   //ryker
+        "trait_type": "Attack",
+        "type": "number",
+        "value": "RANDOM"
+      },
+      {
+        "label": "Defense",
+        "trait_type": "Defense",
+        "type": "number",
+        "value": "RANDOM"   //luna da 50 a 100
+      },
+      {
+        "label": "Magic",
+        "trait_type": "Magic",
+        "type": "number",
+        "value": "NUMBER"  //Aria
+      },
+      {
+        "label": "Fortune",
+        "trait_type": "Fortune",
+        "type": "number",
+        "value": "NUMBER"  //Thaddeus
+      }
+    ]
