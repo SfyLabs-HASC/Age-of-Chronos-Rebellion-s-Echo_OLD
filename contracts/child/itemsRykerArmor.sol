@@ -3,7 +3,7 @@
 pragma solidity ^0.8.21;
 import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKEquippablePreMint.sol";
 
-contract itemsRykerArmor is RMRKEquippablePreMint {
+contract ItemsRykerArmor is RMRKEquippablePreMint {
     // Constructor
     constructor(
         string memory collectionMetadata,

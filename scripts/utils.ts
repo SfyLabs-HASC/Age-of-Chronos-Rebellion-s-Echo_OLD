@@ -91,23 +91,24 @@ async function deployContracts(): Promise<{
 
   const squadArgs = [
     C.SQUAD_METADATA,
-    BigNumber.from(100),
+    BigNumber.from(250),
     deployerAddress,
     500, // 5%
   ] as const;
 
-  const timeSquadAria: TimeSquadAria = await timeSquadCatalogAriaFactory.deploy(...squadArgs);
+  const timeSquadAria: TimeSquadAria = await timeSquadAriaFactory.deploy(...squadArgs);
   await timeSquadAria.deployed();
   
-  const timeSquadLuna: TimeSquadLuna = await timeSquadCatalogLunaFactory.deploy(...squadArgs);
+  const timeSquadLuna: TimeSquadLuna = await timeSquadLunaFactory.deploy(...squadArgs);
   await timeSquadLuna.deployed();
   
-  const timeSquadRyker: TimeSquadRyker = await timeSquadCatalogRykerFactory.deploy(...squadArgs);
+  const timeSquadRyker: TimeSquadRyker = await timeSquadRykerFactory.deploy(...squadArgs);
   await timeSquadRyker.deployed();
   
-  const timeSquadThaddeus: TimeSquadThaddeus = await timeSquadCatalogThaddeusFactory.deploy(...squadArgs);
+  const timeSquadThaddeus: TimeSquadThaddeus = await timeSquadThaddeusFactory.deploy(...squadArgs);
   await timeSquadThaddeus.deployed();
 
+console.log("parent Deployati")
   // Deployment script for Catalog Contracts
   const catalogRykerArgs = [C.SQUAD_CATALOG_RYKER_METADATA, 'image/*'] as const;
   const catalogLunaArgs = [C.SQUAD_CATALOG_LUNA_METADATA, 'image/*'] as const;
@@ -127,7 +128,7 @@ async function deployContracts(): Promise<{
   const timeSquadCatalogThaddeus = await timeSquadCatalogThaddeusFactory.deploy(...catalogThaddeusArgs);
   await timeSquadCatalogThaddeus.deployed();
 
-
+  console.log("catalog Deployati")
   // Deployment script for Item Contracts
 
   const itemArgs = [
@@ -185,32 +186,33 @@ async function deployContracts(): Promise<{
   const itemsThaddeusRightHand = await itemsThaddeusRightHandFactory.deploy(...itemArgs);
   await itemsThaddeusRightHand.deployed();
 
-  
+  console.log("items Deployati")
   // So holders do not need to accept each item
 // Aria
-await timeSquadAria.setAutoAcceptCollection(itemsAriaArmor.address);
-await timeSquadAria.setAutoAcceptCollection(itemsAriaCap.address);
-await timeSquadAria.setAutoAcceptCollection(itemsAriaLeftHand.address);
-await timeSquadAria.setAutoAcceptCollection(itemsAriaRightHand.address);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaArmor.address,true);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaCap.address,true);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaLeftHand.address,true);
+await timeSquadAria.setAutoAcceptCollection(itemsAriaRightHand.address,true);
 
 // Luna
-await timeSquadLuna.setAutoAcceptCollection(itemsLunaArmor.address);
-await timeSquadLuna.setAutoAcceptCollection(itemsLunaCap.address);
-await timeSquadLuna.setAutoAcceptCollection(itemsLunaLeftHand.address);
-await timeSquadLuna.setAutoAcceptCollection(itemsLunaRightHand.address);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaArmor.address,true);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaCap.address,true);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaLeftHand.address,true);
+await timeSquadLuna.setAutoAcceptCollection(itemsLunaRightHand.address,true);
 
 // Ryker
-await timeSquadRyker.setAutoAcceptCollection(itemsRykerArmor.address);
-await timeSquadRyker.setAutoAcceptCollection(itemsRykerCap.address);
-await timeSquadRyker.setAutoAcceptCollection(itemsRykerLeftHand.address);
-await timeSquadRyker.setAutoAcceptCollection(itemsRykerRightHand.address);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerArmor.address,true);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerCap.address,true);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerLeftHand.address,true);
+await timeSquadRyker.setAutoAcceptCollection(itemsRykerRightHand.address,true);
 
 // Thaddeus
-await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusArmor.address);
-await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusCap.address);
-await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusLeftHand.address);
-await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusRightHand.address);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusArmor.address,true);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusCap.address,true);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusLeftHand.address,true);
+await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusRightHand.address,true);
 
+console.log("setAutoAcceptCollection fatto")
 /*
   NEL TESTING NON METTERE QUESTA PARTE!!!!
   const chainId = (await ethers.provider.getNetwork()).chainId;
@@ -347,6 +349,7 @@ await run('verify:verify', {
     timeSquadLuna,
     timeSquadRyker,
     timeSquadThaddeus,
+    
     itemsAriaArmor,
     itemsAriaCap,
     itemsAriaLeftHand,
@@ -363,6 +366,7 @@ await run('verify:verify', {
     itemsThaddeusCap,
     itemsThaddeusLeftHand,
     itemsThaddeusRightHand,
+    
     timeSquadCatalogAria,
     timeSquadCatalogLuna,
     timeSquadCatalogRyker,

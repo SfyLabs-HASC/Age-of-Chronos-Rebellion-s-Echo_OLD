@@ -49,11 +49,13 @@ async function main() {
   console.log(`Deploying Contracts to ${network.name} blockchain...`);
   const [deployer] = await ethers.getSigners();
 
+  
   const {
     timeSquadAria,
     timeSquadLuna,
     timeSquadRyker,
     timeSquadThaddeus,
+    
     itemsAriaArmor,
     itemsAriaCap,
     itemsAriaLeftHand,
@@ -70,6 +72,7 @@ async function main() {
     itemsThaddeusCap,
     itemsThaddeusLeftHand,
     itemsThaddeusRightHand,
+    
     timeSquadCatalogAria,
     timeSquadCatalogLuna,
     timeSquadCatalogRyker,
@@ -124,7 +127,7 @@ async function main() {
   let tx2 = await registry.addExternalCollection(timeSquadRyker.address,C.SQUAD_METADATA);
   let tx3 = await registry.addExternalCollection(timeSquadThaddeus.address,C.SQUAD_METADATA);
   let tx4 = await registry.addExternalCollection(itemsAriaArmor.address,C.SQUAD_METADATA);
-  await Promise.all([tx1.wait(), tx2.wait()]);
+  await Promise.all([tx1.wait(), tx2.wait(),tx3.wait(), tx4.wait()]);
   console.log('Collections added to Singular Registry');
   
   let tx01 = await registry.addExternalCollection(itemsAriaArmor.address, C.SQUAD_ITEM_METADATA);

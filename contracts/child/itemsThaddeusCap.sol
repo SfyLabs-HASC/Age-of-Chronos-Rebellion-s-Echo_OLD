@@ -1,10 +1,9 @@
-
 // SPDX-License-Identifier: Apache-2.0
 
 pragma solidity ^0.8.21;
 import "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKEquippablePreMint.sol";
 
-contract itemsThaddeusCap is RMRKEquippablePreMint {
+contract ItemsThaddeusCap is RMRKEquippablePreMint {
     // Constructor
     constructor(
         string memory collectionMetadata,
@@ -22,7 +21,7 @@ contract itemsThaddeusCap is RMRKEquippablePreMint {
         )
     {}
 
-        function addTwoItemAssets(
+    function addTwoItemAssets(
         uint64 slotForLeftHand,
         uint64 slotForRightHand,
         uint64 slotForCap,
@@ -32,16 +31,56 @@ contract itemsThaddeusCap is RMRKEquippablePreMint {
         string memory assetForCap,
         string memory assetForArmor
     ) public {
-        addEquippableAssetEntry(slotForLeftHand, address(0), assetForLeftHand, new uint64[](0));
-        addEquippableAssetEntry(slotForLeftHand, address(0), assetForLeftHand, new uint64[](0));
-        addEquippableAssetEntry(slotForRightHand, address(0), assetForRightHand, new uint64[](0));
-        addEquippableAssetEntry(slotForRightHand, address(0), assetForRightHand, new uint64[](0));
-        addEquippableAssetEntry(slotForCap, address(0), assetForCap, new uint64[](0));
-        addEquippableAssetEntry(slotForCap, address(0), assetForCap, new uint64[](0));
-        addEquippableAssetEntry(slotForArmor, address(0), assetForArmor, new uint64[](0));
-        addEquippableAssetEntry(slotForArmor, address(0), assetForArmor, new uint64[](0));
+        addEquippableAssetEntry(
+            slotForLeftHand,
+            address(0),
+            assetForLeftHand,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForLeftHand,
+            address(0),
+            assetForLeftHand,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForRightHand,
+            address(0),
+            assetForRightHand,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForRightHand,
+            address(0),
+            assetForRightHand,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForCap,
+            address(0),
+            assetForCap,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForCap,
+            address(0),
+            assetForCap,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForArmor,
+            address(0),
+            assetForArmor,
+            new uint64[](0)
+        );
+        addEquippableAssetEntry(
+            slotForArmor,
+            address(0),
+            assetForArmor,
+            new uint64[](0)
+        );
     }
-    
+
     function nestMintWithAssets(
         address to,
         uint256 destinationId,
