@@ -23,13 +23,8 @@ contract ItemsThaddeusLeftHand is RMRKEquippablePreMint {
 
     function addTwoItemAssets(
         uint64 slotForLeftHand,
-        uint64 slotForRightHand,
-        uint64 slotForCap,
-        uint64 slotForArmor,
         string memory assetForLeftHand,
-        string memory assetForRightHand,
-        string memory assetForCap,
-        string memory assetForArmor
+        string memory secondAssetForLeftHand
     ) public {
         addEquippableAssetEntry(
             slotForLeftHand,
@@ -40,43 +35,7 @@ contract ItemsThaddeusLeftHand is RMRKEquippablePreMint {
         addEquippableAssetEntry(
             slotForLeftHand,
             address(0),
-            assetForLeftHand,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForRightHand,
-            address(0),
-            assetForRightHand,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForRightHand,
-            address(0),
-            assetForRightHand,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForCap,
-            address(0),
-            assetForCap,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForCap,
-            address(0),
-            assetForCap,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForArmor,
-            address(0),
-            assetForArmor,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForArmor,
-            address(0),
-            assetForArmor,
+            secondAssetForLeftHand,
             new uint64[](0)
         );
     }

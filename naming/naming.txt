@@ -17,3 +17,6 @@ parameters = [
     ("itemsLunaArmor", "Items Luna Armor", "LUNAITEMARMOR")
 ]
 python ./naming/naming.py
+
+
+CREA UNO SCRIPT PYTHON CHE CREA I METADATA DEI PARENT 

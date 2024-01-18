@@ -88,6 +88,9 @@ async function deployContracts(): Promise<{
   const timeSquadCatalogRykerFactory = await ethers.getContractFactory('TimeSquadCatalogRyker');
   const timeSquadCatalogThaddeusFactory = await ethers.getContractFactory('TimeSquadCatalogThaddeus');
   
+  const delay = (ms: number): Promise<void> => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   const squadArgs = [
     C.SQUAD_METADATA,
@@ -108,6 +111,10 @@ async function deployContracts(): Promise<{
   const timeSquadThaddeus: TimeSquadThaddeus = await timeSquadThaddeusFactory.deploy(...squadArgs);
   await timeSquadThaddeus.deployed();
 
+  console.log(`timeSquadAria deployed to ${timeSquadAria.address}`);
+  console.log(`timeSquadLuna deployed to ${timeSquadLuna.address}`);
+  console.log(`timeSquadRyker deployed to ${timeSquadRyker.address}`);
+  console.log(`timeSquadThaddeus deployed to ${timeSquadThaddeus.address}`);
 console.log("parent Deployati")
   // Deployment script for Catalog Contracts
   const catalogRykerArgs = [C.SQUAD_CATALOG_RYKER_METADATA, 'image/*'] as const;
@@ -127,13 +134,20 @@ console.log("parent Deployati")
 
   const timeSquadCatalogThaddeus = await timeSquadCatalogThaddeusFactory.deploy(...catalogThaddeusArgs);
   await timeSquadCatalogThaddeus.deployed();
+  
+  
+  console.log(`Catalog Aria deployed to ${timeSquadCatalogAria.address}`);
+  console.log(`Catalog Luna deployed to ${timeSquadCatalogLuna.address}`);
+  console.log(`Catalog Ryker deployed to ${timeSquadCatalogRyker.address}`);
+  console.log(`Catalog Thaddeus deployed to ${timeSquadCatalogThaddeus.address}`);
+  console.log("catalog Deployati");
 
-  console.log("catalog Deployati")
+  await delay(10000) /// waiting 10 second.
   // Deployment script for Item Contracts
 
   const itemArgs = [
     C.SQUAD_ITEM_METADATA,
-    BigNumber.from(200),
+    BigNumber.from(200),   ///
     deployerAddress,
     500, // 5%
   ] as const;
@@ -186,26 +200,46 @@ console.log("parent Deployati")
   const itemsThaddeusRightHand = await itemsThaddeusRightHandFactory.deploy(...itemArgs);
   await itemsThaddeusRightHand.deployed();
 
+  console.log(`Items Aria Armor deployed to ${itemsAriaArmor.address}`);
+  console.log(`Items Aria Cap deployed to ${itemsAriaCap.address}`);
+  console.log(`Items Aria Left Hand deployed to ${itemsAriaLeftHand.address}`);
+  console.log(`Items Aria Right Hand deployed to ${itemsAriaRightHand.address}`);
+
+  console.log(`Items Luna Armor deployed to ${itemsLunaArmor.address}`);
+  console.log(`Items Luna Cap deployed to ${itemsLunaCap.address}`);
+  console.log(`Items Luna Left Hand deployed to ${itemsLunaLeftHand.address}`);
+  console.log(`Items Luna Right Hand deployed to ${itemsLunaRightHand.address}`);
+
+  console.log(`Items Ryker Armor deployed to ${itemsRykerArmor.address}`);
+  console.log(`Items Ryker Cap deployed to ${itemsRykerCap.address}`);
+  console.log(`Items Ryker Left Hand deployed to ${itemsRykerLeftHand.address}`);
+  console.log(`Items Ryker Right Hand deployed to ${itemsRykerRightHand.address}`);
+
+  console.log(`Items Thaddeus Armor deployed to ${itemsThaddeusArmor.address}`);
+  console.log(`Items Thaddeus Cap deployed to ${itemsThaddeusCap.address}`);
+  console.log(`Items Thaddeus Left Hand deployed to ${itemsThaddeusLeftHand.address}`);
+  console.log(`Items Thaddeus Right Hand deployed to ${itemsThaddeusRightHand.address}`);
   console.log("items Deployati")
+await delay(10000) /// waiting 10 second.
   // So holders do not need to accept each item
 // Aria
 await timeSquadAria.setAutoAcceptCollection(itemsAriaArmor.address,true);
 await timeSquadAria.setAutoAcceptCollection(itemsAriaCap.address,true);
 await timeSquadAria.setAutoAcceptCollection(itemsAriaLeftHand.address,true);
 await timeSquadAria.setAutoAcceptCollection(itemsAriaRightHand.address,true);
-
+await delay(10000) /// waiting 10 second.
 // Luna
 await timeSquadLuna.setAutoAcceptCollection(itemsLunaArmor.address,true);
 await timeSquadLuna.setAutoAcceptCollection(itemsLunaCap.address,true);
 await timeSquadLuna.setAutoAcceptCollection(itemsLunaLeftHand.address,true);
 await timeSquadLuna.setAutoAcceptCollection(itemsLunaRightHand.address,true);
-
+await delay(10000) /// waiting 10 second.
 // Ryker
 await timeSquadRyker.setAutoAcceptCollection(itemsRykerArmor.address,true);
 await timeSquadRyker.setAutoAcceptCollection(itemsRykerCap.address,true);
 await timeSquadRyker.setAutoAcceptCollection(itemsRykerLeftHand.address,true);
 await timeSquadRyker.setAutoAcceptCollection(itemsRykerRightHand.address,true);
-
+await delay(10000) /// waiting 10 second.
 // Thaddeus
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusArmor.address,true);
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusCap.address,true);
@@ -213,6 +247,7 @@ await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusLeftHand.address,tr
 await timeSquadThaddeus.setAutoAcceptCollection(itemsThaddeusRightHand.address,true);
 
 console.log("setAutoAcceptCollection fatto")
+await delay(10000) /// waiting 10 second.
 /*
   NEL TESTING NON METTERE QUESTA PARTE!!!!
   const chainId = (await ethers.provider.getNetwork()).chainId;

@@ -22,39 +22,11 @@ contract ItemsThaddeusCap is RMRKEquippablePreMint {
     {}
 
     function addTwoItemAssets(
-        uint64 slotForLeftHand,
-        uint64 slotForRightHand,
         uint64 slotForCap,
-        uint64 slotForArmor,
-        string memory assetForLeftHand,
-        string memory assetForRightHand,
         string memory assetForCap,
-        string memory assetForArmor
+        string memory secondAssetForCap
     ) public {
-        addEquippableAssetEntry(
-            slotForLeftHand,
-            address(0),
-            assetForLeftHand,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForLeftHand,
-            address(0),
-            assetForLeftHand,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForRightHand,
-            address(0),
-            assetForRightHand,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForRightHand,
-            address(0),
-            assetForRightHand,
-            new uint64[](0)
-        );
+        
         addEquippableAssetEntry(
             slotForCap,
             address(0),
@@ -64,21 +36,10 @@ contract ItemsThaddeusCap is RMRKEquippablePreMint {
         addEquippableAssetEntry(
             slotForCap,
             address(0),
-            assetForCap,
+            secondAssetForCap,
             new uint64[](0)
         );
-        addEquippableAssetEntry(
-            slotForArmor,
-            address(0),
-            assetForArmor,
-            new uint64[](0)
-        );
-        addEquippableAssetEntry(
-            slotForArmor,
-            address(0),
-            assetForArmor,
-            new uint64[](0)
-        );
+        
     }
 
     function nestMintWithAssets(
