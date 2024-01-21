@@ -1,4 +1,13 @@
 ## DA IMPELMENTARE
+1. metti la max supply agli item
+2. metti gli attributi
+3. metti il secondo asset (ora stai replicando oggetto1,oggetto2 e cosi via)
+4. fatti una licenza come questa su ageofChronos https://rmrk.app/license
+5. come funziona tag nella collection metadata
+6. la presentation image si puo inserire nel metadata? oppure è una cosa di singular.app?
+7. 
+
+
 
 1. ogni personaggio ha 4 valori come METADATI che ha "attacco" "difesa" "magia" "fortuna"
 2. naming dei 4 slot equippaggiabili

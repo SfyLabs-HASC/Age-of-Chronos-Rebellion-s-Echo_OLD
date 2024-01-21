@@ -18,11 +18,11 @@
       },
       "mediaUri": {
           "type": "string",
-          "description": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo"
+          "description": "https://storage.googleapis.com/astarnetwork-a4924.appspot.com/astar-dapps%2F0x74cc66cd0cf57bb2a0f237c89bcf8db92d3721a8_mmmm.png"
       },
       "thumbnailUri": {
           "type": "string",
-          "description": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo"
+          "description": "https://storage.googleapis.com/astarnetwork-a4924.appspot.com/astar-dapps%2F0x74cc66cd0cf57bb2a0f237c89bcf8db92d3721a8_mmmm.png"
       },
       "license": {
           "type": "string",

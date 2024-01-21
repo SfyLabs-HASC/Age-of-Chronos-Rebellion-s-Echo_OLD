@@ -5,6 +5,33 @@
   "external_url": "https://www.ageofchronos.com/",
   "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/thaddeus/parent_thaddeus.png",
   "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/thaddeus/parent_thaddeus.png",
+  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/parent_aria.png",
+  "license": "PERSONAL LICENSE (\"CBE-PERSONAL\")",
+  "licenseUri": "https://rmrk.app/license",
   "attributes": [
-    ]
+    {
+        "label": "Attack",
+        "type": "number",
+        "value": "10",
+        "trait_type": "Attack"
+    },
+    {
+        "label": "Defence",
+        "type": "number",
+        "value": "10",
+        "trait_type": "Defence"
+    },
+    {
+        "label": "Magic",
+        "type": "number",
+        "value": "10",
+        "trait_type": "Magic"
+    },
+    {
+        "label": "Fortune",
+        "type": "number",
+        "value": "10",
+        "trait_type": "Fortune"
+    }
+]
 }

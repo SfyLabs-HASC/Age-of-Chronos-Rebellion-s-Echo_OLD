@@ -610,10 +610,10 @@ async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCat
 async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalogAria: string, mintTo: SignerWithAddress) {
   let txAria = await timeSquadAria.mintWithEquippableAsset(
     mintTo.address, 
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001aria.json`, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`, 
     C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, 
     timeSquadCatalogAria, 
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001aria.json`, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`, 
     [
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
@@ -628,10 +628,10 @@ async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalo
 async function mintParentSquadLuna(timeSquadLuna: TimeSquadLuna, timeSquadCatalogLuna: string, mintTo: SignerWithAddress) {
   let txLuna = await timeSquadLuna.mintWithEquippableAsset(
     mintTo.address,
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001luna.json`, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/Luna.json`, 
     C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, 
     timeSquadCatalogLuna,
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001luna.json`, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/Luna.json`, 
     [
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
@@ -646,10 +646,10 @@ async function mintParentSquadLuna(timeSquadLuna: TimeSquadLuna, timeSquadCatalo
 async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, timeSquadCatalogThaddeus: string, mintTo: SignerWithAddress) {
   let txThaddeus = await timeSquadThaddeus.mintWithEquippableAsset(
     mintTo.address,
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001thaddeus.json`, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/Thaddeus.json`, 
     C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, 
     timeSquadCatalogThaddeus,
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001thaddeus.json`, 
+    `${C.BASE_IPFS_URI}/timeSquad/full/Thaddeus.json`, 
     [
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
@@ -662,11 +662,10 @@ async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, tim
 
 
 async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddress: string) {
-
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
- `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
- `${C.BASE_IPFS_URI}/items/armor/SecondAsset.json`,
+ `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`,
+ `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`,  //second asset (todo dovresti cambiare il metadata)
   );
   await tx.wait();
 
@@ -682,8 +681,8 @@ async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddres
 async function addItemAssetsAriaCap(items: ItemsAriaCap, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`,
   );
   await tx.wait();
 
@@ -698,8 +697,8 @@ async function addItemAssetsAriaCap(items: ItemsAriaCap, TimeSquadAriaAddress: s
 async function addItemAssetsAriaLeftHand(items: ItemsAriaLeftHand, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`,
   );
   await tx.wait();
 
@@ -714,8 +713,8 @@ async function addItemAssetsAriaLeftHand(items: ItemsAriaLeftHand, TimeSquadAria
 async function addItemAssetsAriaRightHand(items: ItemsAriaRightHand, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`,
   );
   await tx.wait();
 
@@ -730,8 +729,8 @@ async function addItemAssetsAriaRightHand(items: ItemsAriaRightHand, TimeSquadAr
 async function addItemAssetsRykerArmor(items: ItemsRykerArmor, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/armor/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`,
   );
   await tx.wait();
 
@@ -746,8 +745,8 @@ async function addItemAssetsRykerArmor(items: ItemsRykerArmor, TimeSquadRykerAdd
 async function addItemAssetsRykerCap(items: ItemsRykerCap, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`,
   );
   await tx.wait();
 
@@ -762,8 +761,8 @@ async function addItemAssetsRykerCap(items: ItemsRykerCap, TimeSquadRykerAddress
 async function addItemAssetsRykerLeftHand(items: ItemsRykerLeftHand, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`,
   );
   await tx.wait();
 
@@ -778,8 +777,8 @@ async function addItemAssetsRykerLeftHand(items: ItemsRykerLeftHand, TimeSquadRy
 async function addItemAssetsRykerRightHand(items: ItemsRykerRightHand, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`,
   );
   await tx.wait();
 
@@ -794,8 +793,8 @@ async function addItemAssetsRykerRightHand(items: ItemsRykerRightHand, TimeSquad
 async function addItemAssetsLunaArmor(items: ItemsLunaArmor, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/armor/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`,
   );
   await tx.wait();
 
@@ -810,8 +809,8 @@ async function addItemAssetsLunaArmor(items: ItemsLunaArmor, TimeSquadLunaAddres
 async function addItemAssetsLunaCap(items: ItemsLunaCap, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`,
   );
   await tx.wait();
 
@@ -826,8 +825,8 @@ async function addItemAssetsLunaCap(items: ItemsLunaCap, TimeSquadLunaAddress: s
 async function addItemAssetsLunaLeftHand(items: ItemsLunaLeftHand, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`,
   );
   await tx.wait();
 
@@ -842,8 +841,8 @@ async function addItemAssetsLunaLeftHand(items: ItemsLunaLeftHand, TimeSquadLuna
 async function addItemAssetsLunaRightHand(items: ItemsLunaRightHand, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`,
   );
   await tx.wait();
 
@@ -858,8 +857,8 @@ async function addItemAssetsLunaRightHand(items: ItemsLunaRightHand, TimeSquadLu
 async function addItemAssetsThaddeusArmor(items: ItemsThaddeusArmor, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/armor/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`,
   );
   await tx.wait();
 
@@ -874,8 +873,8 @@ async function addItemAssetsThaddeusArmor(items: ItemsThaddeusArmor, TimeSquadTh
 async function addItemAssetsThaddeusCap(items: ItemsThaddeusCap, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/cap/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`,
   );
   await tx.wait();
 
@@ -890,8 +889,8 @@ async function addItemAssetsThaddeusCap(items: ItemsThaddeusCap, TimeSquadThadde
 async function addItemAssetsThaddeusLeftHand(items: ItemsThaddeusLeftHand, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/lefthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`,
   );
   await tx.wait();
 
@@ -906,8 +905,8 @@ async function addItemAssetsThaddeusLeftHand(items: ItemsThaddeusLeftHand, TimeS
 async function addItemAssetsThaddeusRightHand(items: ItemsThaddeusRightHand, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`,
-    `${C.BASE_IPFS_URI}/items/righthand/secondAsset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`,
   );
   await tx.wait();
 
@@ -929,7 +928,7 @@ async function mintItemsAriaArmor(itemsAriaArmor: ItemsAriaArmor, TimeSquadAriaA
   let tx = await itemsAriaArmor.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId il primo nft parent
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, // TokenURI del child nft,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`, // TokenURI del child nft,
     [armorFirstAssetId, armorSecondAssetId], // Assets
   );
   await tx.wait();
@@ -945,7 +944,7 @@ async function mintItemsAriaLeftHand(itemsAriaLeftHand: ItemsAriaLeftHand, TimeS
   let tx = await itemsAriaLeftHand.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, // TokenURI of the child NFT,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`, // TokenURI of the child NFT,
     [leftHandFirstAssetId, leftHandSecondAssetId], // Assets
   );
   await tx.wait();
@@ -961,7 +960,7 @@ async function mintItemsAriaRightHand(itemsAriaRightHand: ItemsAriaRightHand, Ti
   let tx = await itemsAriaRightHand.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, // TokenURI of the child NFT,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`, // TokenURI of the child NFT,
     [rightHandFirstAssetId, rightHandSecondAssetId], // Assets
   );
   await tx.wait();
@@ -977,7 +976,7 @@ async function mintItemsAriaCap(itemsAriaCap: ItemsAriaCap, TimeSquadAriaAddress
   let tx = await itemsAriaCap.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, // TokenURI of the child NFT,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`, // TokenURI of the child NFT,
     [capFirstAssetId, capSecondAssetId], // Assets
   );
   await tx.wait();
@@ -993,7 +992,7 @@ async function mintItemsLunaArmor(itemsLunaArmor: ItemsLunaArmor, TimeSquadLunaA
   let tx = await itemsLunaArmor.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`, 
     [armorFirstAssetId, armorSecondAssetId],
   );
   await tx.wait();
@@ -1009,7 +1008,7 @@ async function mintItemsLunaLeftHand(itemsLunaLeftHand: ItemsLunaLeftHand, TimeS
   let tx = await itemsLunaLeftHand.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`, 
     [leftHandFirstAssetId, leftHandSecondAssetId],
   );
   await tx.wait();
@@ -1025,7 +1024,7 @@ async function mintItemsLunaRightHand(itemsLunaRightHand: ItemsLunaRightHand, Ti
   let tx = await itemsLunaRightHand.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`, 
     [rightHandFirstAssetId, rightHandSecondAssetId],
   );
   await tx.wait();
@@ -1041,7 +1040,7 @@ async function mintItemsLunaCap(itemsLunaCap: ItemsLunaCap, TimeSquadLunaAddress
   let tx = await itemsLunaCap.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`, 
     [capFirstAssetId, capSecondAssetId],
   );
   await tx.wait();
@@ -1057,7 +1056,7 @@ async function mintItemsRykerArmor(itemsRykerArmor: ItemsRykerArmor, TimeSquadRy
   let tx = await itemsRykerArmor.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`, 
     [armorFirstAssetId, armorSecondAssetId],
   );
   await tx.wait();
@@ -1073,7 +1072,7 @@ async function mintItemsRykerLeftHand(itemsRykerLeftHand: ItemsRykerLeftHand, Ti
   let tx = await itemsRykerLeftHand.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`, 
     [leftHandFirstAssetId, leftHandSecondAssetId],
   );
   await tx.wait();
@@ -1089,7 +1088,7 @@ async function mintItemsRykerRightHand(itemsRykerRightHand: ItemsRykerRightHand,
   let tx = await itemsRykerRightHand.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`, 
     [rightHandFirstAssetId, rightHandSecondAssetId],
   );
   await tx.wait();
@@ -1105,7 +1104,7 @@ async function mintItemsRykerCap(itemsRykerCap: ItemsRykerCap, TimeSquadRykerAdd
   let tx = await itemsRykerCap.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`, 
     [capFirstAssetId, capSecondAssetId],
   );
   await tx.wait();
@@ -1122,7 +1121,7 @@ async function mintItemsThaddeusArmor(itemsThaddeusArmor: ItemsThaddeusArmor, Ti
   let tx = await itemsThaddeusArmor.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/armor/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`, 
     [armorFirstAssetId, armorSecondAssetId],
   );
   await tx.wait();
@@ -1138,7 +1137,7 @@ async function mintItemsThaddeusLeftHand(itemsThaddeusLeftHand: ItemsThaddeusLef
   let tx = await itemsThaddeusLeftHand.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/lefthand/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`, 
     [leftHandFirstAssetId, leftHandSecondAssetId],
   );
   await tx.wait();
@@ -1154,7 +1153,7 @@ async function mintItemsThaddeusRightHand(itemsThaddeusRightHand: ItemsThaddeusR
   let tx = await itemsThaddeusRightHand.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/righthand/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`, 
     [rightHandFirstAssetId, rightHandSecondAssetId],
   );
   await tx.wait();
@@ -1170,7 +1169,7 @@ async function mintItemsThaddeusCap(itemsThaddeusCap: ItemsThaddeusCap, TimeSqua
   let tx = await itemsThaddeusCap.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/cap/firstAsset.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`, 
     [capFirstAssetId, capSecondAssetId],
   );
   await tx.wait();

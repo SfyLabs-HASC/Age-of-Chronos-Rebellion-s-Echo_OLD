@@ -169,53 +169,74 @@ async function main() {
 
   //TODO FIN QUI TUTTO OK!!!!
   await mintParentSquadAria(timeSquadAria, timeSquadCatalogAria.address, deployer);
+  await delay(10000) /// waiting 10 second.
   await mintParentSquadLuna(timeSquadLuna, timeSquadCatalogLuna.address, deployer);
+  await delay(10000) /// waiting 10 second.
   await mintParentSquadRyker(timeSquadRyker, timeSquadCatalogRyker.address, deployer);
+  await delay(10000) /// waiting 10 second.
   await mintParentSquadThaddeus(timeSquadThaddeus, timeSquadCatalogThaddeus.address, deployer);
   console.log('Parent squads minted');
   await delay(10000) /// waiting 10 second.
   // Add item assets and mint them
   // Add item assets and mint them for Aria:
   await addItemAssetsAriaArmor(itemsAriaArmor, timeSquadAria.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsAriaCap(itemsAriaCap, timeSquadAria.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsAriaLeftHand(itemsAriaLeftHand, timeSquadAria.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria item assets added');
   await delay(10000) /// waiting 10 second.
 
   await mintItemsAriaArmor(itemsAriaArmor, timeSquadAria.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsAriaCap(itemsAriaCap, timeSquadAria.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsAriaLeftHand(itemsAriaLeftHand, timeSquadAria.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria items minted');
   await delay(10000) /// waiting 10 second.
   // Add item assets and mint them for Luna
 
   await addItemAssetsLunaArmor(itemsLunaArmor, timeSquadLuna.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsLunaCap(itemsLunaCap, timeSquadLuna.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsLunaLeftHand(itemsLunaLeftHand, timeSquadLuna.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsLunaRightHand(itemsLunaRightHand, timeSquadLuna.address);
   console.log('Luna item assets added');
   await delay(10000) /// waiting 10 second.
 
   await mintItemsLunaArmor(itemsLunaArmor, timeSquadLuna.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsLunaCap(itemsLunaCap, timeSquadLuna.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsLunaLeftHand(itemsLunaLeftHand, timeSquadLuna.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsLunaRightHand(itemsLunaRightHand, timeSquadLuna.address);
   console.log('Luna items minted');
   await delay(10000) /// waiting 10 second.
   
   // Add item assets and mint them for Ryker
   await addItemAssetsRykerArmor(itemsRykerArmor, timeSquadRyker.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsRykerCap(itemsRykerCap, timeSquadRyker.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsRykerLeftHand(itemsRykerLeftHand, timeSquadRyker.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsRykerRightHand(itemsRykerRightHand, timeSquadRyker.address);
   console.log('Ryker item assets added');
   await delay(10000) /// waiting 10 second.
   
   await mintItemsRykerArmor(itemsRykerArmor, timeSquadRyker.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsRykerCap(itemsRykerCap, timeSquadRyker.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsRykerLeftHand(itemsRykerLeftHand, timeSquadRyker.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsRykerRightHand(itemsRykerRightHand, timeSquadRyker.address);
   
   await delay(10000) /// waiting 10 second.
@@ -223,15 +244,21 @@ async function main() {
   
   // Add item assets and mint them for Thaddeus
   await addItemAssetsThaddeusArmor(itemsThaddeusArmor, timeSquadThaddeus.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsThaddeusCap(itemsThaddeusCap, timeSquadThaddeus.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsThaddeusLeftHand(itemsThaddeusLeftHand, timeSquadThaddeus.address);
+  await delay(10000) /// waiting 10 second.
   await addItemAssetsThaddeusRightHand(itemsThaddeusRightHand, timeSquadThaddeus.address);
   console.log('Thaddeus item assets added');
   await delay(10000) /// waiting 10 second.
   
   await mintItemsThaddeusArmor(itemsThaddeusArmor, timeSquadThaddeus.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsThaddeusCap(itemsThaddeusCap, timeSquadThaddeus.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsThaddeusLeftHand(itemsThaddeusLeftHand, timeSquadThaddeus.address);
+  await delay(10000) /// waiting 10 second.
   await mintItemsThaddeusRightHand(itemsThaddeusRightHand, timeSquadThaddeus.address);
   console.log('Thaddeus items minted');
 
