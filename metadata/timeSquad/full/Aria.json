@@ -3,8 +3,8 @@
   "description": "Aria is a technomancer mage with the extraordinary ability to combine magical objects and ancient artifacts with modern technology, thereby creating new items of incredible power.",
   "externalUri": "https://www.ageofchronos.com/",
   "external_url": "https://www.ageofchronos.com/",
-  "image": "ipfs://<stringadoveconservaretutto>/timeSquad/aria/1.png",
-  "mediaUri": "ipfs://<stringadoveconservaretutto>/timeSquad/aria/1.png",
+  "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/parent_aria.png",
+  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/parent_aria.png",
   "attributes": [
     ]
 }

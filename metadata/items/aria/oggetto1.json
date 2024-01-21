@@ -1,0 +1,10 @@
+{
+  "name": "Oggetto1",
+  "description": "Primo Oggetto",
+  "externalUri": "https://www.ageofchronos.com/",
+  "external_url": "https://www.ageofchronos.com/",
+  "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/item/01_item_aria.png",
+  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/item/01_item_aria.png",
+  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/thumb/01_thumb_aria.png",
+  "preferThumb": true
+}
