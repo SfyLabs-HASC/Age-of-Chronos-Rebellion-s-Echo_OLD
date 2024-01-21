@@ -77,6 +77,7 @@ async function main() {
     timeSquadCatalogThaddeus
   } = await deployContracts();
 
+  /*
   // Log the deployed addresses for item contracts
   console.log(`Items Aria Armor deployed to ${itemsAriaArmor.address}`);
   console.log(`Items Aria Cap deployed to ${itemsAriaCap.address}`);
@@ -97,7 +98,7 @@ async function main() {
   console.log(`Items Thaddeus Cap deployed to ${itemsThaddeusCap.address}`);
   console.log(`Items Thaddeus Left Hand deployed to ${itemsThaddeusLeftHand.address}`);
   console.log(`Items Thaddeus Right Hand deployed to ${itemsThaddeusRightHand.address}`);
-
+*/
   const delay = (ms: number): Promise<void> => {
     return new Promise(resolve => setTimeout(resolve, ms));
   }

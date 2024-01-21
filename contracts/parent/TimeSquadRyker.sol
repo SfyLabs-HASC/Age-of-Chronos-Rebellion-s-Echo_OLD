@@ -31,12 +31,10 @@ contract TimeSquadRyker is RMRKEquippablePreMint {
         address catalogAddress,
         string memory metadataURI,
         uint64[] memory partIds
-    ) public onlyOwnerOrContributor payable {  //onlyOwnerOrContributor non dovrebbe essere necessario
+    ) public onlyOwnerOrContributor payable {
         uint256 tokenId = mint(to, 1, tokenURI);
         uint256 assetId = addEquippableAssetEntry(equippableGroupId, catalogAddress, metadataURI, partIds);
         addAssetToToken(tokenId, uint64(assetId), 0);
-        // This implementation auto accepts first asset, if it weren't the case we could do:
-        _acceptAsset(tokenId, 0, uint64(assetId)); // This is an internal call which bypasses accepting by owner. Recommended only during minting.
     }
 
     // Methods

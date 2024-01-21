@@ -1,41 +1,15 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "RMRK Collection Metadata Schema",
-  "description": "Metadata to describe a collection and help visualization on various platforms.",
-  "type": "object",
-  "properties": {
-      "name": {
-          "type": "string",
-          "description": "AGE OF CHRONOS: Rebellion's Echo"
-      },
-      "description": {
-          "type": "string",
-          "description": "Embark on a thrilling odyssey through time and space in 'Age of Chronos: Rebellion's Echoes,' a captivating game set in a dystopian future where Earth's fate hangs by a thread. Immerse yourself in a world devastated by environmental disasters, global warfare, and the oppressive rule of Nomindo Corp."
-        },
-      "externalUri": {
-          "type": "string",
-          "description": "https://www.ageofchronos.com/"
-      },
-      "mediaUri": {
-          "type": "string",
-          "description": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo"
-      },
-      "thumbnailUri": {
-          "type": "string",
-          "description": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo"
-      },
-      "license": {
-          "type": "string",
-          "description": "GNU Licence"
-      },
-      "licenseUri": {
-          "type": "string",
-          "description": "https://rmrk.app/license"
-      }
-  },
-  "additionalProperties": true,
-  "required": [
-      "description",
-      "mediaUri"
+  "name": "AGE OF CHRONOS: Rebellion's Echo",
+  "description": "Embark on a thrilling odyssey through time and space in 'Age of Chronos: Rebellion's Echoes,' a captivating game set in a dystopian future where Earth's fate hangs by a thread. Immerse yourself in a world devastated by environmental disasters, global warfare, and the oppressive rule of Nomindo Corp.",
+  "mediaUri": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo",
+  "externalUri": "https://www.ageofchronos.com/",
+  "thumbnailUri": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo",
+  "license": "MIT",
+  "licenseUri": "https://rmrk.app/license",
+  "tags": [
+      "ageofchronos",
+      "nft",
+      "rmrk",
+      "SFY"
   ]
 }

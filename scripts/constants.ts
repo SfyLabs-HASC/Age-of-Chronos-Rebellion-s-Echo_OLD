@@ -1,4 +1,4 @@
-const BASE_IPFS_URI = 'ipfs://QmfMEWJnfXZNKqTL872qywDfLUgrRGx1ovnM2HMRUZa6V2';
+const BASE_IPFS_URI = 'ipfs://Qmb858kWZjNWSabic43xCq5z2epp7sitQpTe361sQtoNkD';
 
 // Collection metadata
 const SQUAD_METADATA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad.json';
