@@ -1,8 +1,8 @@
-const BASE_IPFS_URI = 'ipfs://<ipfsdibase>';
+const BASE_IPFS_URI = 'ipfs://QmXiw9b35MybmMZxPuQfqGVj9mj6YkKnsAebCeUPMJ6y5r';
 
 // Collection metadata
-const SQUAD_METADATA = BASE_IPFS_URI + '/metadata/timeSquad/collection_metadata_squad.json';
-const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/metadata/items/collection_metadata_item.json';
+const SQUAD_METADATA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
 
 // Catalog metadata
 const SQUAD_CATALOG_RYKER_METADATA = BASE_IPFS_URI + '/catalog/catalogRyker.json';
