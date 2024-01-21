@@ -165,6 +165,9 @@ async function main() {
   console.log('Catalogs configured');
   await delay(10000) /// waiting 10 second.
   // Mint parent squads
+
+
+  //TODO FIN QUI TUTTO OK!!!!
   await mintParentSquadAria(timeSquadAria, timeSquadCatalogAria.address, deployer);
   await mintParentSquadLuna(timeSquadLuna, timeSquadCatalogLuna.address, deployer);
   await mintParentSquadRyker(timeSquadRyker, timeSquadCatalogRyker.address, deployer);
