@@ -75,3 +75,25 @@ l'owner di un parent che ha un childA si nesta un'altro child (childB) sotto al 
 ## da fare in production
 
 1. elimina l'import aggiuntivo nei cataloghi dopo che hai finito di fare tutti i test!
+
+
+
+items Deployati
+setAutoAcceptCollection fatto
+Parent Collections added to Singular Registry
+Aria Items Collections added to Singular Registry
+Luna Items Collections added to Singular Registry
+Ryker Items Collections added to Singular Registry
+Thaddeus Items Collections added to Singular Registry
+All item collections added to Singular Registry
+Catalogs configured
+Parent squads minted
+Aria item assets added
+Aria items minted
+ConnectTimeoutError: Connect Timeout Error
+    at onConnectTimeout (C:\Users\dottdav\Documents\36nftsito\AGE_OF_CHRONOS\AGE_OF_CHRONOS\node_modules\undici\lib\core\connect.js:186:24)
+    at C:\Users\dottdav\Documents\36nftsito\AGE_OF_CHRONOS\AGE_OF_CHRONOS\node_modules\undici\lib\core\connect.js:133:46
+    at Immediate._onImmediate (C:\Users\dottdav\Documents\36nftsito\AGE_OF_CHRONOS\AGE_OF_CHRONOS\node_modules\undici\lib\core\connect.js:172:33)
+    at processImmediate (node:internal/timers:471:21) {
+  code: 'UND_ERR_CONNECT_TIMEOUT'
+}
