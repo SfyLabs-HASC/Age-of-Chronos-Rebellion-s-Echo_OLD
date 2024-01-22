@@ -25,6 +25,7 @@ const config: HardhatUserConfig = {
       chainId: 1287,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       gasPrice: 1100000000,
+      timeout: 1000000,
     },
     sepolia: {
       url: process.env.SEPOLIA_URL || 'https://rpc.sepolia.dev',
