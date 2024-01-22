@@ -1,7 +1,10 @@
-const BASE_IPFS_URI = 'ipfs://Qmb858kWZjNWSabic43xCq5z2epp7sitQpTe361sQtoNkD';
+const BASE_IPFS_URI = 'ipfs://QmYNjtwjKt55muT3DHfHL23NWpzwPnufWkYSoAZ4qnzpeY';
 
 // Collection metadata
-const SQUAD_METADATA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad.json';
+const SQUAD_METADATA_ARIA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_aria.json';
+const SQUAD_METADATA_LUNA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_luna.json';
+const SQUAD_METADATA_RYKER = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_ryker.json';
+const SQUAD_METADATA_THADDEUS = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_thaddeus.json';
 const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
 
 // Catalog metadata
@@ -47,7 +50,10 @@ const SQUAD_ITEM_BASE_METADATA_URI = BASE_IPFS_URI + '/items/';
 
   export {
     BASE_IPFS_URI,
-    SQUAD_METADATA,
+    SQUAD_METADATA_ARIA,
+    SQUAD_METADATA_LUNA,
+    SQUAD_METADATA_RYKER,
+    SQUAD_METADATA_THADDEUS,
     SQUAD_ITEM_METADATA,
     SQUAD_CATALOG_RYKER_METADATA,
     SQUAD_CATALOG_LUNA_METADATA,

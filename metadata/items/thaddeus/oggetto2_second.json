@@ -1,0 +1,10 @@
+{
+  "name": "oggetto2",
+  "description": "Secondo Oggetto",
+  "externalUri": "https://skybreach.app/",
+  "external_url": "https://skybreach.app/",
+  "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/item/02_item_thaddeus.png",
+  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/item/02_item_thaddeus.png",
+  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/thumb/02_thumb_thaddeus.png",
+  "preferThumb": false
+}

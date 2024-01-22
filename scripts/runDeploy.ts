@@ -105,10 +105,10 @@ async function main() {
   await delay(10000) /// waiting 10 second.
 
   const registry = await getRegistry();
-  let tx1 = await registry.addExternalCollection(timeSquadLuna.address, C.SQUAD_METADATA);
-  let tx2 = await registry.addExternalCollection(timeSquadRyker.address, C.SQUAD_METADATA);
-  let tx3 = await registry.addExternalCollection(timeSquadThaddeus.address, C.SQUAD_METADATA);
-  let tx4 = await registry.addExternalCollection(timeSquadAria.address, C.SQUAD_METADATA);
+  let tx1 = await registry.addExternalCollection(timeSquadLuna.address, C.SQUAD_METADATA_LUNA);
+  let tx2 = await registry.addExternalCollection(timeSquadRyker.address, C.SQUAD_METADATA_RYKER);
+  let tx3 = await registry.addExternalCollection(timeSquadThaddeus.address, C.SQUAD_METADATA_THADDEUS);
+  let tx4 = await registry.addExternalCollection(timeSquadAria.address, C.SQUAD_METADATA_ARIA);
   await Promise.all([tx1.wait(), tx2.wait(), tx3.wait(), tx4.wait()]);
   console.log('Parent Collections added to Singular Registry');
   await delay(10000) /// waiting 10 second.

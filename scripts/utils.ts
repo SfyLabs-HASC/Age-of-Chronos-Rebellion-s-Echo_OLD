@@ -92,23 +92,41 @@ async function deployContracts(): Promise<{
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  const squadArgs = [
-    C.SQUAD_METADATA,
+  const ariaSquadArgs = [
+    C.SQUAD_METADATA_ARIA,
+    BigNumber.from(250),
+    deployerAddress,
+    500, // 5%
+  ] as const;
+  const lunaSquadArgs = [
+    C.SQUAD_METADATA_LUNA,
+    BigNumber.from(250),
+    deployerAddress,
+    500, // 5%
+  ] as const;
+  const rykerSquadArgs = [
+    C.SQUAD_METADATA_RYKER,
+    BigNumber.from(250),
+    deployerAddress,
+    500, // 5%
+  ] as const;
+  const thaddeusSquadArgs = [
+    C.SQUAD_METADATA_THADDEUS,
     BigNumber.from(250),
     deployerAddress,
     500, // 5%
   ] as const;
 
-  const timeSquadAria: TimeSquadAria = await timeSquadAriaFactory.deploy(...squadArgs);
+  const timeSquadAria: TimeSquadAria = await timeSquadAriaFactory.deploy(...ariaSquadArgs);
   await timeSquadAria.deployed();
   
-  const timeSquadLuna: TimeSquadLuna = await timeSquadLunaFactory.deploy(...squadArgs);
+  const timeSquadLuna: TimeSquadLuna = await timeSquadLunaFactory.deploy(...lunaSquadArgs);
   await timeSquadLuna.deployed();
   
-  const timeSquadRyker: TimeSquadRyker = await timeSquadRykerFactory.deploy(...squadArgs);
+  const timeSquadRyker: TimeSquadRyker = await timeSquadRykerFactory.deploy(...rykerSquadArgs);
   await timeSquadRyker.deployed();
   
-  const timeSquadThaddeus: TimeSquadThaddeus = await timeSquadThaddeusFactory.deploy(...squadArgs);
+  const timeSquadThaddeus: TimeSquadThaddeus = await timeSquadThaddeusFactory.deploy(...thaddeusSquadArgs);
   await timeSquadThaddeus.deployed();
 
   console.log(`timeSquadAria deployed to ${timeSquadAria.address}`);
@@ -591,10 +609,10 @@ async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, items
 async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCatalogRyker: string, mintTo: SignerWithAddress) {
   let txRyker = await timeSquadRyker.mintWithEquippableAsset(
     mintTo.address, // To
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`, // TokenURI
+    `${C.BASE_IPFS_URI}/timeSquad/full/Ryker.json`, // TokenURI
     C.EQUIPPABLE_GROUP_FOR_SQUAD_DEFAULT, // Equippable group
     timeSquadCatalogRyker, // Catalog address
-    `${C.BASE_IPFS_URI}/timeSquad/full/0001ryker.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
+    `${C.BASE_IPFS_URI}/timeSquad/full/Ryker.json`, // Metadata URI, we are using the same as tokenURI. We could use a fallback one for all.
     [
       // slots part ids:
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
@@ -664,8 +682,8 @@ async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, tim
 async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
- `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`,
- `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`,  //second asset (todo dovresti cambiare il metadata)
+ `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`,  //THUMB TRUE
+ `${C.BASE_IPFS_URI}/items/aria/oggetto1_second.json`,  //second asset (todo dovresti cambiare il metadata) THUMB FALSE
   );
   await tx.wait();
 
@@ -682,7 +700,7 @@ async function addItemAssetsAriaCap(items: ItemsAriaCap, TimeSquadAriaAddress: s
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
     `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto2_second.json`,
   );
   await tx.wait();
 
@@ -698,7 +716,7 @@ async function addItemAssetsAriaLeftHand(items: ItemsAriaLeftHand, TimeSquadAria
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
     `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto3_second.json`,
   );
   await tx.wait();
 
@@ -714,7 +732,7 @@ async function addItemAssetsAriaRightHand(items: ItemsAriaRightHand, TimeSquadAr
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
     `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/aria/oggetto4_second.json`,
   );
   await tx.wait();
 
@@ -730,7 +748,7 @@ async function addItemAssetsRykerArmor(items: ItemsRykerArmor, TimeSquadRykerAdd
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
     `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto1_second.json`,
   );
   await tx.wait();
 
@@ -746,7 +764,7 @@ async function addItemAssetsRykerCap(items: ItemsRykerCap, TimeSquadRykerAddress
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
     `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto2_second.json`,
   );
   await tx.wait();
 
@@ -762,7 +780,7 @@ async function addItemAssetsRykerLeftHand(items: ItemsRykerLeftHand, TimeSquadRy
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
     `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto3_second.json`,
   );
   await tx.wait();
 
@@ -778,7 +796,7 @@ async function addItemAssetsRykerRightHand(items: ItemsRykerRightHand, TimeSquad
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
     `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/oggetto4_second.json`,
   );
   await tx.wait();
 
@@ -794,7 +812,7 @@ async function addItemAssetsLunaArmor(items: ItemsLunaArmor, TimeSquadLunaAddres
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
     `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto1_second.json`,
   );
   await tx.wait();
 
@@ -810,7 +828,7 @@ async function addItemAssetsLunaCap(items: ItemsLunaCap, TimeSquadLunaAddress: s
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
     `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto2_second.json`,
   );
   await tx.wait();
 
@@ -826,7 +844,7 @@ async function addItemAssetsLunaLeftHand(items: ItemsLunaLeftHand, TimeSquadLuna
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
     `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto3_second.json`,
   );
   await tx.wait();
 
@@ -842,7 +860,7 @@ async function addItemAssetsLunaRightHand(items: ItemsLunaRightHand, TimeSquadLu
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
     `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/luna/oggetto4_second.json`,
   );
   await tx.wait();
 
@@ -858,7 +876,7 @@ async function addItemAssetsThaddeusArmor(items: ItemsThaddeusArmor, TimeSquadTh
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
     `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1_second.json`,
   );
   await tx.wait();
 
@@ -874,7 +892,7 @@ async function addItemAssetsThaddeusCap(items: ItemsThaddeusCap, TimeSquadThadde
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
     `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2_second.json`,
   );
   await tx.wait();
 
@@ -890,7 +908,7 @@ async function addItemAssetsThaddeusLeftHand(items: ItemsThaddeusLeftHand, TimeS
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
     `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3_second.json`,
   );
   await tx.wait();
 
@@ -906,7 +924,7 @@ async function addItemAssetsThaddeusRightHand(items: ItemsThaddeusRightHand, Tim
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
     `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4_second.json`,
   );
   await tx.wait();
 

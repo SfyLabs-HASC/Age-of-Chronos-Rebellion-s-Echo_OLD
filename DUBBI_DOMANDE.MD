@@ -1,3 +1,11 @@
+## PER CASA
+
+1. fai uscire da riga di comando il valore dei metadata (leggi la blockchain)
+2. python random metadata
+3. zkevm testnet
+4. 7508
+
+
 ## DA IMPELMENTARE
 1. metti la max supply agli item
 2. metti gli attributi

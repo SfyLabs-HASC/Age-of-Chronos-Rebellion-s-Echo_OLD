@@ -1,0 +1,10 @@
+{
+  "name": "oggetto3",
+  "description": "Terzo Oggetto",
+  "externalUri": "https://skybreach.app/",
+  "external_url": "https://skybreach.app/",
+  "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/item/03_item_ryker.png",
+  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/item/03_item_ryker.png",
+  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/thumb/03_thumb_ryker.png",
+  "preferThumb": false
+}
