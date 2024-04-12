@@ -13,10 +13,14 @@ const SQUAD_CATALOG_LUNA_METADATA = BASE_IPFS_URI + '/catalog/catalogluna.json';
 const SQUAD_CATALOG_ARIA_METADATA = BASE_IPFS_URI + '/catalog/catalogAria.json';
 const SQUAD_CATALOG_THADDEUS_METADATA = BASE_IPFS_URI + '/catalog/catalogThaddeus.json';
 
-const SQUAD_ITEM_LEFT_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/left_hand.json';  //{ "name": "Left Hand" }
-const SQUAD_ITEM_RIGHT_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/right_hand.json';
-const SQUAD_ITEM_CAP_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/cap_.json';
-const SQUAD_ITEM_ARMOR_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/armor.json';
+const SQUAD_ITEM_LEFT_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/left_hand.json';  //{ "name": "Left Hand" }
+const SQUAD_ITEM_RIGHT_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/right_hand.json';
+const SQUAD_ITEM_CAP_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/cap.json';
+const SQUAD_ITEM_ARMOR_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/armor.json';
+
+// Image data
+const SQUAD_ITEM_BASE_METADATA_URI = BASE_IPFS_URI + '/items/';
+
 
 // FIXED PARTS
 
@@ -45,8 +49,7 @@ const EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND = SQUAD_RIGHT_HAND_SLOT_PART_ID;
 const EQUIPPABLE_GROUP_FOR_ITEMS_CAP = SQUAD_CAP_SLOT_PART_ID;
 const EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR = SQUAD_ARMOR_SLOT_PART_ID;
 
-// Image data
-const SQUAD_ITEM_BASE_METADATA_URI = BASE_IPFS_URI + '/items/';
+
 
   export {
     BASE_IPFS_URI,

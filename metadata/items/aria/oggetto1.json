@@ -6,5 +6,14 @@
   "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/item/01_item_aria.png",
   "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/item/01_item_aria.png",
   "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/thumb/01_thumb_aria.png",
-  "preferThumb": true
+  "preferThumb": true,
+  "attributes": [
+    {
+        "label": "Attack",
+        "type": "number",
+        "value": 10,
+        "trait_type": "Generation",
+        "display_type": "number"
+    }
+]
 }
