@@ -201,6 +201,7 @@ async function main() {
   await delay(10000) /// waiting 10 second.
   // Add item assets and mint them for Luna
 
+
   await addItemAssetsLunaArmor(itemsLunaArmor, timeSquadLuna.address);
   await delay(10000) /// waiting 10 second.
   await addItemAssetsLunaCap(itemsLunaCap, timeSquadLuna.address);
