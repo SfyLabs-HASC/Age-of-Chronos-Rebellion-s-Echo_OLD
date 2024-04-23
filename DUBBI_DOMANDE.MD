@@ -1,3 +1,8 @@
+## istruzioni
+
+
+
+
 ## PER CASA
 
 1. fai uscire da riga di comando il valore dei metadata (leggi la blockchain)

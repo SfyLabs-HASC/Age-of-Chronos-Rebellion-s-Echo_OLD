@@ -1,0 +1,19 @@
+{
+    "name": "Ryker - Right Hand - Oggetto4",
+    "description": "Ryker left hand descrizione first asset",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/item/RIGHT_HAND.png",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/item/RIGHT_HAND.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/thumb/04_thumb.png",
+    "preferThumb": false,
+    "attributes": [
+        {
+            "label": "Attack",
+            "type": "number",
+            "value": 10,
+            "trait_type": "Generation",
+            "display_type": "number"
+        }
+    ]
+}

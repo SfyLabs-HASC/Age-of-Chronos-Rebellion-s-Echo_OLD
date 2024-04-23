@@ -170,32 +170,32 @@ async function main() {
 
   //TODO FIN QUI TUTTO OK!!!!
   await mintParentSquadAria(timeSquadAria, timeSquadCatalogAria.address, deployer);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintParentSquadLuna(timeSquadLuna, timeSquadCatalogLuna.address, deployer);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintParentSquadRyker(timeSquadRyker, timeSquadCatalogRyker.address, deployer);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintParentSquadThaddeus(timeSquadThaddeus, timeSquadCatalogThaddeus.address, deployer);
   console.log('Parent squads minted');
   await delay(10000) /// waiting 10 second.
   // Add item assets and mint them
   // Add item assets and mint them for Aria:
   await addItemAssetsAriaArmor(itemsAriaArmor, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsAriaCap(itemsAriaCap, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsAriaLeftHand(itemsAriaLeftHand, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria item assets added');
   await delay(10000) /// waiting 10 second.
 
   await mintItemsAriaArmor(itemsAriaArmor, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsAriaCap(itemsAriaCap, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsAriaLeftHand(itemsAriaLeftHand, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria items minted');
   await delay(10000) /// waiting 10 second.

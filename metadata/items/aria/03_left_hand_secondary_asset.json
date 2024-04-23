@@ -1,0 +1,10 @@
+{
+  "name": "Aria - Left Hand - Oggetto3 thumb",
+  "description": "Aria left hand descrizione secondary asset",
+  "externalUri": "https://www.ageofchronos.com/",
+  "external_url": "https://www.ageofchronos.com/",
+  "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/aria/item/LEFT_HAND.png",
+  "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/aria/item/LEFT_HAND.png",
+  "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/aria/thumb/03_thumb.png",
+  "preferThumb": true
+}

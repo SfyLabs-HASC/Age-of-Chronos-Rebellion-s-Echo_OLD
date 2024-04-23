@@ -1,9 +1,9 @@
 {
   "name": "ARIA - AGE OF CHRONOS",
   "description": "Description Parent ARIA",
-  "mediaUri": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo",
+  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/images/character/aria/aria_logo.jpeg",
   "externalUri": "https://www.ageofchronos.com/",
-  "thumbnailUri": "https://ipfs2.rmrk.link/ipfs/QmRa4UrKPw3ex9ucADdMb9VBrNHgevvhHXiDEHxowq2cBo",
+  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/images/character/aria/aria_logo.jpeg",
   "license": "MIT",
   "licenseUri": "https://rmrk.app/license",
   "tags": [

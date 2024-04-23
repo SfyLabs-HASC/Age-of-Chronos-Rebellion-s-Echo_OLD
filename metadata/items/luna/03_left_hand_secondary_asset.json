@@ -1,0 +1,10 @@
+{
+    "name": "Luna - Left Hand - Oggetto3 thumb",
+    "description": "Luna left hand descrizione secondary asset",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/item/LEFT_HAND.png",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/item/LEFT_HAND.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/thumb/03_thumb.png",
+    "preferThumb": true
+}
