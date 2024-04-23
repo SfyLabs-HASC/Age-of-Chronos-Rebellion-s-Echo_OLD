@@ -5,6 +5,17 @@ const SQUAD_METADATA_ARIA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squa
 const SQUAD_METADATA_LUNA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_luna.json';
 const SQUAD_METADATA_RYKER = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_ryker.json';
 const SQUAD_METADATA_THADDEUS = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_thaddeus.json';
+const SQUAD_ITEM_METADATA_ARIA_ARMOR = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
 const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
 
 // Catalog metadata

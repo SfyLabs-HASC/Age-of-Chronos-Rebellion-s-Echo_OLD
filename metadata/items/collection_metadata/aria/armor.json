@@ -1,0 +1,16 @@
+{
+    "name": "Aria Armor Items",
+    "description": "Aria Armor Items DESCRIZIONE",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/aria/item/ARMOR.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/aria/item/ARMOR.png",
+    "externalUri": "https://www.ageofchronos.com/",
+    "license": "MIT",
+    "licenseUri": "https://rmrk.app/license",
+    "tags": [
+        "ageofchronos",
+        "nft",
+        "rmrk",
+        "SFY",
+        "ARMOR"
+    ]
+  }
