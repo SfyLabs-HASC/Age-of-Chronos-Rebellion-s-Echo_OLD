@@ -163,60 +163,186 @@ console.log("parent Deployati")
   await delay(10000) /// waiting 10 second.
   // Deployment script for Item Contracts
 
-  const itemArgs = [
-    C.SQUAD_ITEM_METADATA,
-    BigNumber.from(200),   ///
+  /*
+  SQUAD_ITEM_METADATA_ARIA_ARMOR,
+  SQUAD_ITEM_METADATA_ARIA_CAP,
+  SQUAD_ITEM_METADATA_ARIA_LEFT_HAND,
+  SQUAD_ITEM_METADATA_ARIA_RIGHT_HAND,
+  SQUAD_ITEM_METADATA_LUNA_ARMOR,
+  SQUAD_ITEM_METADATA_LUNA_CAP,
+  SQUAD_ITEM_METADATA_LUNA_LEFT_HAND,
+  SQUAD_ITEM_METADATA_LUNA_RIGHT_HAND,
+  SQUAD_ITEM_METADATA_RYKER_ARMOR,
+  SQUAD_ITEM_METADATA_RYKER_CAP,
+  SQUAD_ITEM_METADATA_RYKER_LEFT_HAND,
+  SQUAD_ITEM_METADATA_RYKER_RIGHT_HAND,
+  SQUAD_ITEM_METADATA_THADDEUS_ARMOR,
+  SQUAD_ITEM_METADATA_THADDEUS_CAP,
+  SQUAD_ITEM_METADATA_THADDEUS_LEFT_HAND,
+  SQUAD_ITEM_METADATA_THADDEUS_RIGHT_HAND
+  */
+
+  const itemArgsAriaArmor = [
+    C.SQUAD_ITEM_METADATA_ARIA_ARMOR,
+    BigNumber.from(200),
     deployerAddress,
-    500, // 5%
+    500
   ] as const;
+  
+  const itemArgsAriaCap = [
+    C.SQUAD_ITEM_METADATA_ARIA_CAP,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsAriaLeftHand = [
+    C.SQUAD_ITEM_METADATA_ARIA_LEFT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsAriaRightHand = [
+    C.SQUAD_ITEM_METADATA_ARIA_RIGHT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsLunaArmor = [
+    C.SQUAD_ITEM_METADATA_LUNA_ARMOR,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsLunaCap = [
+    C.SQUAD_ITEM_METADATA_LUNA_CAP,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsLunaLeftHand = [
+    C.SQUAD_ITEM_METADATA_LUNA_LEFT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsLunaRightHand = [
+    C.SQUAD_ITEM_METADATA_LUNA_RIGHT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsRykerArmor = [
+    C.SQUAD_ITEM_METADATA_RYKER_ARMOR,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsRykerCap = [
+    C.SQUAD_ITEM_METADATA_RYKER_CAP,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsRykerLeftHand = [
+    C.SQUAD_ITEM_METADATA_RYKER_LEFT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsRykerRightHand = [
+    C.SQUAD_ITEM_METADATA_RYKER_RIGHT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsThaddeusArmor = [
+    C.SQUAD_ITEM_METADATA_THADDEUS_ARMOR,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsThaddeusCap = [
+    C.SQUAD_ITEM_METADATA_THADDEUS_CAP,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsThaddeusLeftHand = [
+    C.SQUAD_ITEM_METADATA_THADDEUS_LEFT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
+  const itemArgsThaddeusRightHand = [
+    C.SQUAD_ITEM_METADATA_THADDEUS_RIGHT_HAND,
+    BigNumber.from(200),
+    deployerAddress,
+    500
+  ] as const;
+  
 
-  const itemsAriaArmor = await itemsAriaArmorFactory.deploy(...itemArgs);
-  await itemsAriaArmor.deployed();
+  const itemsAriaArmor = await itemsAriaArmorFactory.deploy(...itemArgsAriaArmor);
+await itemsAriaArmor.deployed();
 
-  const itemsAriaCap = await itemsAriaCapFactory.deploy(...itemArgs);
-  await itemsAriaCap.deployed();
+const itemsAriaCap = await itemsAriaCapFactory.deploy(...itemArgsAriaCap);
+await itemsAriaCap.deployed();
 
-  const itemsAriaLeftHand = await itemsAriaLeftHandFactory.deploy(...itemArgs);
-  await itemsAriaLeftHand.deployed();
+const itemsAriaLeftHand = await itemsAriaLeftHandFactory.deploy(...itemArgsAriaLeftHand);
+await itemsAriaLeftHand.deployed();
 
-  const itemsAriaRightHand = await itemsAriaRightHandFactory.deploy(...itemArgs);
-  await itemsAriaRightHand.deployed();
+const itemsAriaRightHand = await itemsAriaRightHandFactory.deploy(...itemArgsAriaRightHand);
+await itemsAriaRightHand.deployed();
 
-  const itemsLunaArmor = await itemsLunaArmorFactory.deploy(...itemArgs);
-  await itemsLunaArmor.deployed();
+const itemsLunaArmor = await itemsLunaArmorFactory.deploy(...itemArgsLunaArmor);
+await itemsLunaArmor.deployed();
 
-  const itemsLunaCap = await itemsLunaCapFactory.deploy(...itemArgs);
-  await itemsLunaCap.deployed();
+const itemsLunaCap = await itemsLunaCapFactory.deploy(...itemArgsLunaCap);
+await itemsLunaCap.deployed();
 
-  const itemsLunaLeftHand = await itemsLunaLeftHandFactory.deploy(...itemArgs);
-  await itemsLunaLeftHand.deployed();
+const itemsLunaLeftHand = await itemsLunaLeftHandFactory.deploy(...itemArgsLunaLeftHand);
+await itemsLunaLeftHand.deployed();
 
-  const itemsLunaRightHand = await itemsLunaRightHandFactory.deploy(...itemArgs);
-  await itemsLunaRightHand.deployed();
+const itemsLunaRightHand = await itemsLunaRightHandFactory.deploy(...itemArgsLunaRightHand);
+await itemsLunaRightHand.deployed();
 
-  const itemsRykerArmor = await itemsRykerArmorFactory.deploy(...itemArgs);
-  await itemsRykerArmor.deployed();
+const itemsRykerArmor = await itemsRykerArmorFactory.deploy(...itemArgsRykerArmor);
+await itemsRykerArmor.deployed();
 
-  const itemsRykerCap = await itemsRykerCapFactory.deploy(...itemArgs);
-  await itemsRykerCap.deployed();
+const itemsRykerCap = await itemsRykerCapFactory.deploy(...itemArgsRykerCap);
+await itemsRykerCap.deployed();
 
-  const itemsRykerLeftHand = await itemsRykerLeftHandFactory.deploy(...itemArgs);
-  await itemsRykerLeftHand.deployed();
+const itemsRykerLeftHand = await itemsRykerLeftHandFactory.deploy(...itemArgsRykerLeftHand);
+await itemsRykerLeftHand.deployed();
 
-  const itemsRykerRightHand = await itemsRykerRightHandFactory.deploy(...itemArgs);
-  await itemsRykerRightHand.deployed();
+const itemsRykerRightHand = await itemsRykerRightHandFactory.deploy(...itemArgsRykerRightHand);
+await itemsRykerRightHand.deployed();
 
-  const itemsThaddeusArmor = await itemsThaddeusArmorFactory.deploy(...itemArgs);
-  await itemsThaddeusArmor.deployed();
+const itemsThaddeusArmor = await itemsThaddeusArmorFactory.deploy(...itemArgsThaddeusArmor);
+await itemsThaddeusArmor.deployed();
 
-  const itemsThaddeusCap = await itemsThaddeusCapFactory.deploy(...itemArgs);
-  await itemsThaddeusCap.deployed();
+const itemsThaddeusCap = await itemsThaddeusCapFactory.deploy(...itemArgsThaddeusCap);
+await itemsThaddeusCap.deployed();
 
-  const itemsThaddeusLeftHand = await itemsThaddeusLeftHandFactory.deploy(...itemArgs);
-  await itemsThaddeusLeftHand.deployed();
+const itemsThaddeusLeftHand = await itemsThaddeusLeftHandFactory.deploy(...itemArgsThaddeusLeftHand);
+await itemsThaddeusLeftHand.deployed();
 
-  const itemsThaddeusRightHand = await itemsThaddeusRightHandFactory.deploy(...itemArgs);
-  await itemsThaddeusRightHand.deployed();
+const itemsThaddeusRightHand = await itemsThaddeusRightHandFactory.deploy(...itemArgsThaddeusRightHand);
+await itemsThaddeusRightHand.deployed();
+
 
   console.log(`Items Aria Armor deployed to ${itemsAriaArmor.address}`);
   console.log(`Items Aria Cap deployed to ${itemsAriaCap.address}`);
@@ -606,6 +732,8 @@ async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, items
   await Promise.all([tx1.wait()]);
 }
 
+
+//ATTENZIONE QUESTE VANNO SUL SITO WEB! TODO
 async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCatalogRyker: string, mintTo: SignerWithAddress) {
   let txRyker = await timeSquadRyker.mintWithEquippableAsset(
     mintTo.address, // To
@@ -682,8 +810,8 @@ async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, tim
 async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
- `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`,  //THUMB TRUE
- `${C.BASE_IPFS_URI}/items/aria/oggetto1_second.json`,  //second asset (todo dovresti cambiare il metadata) THUMB FALSE
+ `${C.BASE_IPFS_URI}/items/aria/01_armor_primary_asset.json`,  //THUMB false
+ `${C.BASE_IPFS_URI}/items/aria/01_armor_secondary_asset.json`,  //second asset (todo dovresti cambiare il metadata) THUMB true
   );
   await tx.wait();
 
@@ -699,8 +827,8 @@ async function addItemAssetsAriaArmor(items: ItemsAriaArmor, TimeSquadAriaAddres
 async function addItemAssetsAriaCap(items: ItemsAriaCap, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto2_second.json`,
+    `${C.BASE_IPFS_URI}/items/aria/02_cap_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/aria/02_cap_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -715,8 +843,8 @@ async function addItemAssetsAriaCap(items: ItemsAriaCap, TimeSquadAriaAddress: s
 async function addItemAssetsAriaLeftHand(items: ItemsAriaLeftHand, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto3_second.json`,
+    `${C.BASE_IPFS_URI}/items/aria/03_left_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/aria/03_left_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -731,8 +859,8 @@ async function addItemAssetsAriaLeftHand(items: ItemsAriaLeftHand, TimeSquadAria
 async function addItemAssetsAriaRightHand(items: ItemsAriaRightHand, TimeSquadAriaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/aria/oggetto4_second.json`,
+    `${C.BASE_IPFS_URI}/items/aria/04_right_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/aria/04_right_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -747,8 +875,8 @@ async function addItemAssetsAriaRightHand(items: ItemsAriaRightHand, TimeSquadAr
 async function addItemAssetsRykerArmor(items: ItemsRykerArmor, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto1_second.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/01_armor_primary_asset.json`,  
+    `${C.BASE_IPFS_URI}/items/ryker/01_armor_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -763,8 +891,8 @@ async function addItemAssetsRykerArmor(items: ItemsRykerArmor, TimeSquadRykerAdd
 async function addItemAssetsRykerCap(items: ItemsRykerCap, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto2_second.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/02_cap_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/02_cap_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -779,8 +907,8 @@ async function addItemAssetsRykerCap(items: ItemsRykerCap, TimeSquadRykerAddress
 async function addItemAssetsRykerLeftHand(items: ItemsRykerLeftHand, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto3_second.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/03_left_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/03_left_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -795,8 +923,8 @@ async function addItemAssetsRykerLeftHand(items: ItemsRykerLeftHand, TimeSquadRy
 async function addItemAssetsRykerRightHand(items: ItemsRykerRightHand, TimeSquadRykerAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto4_second.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/04_right_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/ryker/04_right_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -811,8 +939,8 @@ async function addItemAssetsRykerRightHand(items: ItemsRykerRightHand, TimeSquad
 async function addItemAssetsLunaArmor(items: ItemsLunaArmor, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto1_second.json`,
+    `${C.BASE_IPFS_URI}/items/luna/01_armor_primary_asset.json`,  
+    `${C.BASE_IPFS_URI}/items/luna/01_armor_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -827,8 +955,8 @@ async function addItemAssetsLunaArmor(items: ItemsLunaArmor, TimeSquadLunaAddres
 async function addItemAssetsLunaCap(items: ItemsLunaCap, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto2_second.json`,
+    `${C.BASE_IPFS_URI}/items/luna/02_cap_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/02_cap_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -843,8 +971,8 @@ async function addItemAssetsLunaCap(items: ItemsLunaCap, TimeSquadLunaAddress: s
 async function addItemAssetsLunaLeftHand(items: ItemsLunaLeftHand, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto3_second.json`,
+    `${C.BASE_IPFS_URI}/items/luna/03_left_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/03_left_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -859,8 +987,8 @@ async function addItemAssetsLunaLeftHand(items: ItemsLunaLeftHand, TimeSquadLuna
 async function addItemAssetsLunaRightHand(items: ItemsLunaRightHand, TimeSquadLunaAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/luna/oggetto4_second.json`,
+    `${C.BASE_IPFS_URI}/items/luna/04_right_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/luna/04_right_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -875,8 +1003,8 @@ async function addItemAssetsLunaRightHand(items: ItemsLunaRightHand, TimeSquadLu
 async function addItemAssetsThaddeusArmor(items: ItemsThaddeusArmor, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1_second.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/01_armor_primary_asset.json`,  
+    `${C.BASE_IPFS_URI}/items/thaddeus/01_armor_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -891,8 +1019,8 @@ async function addItemAssetsThaddeusArmor(items: ItemsThaddeusArmor, TimeSquadTh
 async function addItemAssetsThaddeusCap(items: ItemsThaddeusCap, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_CAP,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2_second.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/02_cap_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/02_cap_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -907,8 +1035,8 @@ async function addItemAssetsThaddeusCap(items: ItemsThaddeusCap, TimeSquadThadde
 async function addItemAssetsThaddeusLeftHand(items: ItemsThaddeusLeftHand, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_LEFT_HAND,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3_second.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/03_left_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/03_left_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -923,8 +1051,8 @@ async function addItemAssetsThaddeusLeftHand(items: ItemsThaddeusLeftHand, TimeS
 async function addItemAssetsThaddeusRightHand(items: ItemsThaddeusRightHand, TimeSquadThaddeusAddress: string) {
   let tx = await items.addTwoItemAssets(
     C.EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`,
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4_second.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/04_right_hand_primary_asset.json`,
+    `${C.BASE_IPFS_URI}/items/thaddeus/04_right_hand_secondary_asset.json`,
   );
   await tx.wait();
 
@@ -935,7 +1063,7 @@ async function addItemAssetsThaddeusRightHand(items: ItemsThaddeusRightHand, Tim
   );
 }
 
-
+/*-----------------------*/
 async function mintItemsAriaArmor(itemsAriaArmor: ItemsAriaArmor, TimeSquadAriaAddress: string) {
   const armorFirstAssetId = 1;
   const armorSecondAssetId = 2;
