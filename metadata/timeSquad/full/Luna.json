@@ -6,6 +6,7 @@
   "image": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/parent_luna.png",
   "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/luna/parent_luna.png",
   "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/character/aria/parent_aria.png",
+  "preferThumb": true,
   "license": "PERSONAL LICENSE (\"CBE-PERSONAL\")",
   "licenseUri": "https://rmrk.app/license",
   "attributes": [

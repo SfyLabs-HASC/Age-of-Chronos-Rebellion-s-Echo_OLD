@@ -1,0 +1,10 @@
+{
+    "name": "Thaddeus - Armor - oggetto1 thumb",
+    "description": "Thaddeus armor descrizione secondary asset",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/item/ARMOR.png",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/item/ARMOR.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/thumb/01_thumb.png",
+    "preferThumb": true
+}

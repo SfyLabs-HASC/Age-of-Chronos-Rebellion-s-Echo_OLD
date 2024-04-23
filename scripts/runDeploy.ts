@@ -105,10 +105,10 @@ async function main() {
   await delay(10000) /// waiting 10 second.
 
   const registry = await getRegistry();
-  let tx1 = await registry.addExternalCollection(timeSquadLuna.address, C.SQUAD_METADATA);
-  let tx2 = await registry.addExternalCollection(timeSquadRyker.address, C.SQUAD_METADATA);
-  let tx3 = await registry.addExternalCollection(timeSquadThaddeus.address, C.SQUAD_METADATA);
-  let tx4 = await registry.addExternalCollection(timeSquadAria.address, C.SQUAD_METADATA);
+  let tx1 = await registry.addExternalCollection(timeSquadLuna.address, C.SQUAD_METADATA_LUNA);
+  let tx2 = await registry.addExternalCollection(timeSquadRyker.address, C.SQUAD_METADATA_RYKER);
+  let tx3 = await registry.addExternalCollection(timeSquadThaddeus.address, C.SQUAD_METADATA_THADDEUS);
+  let tx4 = await registry.addExternalCollection(timeSquadAria.address, C.SQUAD_METADATA_ARIA);
   await Promise.all([tx1.wait(), tx2.wait(), tx3.wait(), tx4.wait()]);
   console.log('Parent Collections added to Singular Registry');
   await delay(10000) /// waiting 10 second.
@@ -170,32 +170,32 @@ async function main() {
 
   //TODO FIN QUI TUTTO OK!!!!
   await mintParentSquadAria(timeSquadAria, timeSquadCatalogAria.address, deployer);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintParentSquadLuna(timeSquadLuna, timeSquadCatalogLuna.address, deployer);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintParentSquadRyker(timeSquadRyker, timeSquadCatalogRyker.address, deployer);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintParentSquadThaddeus(timeSquadThaddeus, timeSquadCatalogThaddeus.address, deployer);
   console.log('Parent squads minted');
   await delay(10000) /// waiting 10 second.
   // Add item assets and mint them
   // Add item assets and mint them for Aria:
   await addItemAssetsAriaArmor(itemsAriaArmor, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsAriaCap(itemsAriaCap, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsAriaLeftHand(itemsAriaLeftHand, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria item assets added');
   await delay(10000) /// waiting 10 second.
 
   await mintItemsAriaArmor(itemsAriaArmor, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsAriaCap(itemsAriaCap, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsAriaLeftHand(itemsAriaLeftHand, timeSquadAria.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria items minted');
   await delay(10000) /// waiting 10 second.

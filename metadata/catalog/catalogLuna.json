@@ -1,8 +1,8 @@
 {
-    "name": "TimeSquad Luna Catalog",
+    "name": "Luna Catalog",
     "description": "Luna is a brave and resilient fighter who wears impenetrable armor. Her prowess in defense is unmatched, and she is capable of protecting herself and her companions from the most powerful blows.",
-    "type": "png",
-    "mediaUri": "https://ipfs2.rmrk.link/ipfs/QmanVcCxjqptTXJ1qR1vzkLJxEnPfuW6ZoBXSC8UGewgT1",
-    "thumbnailUri": "https://ipfs2.rmrk.link/ipfs/QmanVcCxjqptTXJ1qR1vzkLJxEnPfuW6ZoBXSC8UGewgT1",
+    "type": "jpeg",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/logo.jpeg",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/logo.jpeg",
     "externalUri": "https://www.ageofchronos.com/"
 }

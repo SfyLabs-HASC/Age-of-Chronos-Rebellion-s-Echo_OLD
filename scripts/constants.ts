@@ -1,7 +1,21 @@
-const BASE_IPFS_URI = 'ipfs://Qmb858kWZjNWSabic43xCq5z2epp7sitQpTe361sQtoNkD';
+const BASE_IPFS_URI = 'ipfs://QmYNjtwjKt55muT3DHfHL23NWpzwPnufWkYSoAZ4qnzpeY';
 
 // Collection metadata
-const SQUAD_METADATA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad.json';
+const SQUAD_METADATA_ARIA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_aria.json';
+const SQUAD_METADATA_LUNA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_luna.json';
+const SQUAD_METADATA_RYKER = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_ryker.json';
+const SQUAD_METADATA_THADDEUS = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_thaddeus.json';
+const SQUAD_ITEM_METADATA_ARIA_ARMOR = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
+const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
 const SQUAD_ITEM_METADATA = BASE_IPFS_URI + '/items/collection_metadata_item.json';
 
 // Catalog metadata
@@ -10,10 +24,14 @@ const SQUAD_CATALOG_LUNA_METADATA = BASE_IPFS_URI + '/catalog/catalogluna.json';
 const SQUAD_CATALOG_ARIA_METADATA = BASE_IPFS_URI + '/catalog/catalogAria.json';
 const SQUAD_CATALOG_THADDEUS_METADATA = BASE_IPFS_URI + '/catalog/catalogThaddeus.json';
 
-const SQUAD_ITEM_LEFT_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/left_hand.json';  //{ "name": "Left Hand" }
-const SQUAD_ITEM_RIGHT_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/right_hand.json';
-const SQUAD_ITEM_CAP_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/cap_.json';
-const SQUAD_ITEM_ARMOR_SLOT_METADATA = BASE_IPFS_URI + 'catalog/slots/armor.json';
+const SQUAD_ITEM_LEFT_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/left_hand.json';  //{ "name": "Left Hand" }
+const SQUAD_ITEM_RIGHT_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/right_hand.json';
+const SQUAD_ITEM_CAP_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/cap.json';
+const SQUAD_ITEM_ARMOR_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/armor.json';
+
+// Image data
+const SQUAD_ITEM_BASE_METADATA_URI = BASE_IPFS_URI + '/items/';
+
 
 // FIXED PARTS
 
@@ -42,12 +60,14 @@ const EQUIPPABLE_GROUP_FOR_ITEMS_RIGHT_HAND = SQUAD_RIGHT_HAND_SLOT_PART_ID;
 const EQUIPPABLE_GROUP_FOR_ITEMS_CAP = SQUAD_CAP_SLOT_PART_ID;
 const EQUIPPABLE_GROUP_FOR_ITEMS_ARMOR = SQUAD_ARMOR_SLOT_PART_ID;
 
-// Image data
-const SQUAD_ITEM_BASE_METADATA_URI = BASE_IPFS_URI + '/items/';
+
 
   export {
     BASE_IPFS_URI,
-    SQUAD_METADATA,
+    SQUAD_METADATA_ARIA,
+    SQUAD_METADATA_LUNA,
+    SQUAD_METADATA_RYKER,
+    SQUAD_METADATA_THADDEUS,
     SQUAD_ITEM_METADATA,
     SQUAD_CATALOG_RYKER_METADATA,
     SQUAD_CATALOG_LUNA_METADATA,

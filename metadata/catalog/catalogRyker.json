@@ -1,8 +1,8 @@
 {
-    "name": "TimeSquad Ryker Catalog",
+    "name": "Ryker Catalog",
     "description": "Ryker is a muscular warrior with astonishing mastery in the use of swords and combat weapons. He is known for his extraordinary physical strength and skill in close combat.",
-    "type": "png",
-    "mediaUri": "https://ipfs2.rmrk.link/ipfs/QmZ1eGuMj5q2p2VRytFTQuNaiCRRcCzwCWxb1hjKtscBYX",
-    "thumbnailUri": "https://ipfs2.rmrk.link/ipfs/QmZ1eGuMj5q2p2VRytFTQuNaiCRRcCzwCWxb1hjKtscBYX",
+    "type": "jpeg",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/logo.jpeg",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/logo.jpeg",
     "externalUri": "https://www.ageofchronos.com/"
 }

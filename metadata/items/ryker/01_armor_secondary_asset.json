@@ -1,0 +1,10 @@
+{
+    "name": "Ryker - Armor - oggetto1 thumb",
+    "description": "Ryker armor descrizione secondary asset",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/item/ARMOR.png",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/item/ARMOR.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/thumb/01_thumb.png",
+    "preferThumb": true
+}
