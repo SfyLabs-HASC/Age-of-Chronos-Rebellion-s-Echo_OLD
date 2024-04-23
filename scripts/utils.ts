@@ -1074,8 +1074,24 @@ async function mintItemsAriaArmor(itemsAriaArmor: ItemsAriaArmor, TimeSquadAriaA
   let tx = await itemsAriaArmor.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId il primo nft parent
-    `${C.BASE_IPFS_URI}/items/aria/oggetto1.json`, // TokenURI del child nft,
+    `${C.BASE_IPFS_URI}/items/aria/01_armor_primary_asset.json`, // TokenURI del child nft,
     [armorFirstAssetId, armorSecondAssetId], // Assets
+  );
+  await tx.wait();
+}
+
+// For Aria Cap
+async function mintItemsAriaCap(itemsAriaCap: ItemsAriaCap, TimeSquadAriaAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsAriaCap.nestMintWithAssets(
+    TimeSquadAriaAddress, // To
+    1, // destinationId of the first parent NFT
+    `${C.BASE_IPFS_URI}/items/aria/02_cap_primary_asset.json`, // TokenURI of the child NFT,
+    [capFirstAssetId, capSecondAssetId], // Assets
   );
   await tx.wait();
 }
@@ -1090,7 +1106,7 @@ async function mintItemsAriaLeftHand(itemsAriaLeftHand: ItemsAriaLeftHand, TimeS
   let tx = await itemsAriaLeftHand.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
-    `${C.BASE_IPFS_URI}/items/aria/oggetto3.json`, // TokenURI of the child NFT,
+    `${C.BASE_IPFS_URI}/items/aria/03_left_hand_primary_asset.json`, // TokenURI of the child NFT,
     [leftHandFirstAssetId, leftHandSecondAssetId], // Assets
   );
   await tx.wait();
@@ -1106,27 +1122,12 @@ async function mintItemsAriaRightHand(itemsAriaRightHand: ItemsAriaRightHand, Ti
   let tx = await itemsAriaRightHand.nestMintWithAssets(
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
-    `${C.BASE_IPFS_URI}/items/aria/oggetto4.json`, // TokenURI of the child NFT,
+    `${C.BASE_IPFS_URI}/items/aria/04_right_hand_primary_asset.json`, // TokenURI of the child NFT,
     [rightHandFirstAssetId, rightHandSecondAssetId], // Assets
   );
   await tx.wait();
 }
 
-// For Aria Cap
-async function mintItemsAriaCap(itemsAriaCap: ItemsAriaCap, TimeSquadAriaAddress: string) {
-  const capFirstAssetId = 1;
-  const capSecondAssetId = 2;
-
-  const [deployer] = await ethers.getSigners();
-
-  let tx = await itemsAriaCap.nestMintWithAssets(
-    TimeSquadAriaAddress, // To
-    1, // destinationId of the first parent NFT
-    `${C.BASE_IPFS_URI}/items/aria/oggetto2.json`, // TokenURI of the child NFT,
-    [capFirstAssetId, capSecondAssetId], // Assets
-  );
-  await tx.wait();
-}
 
 // For Luna Armor
 async function mintItemsLunaArmor(itemsLunaArmor: ItemsLunaArmor, TimeSquadLunaAddress: string) {
@@ -1138,8 +1139,24 @@ async function mintItemsLunaArmor(itemsLunaArmor: ItemsLunaArmor, TimeSquadLunaA
   let tx = await itemsLunaArmor.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/luna/oggetto1.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/01_armor_primary_asset.json`,
     [armorFirstAssetId, armorSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Luna Cap
+async function mintItemsLunaCap(itemsLunaCap: ItemsLunaCap, TimeSquadLunaAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsLunaCap.nestMintWithAssets(
+    TimeSquadLunaAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/luna/02_cap_primary_asset.json`,
+    [capFirstAssetId, capSecondAssetId],
   );
   await tx.wait();
 }
@@ -1154,7 +1171,7 @@ async function mintItemsLunaLeftHand(itemsLunaLeftHand: ItemsLunaLeftHand, TimeS
   let tx = await itemsLunaLeftHand.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/luna/oggetto3.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/03_left_hand_primary_asset.json`, 
     [leftHandFirstAssetId, leftHandSecondAssetId],
   );
   await tx.wait();
@@ -1170,27 +1187,13 @@ async function mintItemsLunaRightHand(itemsLunaRightHand: ItemsLunaRightHand, Ti
   let tx = await itemsLunaRightHand.nestMintWithAssets(
     TimeSquadLunaAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/luna/oggetto4.json`, 
+    `${C.BASE_IPFS_URI}/items/luna/04_right_hand_primary_asset.json`,
     [rightHandFirstAssetId, rightHandSecondAssetId],
   );
   await tx.wait();
 }
 
-// For Luna Cap
-async function mintItemsLunaCap(itemsLunaCap: ItemsLunaCap, TimeSquadLunaAddress: string) {
-  const capFirstAssetId = 1;
-  const capSecondAssetId = 2;
 
-  const [deployer] = await ethers.getSigners();
-
-  let tx = await itemsLunaCap.nestMintWithAssets(
-    TimeSquadLunaAddress, 
-    1, 
-    `${C.BASE_IPFS_URI}/items/luna/oggetto2.json`, 
-    [capFirstAssetId, capSecondAssetId],
-  );
-  await tx.wait();
-}
 
 // For Ryker Armor
 async function mintItemsRykerArmor(itemsRykerArmor: ItemsRykerArmor, TimeSquadRykerAddress: string) {
@@ -1202,8 +1205,24 @@ async function mintItemsRykerArmor(itemsRykerArmor: ItemsRykerArmor, TimeSquadRy
   let tx = await itemsRykerArmor.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto1.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/01_armor_primary_asset.json`,
     [armorFirstAssetId, armorSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Ryker Cap
+async function mintItemsRykerCap(itemsRykerCap: ItemsRykerCap, TimeSquadRykerAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsRykerCap.nestMintWithAssets(
+    TimeSquadRykerAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/ryker/02_cap_primary_asset.json`,
+    [capFirstAssetId, capSecondAssetId],
   );
   await tx.wait();
 }
@@ -1218,7 +1237,7 @@ async function mintItemsRykerLeftHand(itemsRykerLeftHand: ItemsRykerLeftHand, Ti
   let tx = await itemsRykerLeftHand.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto3.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/03_left_hand_primary_asset.json`,
     [leftHandFirstAssetId, leftHandSecondAssetId],
   );
   await tx.wait();
@@ -1234,27 +1253,14 @@ async function mintItemsRykerRightHand(itemsRykerRightHand: ItemsRykerRightHand,
   let tx = await itemsRykerRightHand.nestMintWithAssets(
     TimeSquadRykerAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto4.json`, 
+    `${C.BASE_IPFS_URI}/items/ryker/04_right_hand_primary_asset.json`,
     [rightHandFirstAssetId, rightHandSecondAssetId],
   );
   await tx.wait();
 }
 
-// For Ryker Cap
-async function mintItemsRykerCap(itemsRykerCap: ItemsRykerCap, TimeSquadRykerAddress: string) {
-  const capFirstAssetId = 1;
-  const capSecondAssetId = 2;
 
-  const [deployer] = await ethers.getSigners();
 
-  let tx = await itemsRykerCap.nestMintWithAssets(
-    TimeSquadRykerAddress, 
-    1, 
-    `${C.BASE_IPFS_URI}/items/ryker/oggetto2.json`, 
-    [capFirstAssetId, capSecondAssetId],
-  );
-  await tx.wait();
-}
 
 
 // For Thaddeus Armor
@@ -1267,8 +1273,24 @@ async function mintItemsThaddeusArmor(itemsThaddeusArmor: ItemsThaddeusArmor, Ti
   let tx = await itemsThaddeusArmor.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto1.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/01_armor_primary_asset.json`,
     [armorFirstAssetId, armorSecondAssetId],
+  );
+  await tx.wait();
+}
+
+// For Thaddeus Cap
+async function mintItemsThaddeusCap(itemsThaddeusCap: ItemsThaddeusCap, TimeSquadThaddeusAddress: string) {
+  const capFirstAssetId = 1;
+  const capSecondAssetId = 2;
+
+  const [deployer] = await ethers.getSigners();
+
+  let tx = await itemsThaddeusCap.nestMintWithAssets(
+    TimeSquadThaddeusAddress, 
+    1, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/02_cap_primary_asset.json`,
+    [capFirstAssetId, capSecondAssetId],
   );
   await tx.wait();
 }
@@ -1283,7 +1305,7 @@ async function mintItemsThaddeusLeftHand(itemsThaddeusLeftHand: ItemsThaddeusLef
   let tx = await itemsThaddeusLeftHand.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto3.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/03_left_hand_primary_asset.json`,
     [leftHandFirstAssetId, leftHandSecondAssetId],
   );
   await tx.wait();
@@ -1299,28 +1321,11 @@ async function mintItemsThaddeusRightHand(itemsThaddeusRightHand: ItemsThaddeusR
   let tx = await itemsThaddeusRightHand.nestMintWithAssets(
     TimeSquadThaddeusAddress, 
     1, 
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto4.json`, 
+    `${C.BASE_IPFS_URI}/items/thaddeus/04_right_hand_primary_asset.json`,
     [rightHandFirstAssetId, rightHandSecondAssetId],
   );
   await tx.wait();
 }
-
-// For Thaddeus Cap
-async function mintItemsThaddeusCap(itemsThaddeusCap: ItemsThaddeusCap, TimeSquadThaddeusAddress: string) {
-  const capFirstAssetId = 1;
-  const capSecondAssetId = 2;
-
-  const [deployer] = await ethers.getSigners();
-
-  let tx = await itemsThaddeusCap.nestMintWithAssets(
-    TimeSquadThaddeusAddress, 
-    1, 
-    `${C.BASE_IPFS_URI}/items/thaddeus/oggetto2.json`, 
-    [capFirstAssetId, capSecondAssetId],
-  );
-  await tx.wait();
-}
-
 
 
 export {
