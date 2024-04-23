@@ -1,9 +1,9 @@
 {
   "name": "THADDEUS - AGE OF CHRONOS",
   "description": "Description parent THADDEUS",
-  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/images/character/thaddeus/thaddeus_logo.jpeg",
+  "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/logo.jpeg",
   "externalUri": "https://www.ageofchronos.com/",
-  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/images/character/thaddeus/thaddeus_logo.jpeg",
+  "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/logo.jpeg",
   "license": "MIT",
   "licenseUri": "https://rmrk.app/license",
   "tags": [

@@ -1,9 +1,9 @@
 {
   "name": "RYKER - AGE OF CHRONOS",
   "description": "Description parent RYKER",
-  "mediaUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/images/character/ryker/ryker_logo.jpeg",
+  "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/logo.jpeg",
   "externalUri": "https://www.ageofchronos.com/",
-  "thumbnailUri": "ipfs://QmdgQUovFT4S8kUuF1Npb1GJJx7FpQ5GotYvtSs8eSjYrN/images/character/ryker/ryker_logo.jpeg",
+  "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/ryker/logo.jpeg",
   "license": "MIT",
   "licenseUri": "https://rmrk.app/license",
   "tags": [

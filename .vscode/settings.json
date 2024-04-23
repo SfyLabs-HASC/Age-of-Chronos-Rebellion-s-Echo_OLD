@@ -1,3 +1,8 @@
 {
 "solidity.compileUsingRemoteVersion": "v0.8.21+commit.d9974bed",
+"C_Cpp.errorSquiggles": "enabled",
+"files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+} 
 }
