@@ -1,4 +1,4 @@
-const BASE_IPFS_URI = 'ipfs://QmREzLnDEcbpsKvmgJtT31wSCRk2Vt8NdRyv8b2te6Meky';  //metadata ipfs
+const BASE_IPFS_URI = 'ipfs://QmWB7TEUpnarfxZidTvdXdweNDUqrmP9PLMtpMP6rrStps';  //metadata ipfs
 
 // Collection metadata
 const SQUAD_METADATA_ARIA = BASE_IPFS_URI + '/timeSquad/collection_metadata_squad_aria.json';
@@ -55,11 +55,10 @@ const PART_TYPE_SLOT = 1;
 const PART_TYPE_FIXED = 2;
 
 // Z INDEXES per le immagini SVG (sia fixed che slot part), avendo lo stesso valore allora hanno lo stesso livello
-const Z_INDEX_BODY = 2;
-const Z_INDEX_LEFT_HAND_ITEMS = 4;
-const Z_INDEX_RIGHT_HAND_ITEMS = 4;
+const Z_INDEX_LEFT_HAND_ITEMS = 6;
+const Z_INDEX_RIGHT_HAND_ITEMS = 8;
 const Z_INDEX_CAP_ITEMS = 4;
-const Z_INDEX_ARMOR_ITEMS = 4;
+const Z_INDEX_ARMOR_ITEMS = 2;
 
 
 // Equippable groups  todo forse qui il doppio bug?
@@ -108,7 +107,7 @@ export {
   SQUAD_ARMOR_SLOT_PART_ID,
   PART_TYPE_SLOT,
   PART_TYPE_FIXED,
-  Z_INDEX_BODY,
+
   Z_INDEX_LEFT_HAND_ITEMS,
   Z_INDEX_RIGHT_HAND_ITEMS,
   Z_INDEX_CAP_ITEMS,
