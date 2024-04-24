@@ -1,9 +1,9 @@
 {
   "name": "LUNA - AGE OF CHRONOS",
   "description": "Description parent Luna",
-  "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/luna/logo.jpeg",
+  "mediaUri": "ipfs://QmQNVfxwNjan3aYKo44WKr2yLfhBGb1dCggU3GUfVTDWLq/character/luna/logo.jpeg",
   "externalUri": "https://www.ageofchronos.com/",
-  "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/luna/logo.jpeg",
+  "thumbnailUri": "ipfs://QmQNVfxwNjan3aYKo44WKr2yLfhBGb1dCggU3GUfVTDWLq/character/luna/logo.jpeg",
   "license": "MIT",
   "licenseUri": "https://rmrk.app/license",
   "tags": [

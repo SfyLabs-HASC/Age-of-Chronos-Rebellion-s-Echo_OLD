@@ -1,8 +1,8 @@
 {
     "name": "Thaddeus Right Hand Items",
-    "description": "Thaddeus Cap Items DESCRIZIONE",
-    "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/thaddeus/item/RIGHT_HAND.png",
-    "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/thaddeus/item/RIGHT_HAND.png",
+    "description": "Thaddeus Right Hand Items DESCRIZIONE",
+    "mediaUri": "ipfs://QmQNVfxwNjan3aYKo44WKr2yLfhBGb1dCggU3GUfVTDWLq/character/thaddeus/item/RIGHT_HAND.png",
+    "thumbnailUri": "ipfs://QmQNVfxwNjan3aYKo44WKr2yLfhBGb1dCggU3GUfVTDWLq/character/thaddeus/item/LOGO.png",
     "externalUri": "https://www.ageofchronos.com/",
     "license": "MIT",
     "licenseUri": "https://rmrk.app/license",

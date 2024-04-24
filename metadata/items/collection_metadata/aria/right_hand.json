@@ -1,8 +1,8 @@
 {
     "name": "Aria Right Hand Items",
-    "description": "Aria Cap Items DESCRIZIONE",
-    "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/RIGHT_HAND.png",
-    "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/RIGHT_HAND.png",
+    "description": "Aria Right Hand Items DESCRIZIONE",
+    "mediaUri": "ipfs://QmQNVfxwNjan3aYKo44WKr2yLfhBGb1dCggU3GUfVTDWLq/character/aria/item/RIGHT_HAND.png",
+    "thumbnailUri": "ipfs://QmQNVfxwNjan3aYKo44WKr2yLfhBGb1dCggU3GUfVTDWLq/character/aria/item/LOGO.png",
     "externalUri": "https://www.ageofchronos.com/",
     "license": "MIT",
     "licenseUri": "https://rmrk.app/license",
