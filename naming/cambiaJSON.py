@@ -27,9 +27,10 @@ def sostituisci_parola_chiave(cartella_lavoro, parola_chiave_originale, nuova_pa
             print(f"File '{filename}' aggiornato con la nuova parola chiave.")
 
 # Esempio di come chiamare la funzione:
-#sostituisci_parola_chiave('C:\\Users\\raffa\\Documents\\ethDavide\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\luna','aria', 'luna')
-sostituisci_parola_chiave('C:\\Users\\raffa\\Documents\\ethDavide\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\luna','Aria', 'Luna')
-sostituisci_parola_chiave('C:\\Users\\raffa\\Documents\\ethDavide\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\ryker','aria', 'ryker')
-sostituisci_parola_chiave('C:\\Users\\raffa\\Documents\\ethDavide\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\ryker','Aria', 'Ryker')
-sostituisci_parola_chiave('C:\\Users\\raffa\\Documents\\ethDavide\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\thaddeus','aria', 'thaddeus')
-sostituisci_parola_chiave('C:\\Users\\raffa\\Documents\\ethDavide\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\thaddeus','Aria', 'Thaddeus')
+#C:\Users\dottdav\Documents\36nftsito\AGE_OF_CHRONOS\AGE_OF_CHRONOS\metadata\items\collection_metadata
+sostituisci_parola_chiave('C:\\Users\\dottdav\\Documents\\36nftsito\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\collection_metadata\\luna','aria', 'luna')
+sostituisci_parola_chiave('C:\\Users\\dottdav\\Documents\\36nftsito\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\collection_metadata\\luna','Aria', 'Luna')
+sostituisci_parola_chiave('C:\\Users\\dottdav\\Documents\\36nftsito\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\collection_metadata\\ryker','aria', 'ryker')
+sostituisci_parola_chiave('C:\\Users\\dottdav\\Documents\\36nftsito\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\collection_metadata\\ryker','Aria', 'Ryker')
+sostituisci_parola_chiave('C:\\Users\\dottdav\\Documents\\36nftsito\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\collection_metadata\\thaddeus','aria', 'thaddeus')
+sostituisci_parola_chiave('C:\\Users\\dottdav\\Documents\\36nftsito\\AGE_OF_CHRONOS\\AGE_OF_CHRONOS\\metadata\\items\\collection_metadata\\thaddeus','Aria', 'Thaddeus')

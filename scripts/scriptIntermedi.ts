@@ -28,51 +28,83 @@ import {
     import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 import * as C from './constants';
 
+import {
+mintItemsThaddeusArmor,
+mintItemsThaddeusCap,
+mintItemsThaddeusLeftHand,
+mintItemsThaddeusRightHand
+} from './utils';
+
+
+
 async function main() {
 
+    const signers = (await ethers.getSigners());
+    const deployerAddress = signers[0].address;
 
     const contractParentAddresses: { [key: string]: string } = {
-        "Aria": "0xAbca4357640539B169F6b16214AC3039F9f9aF38",
-        "Luna": "0x1E7219fAFf87265431320BB291845Ec308A03222",
-        "Ryker": "0x3b85e80d22a2778a56817dD8456d214c136D0f50",
-        "Thaddeus": "0x1447ADe5327463d0788f80A94F921a8b669F2B1c"
+        "Aria": "0x027F30069C15459ca08552B88915EBF38606e38e",
+        "Luna": "0x77ff3e283079e83Fba2e2f95399627dCE8D7731A",
+        "Ryker": "0x6131Fb06D3dE578A9DF947B32a8d65D93Be54B06",
+        "Thaddeus": "0x5Ec76143D5CB9EA58d043fD71CBed2F1ccFE68c7"
     };
-    
     
 
     const contractCatalogAddresses: { [key: string]: string } = {
-        "Aria": "0xA9eE3A2A0B7e6490F493463E7F545EEd16b14e56",
-        "Luna": "0x840c13858090F2869Ba95B2c254Ae343aa1C10c6",
-        "Ryker": "0x80292f35D6F9EbF94A4911379c5019aDf76C4d33",
-        "Thaddeus": "0x375FA08398f793998371cC80774ab9f8CC531539"
+        "Aria": "0xa2BE213196C641B5E7511A0388371168047C2623",
+        "Luna": "0x410455058D065a03207758391Ba66c93546264A3",
+        "Ryker": "0x6eFbA2846e2C3C716fD4869cd8051E7e924EF18B",
+        "Thaddeus": "0x9ce185Fc0fBd98d1382C144FE106a855Cd75dED0"
     };
     
 
     const contractItemAddresses: { [key: string]: string } = {
-        "AriaArmor": "0x371Fef6D54FEa1ECf125F6633d6F61055cbF45F4",
-        "AriaCap": "0x5681fEa9f7219CEaD0e087C80F9ab539F3d3553C",
-        "AriaLeftHand": "0x86c5A636C45bacFc736A2E5a142C47FC7A4EA812",
-        "AriaRightHand": "0x2ec208A0fD1BdF6a7db292522cac95Cba674E000",
-        "LunaArmor": "0xcE8401Df8696151a290777d4547D33F95a7458bD",
-        "LunaCap": "0xDb163CE2f621e4DE80dC62bF41e78fA68c3b4f9c",
-        "LunaLeftHand": "0x65a1B700E89824eB5238fFBaf70Aec2A7D540f1C",
-        "LunaRightHand": "0x1FD9A1e512348D8E7f70F3f9a8d15D2F0eeb11bb",
-        "RykerArmor": "0xAB5aAF41Aaa1b4311218cF8A3C2b80b5c008429D",
-        "RykerCap": "0x7cDd1baC0E265B08090c928CFc7a079F50e7241c",
-        "RykerLeftHand": "0xdDC8705E20819b34156122a8B08764029f131609",
-        "RykerRightHand": "0xc13684aec8EE62ec58092bdc27036c233db23789",
-        "ThaddeusArmor": "0x0847f79Ad21345642d0C10dF1714f7Fe442a49F0",
-        "ThaddeusCap": "0xa13F3BE3cc14F0c54e4B2504f9B4C52802Cb838C",
-        "ThaddeusLeftHand": "0xb174E09f5F83f0bcc9b50bB89632b02FCfCCF00D",
-        "ThaddeusRightHand": "0xF0Bb07B3886625eC1AD7b16b7A0a9F15e4C31b1d"
+        "AriaArmor": "0x182270Cc7859670Efe94E1B308C781cf7355e885",
+        "AriaCap": "0x812a3bb3adEbbcDa5E095b20C48B1A3885C114ac",
+        "AriaLeftHand": "0xf01C019c1f66BB845300138Faf24857F8E91862B",
+        "AriaRightHand": "0x505559b9d75cE81c79052b73d7dD413a3717aD92",
+        "LunaArmor": "0x0c13870CB13d01908b9716b764BC3422EF32A8B2",
+        "LunaCap": "0xeB57419FC73E5cE7dB1254F87a0485eCdd5cAF1c",
+        "LunaLeftHand": "0x623Ba139469eFDd2f131694c17b185659459091f",
+        "LunaRightHand": "0x80d05d62a63b633A5E157551EfB05d68dCAdF0cd",
+        "RykerArmor": "0x6e68efF194492A7a57F9bc345D0e83Cbabbb5e7b",
+        "RykerCap": "0xeCA349AF953dB4185c4d9F2219BcF5FAF7cd5d06",
+        "RykerLeftHand": "0x5820D0B8458b78F3cC09111Da1AbF2Ba66ebB62a",
+        "RykerRightHand": "0xAFc0039Eb091d51DBE1C5cb39754F11E6215f2A9",
+        "ThaddeusArmor": "0x41D0Ac53b7bFF9c1C51D15acfb32738b9e4bAdae",
+        "ThaddeusCap": "0x56C4c12a809D6D691049Df21393895b68D2365F8",
+        "ThaddeusLeftHand": "0x0f21EE016367E826b8627B120EB5F7891342d5b8",
+        "ThaddeusRightHand": "0x4bAbD91Fe6886E481CC1DE5559f940e813Be49b2"
     };
     
     
 
+    /*DA QUI DOVRESTI MODIFICARE*/
+
+const timeSquadThaddeus = await ethers.getContractAt("TimeSquadThaddeus", contractParentAddresses['Thaddeus'], signers[0]);
+const itemsThaddeusArmor = await ethers.getContractAt("ItemsThaddeusArmor", contractItemAddresses['ThaddeusArmor'], signers[0]);
+const itemsThaddeusCap = await ethers.getContractAt("ItemsThaddeusCap", contractItemAddresses['ThaddeusCap'], signers[0]);
+const itemsThaddeusLeftHand = await ethers.getContractAt("ItemsThaddeusLeftHand", contractItemAddresses['ThaddeusLeftHand'], signers[0]);
+const itemsThaddeusRightHand = await ethers.getContractAt("ItemsThaddeusRightHand", contractItemAddresses['ThaddeusRightHand'], signers[0]);
+
+// Define a helper function to pause execution
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Mint Thaddeus items with delays between transactions to avoid rate limit issues
+await mintItemsThaddeusArmor(itemsThaddeusArmor, timeSquadThaddeus.address);
+await delay(1000); // waiting 10 seconds
+await mintItemsThaddeusCap(itemsThaddeusCap, timeSquadThaddeus.address);
+await delay(1000); // waiting 10 seconds
+await mintItemsThaddeusLeftHand(itemsThaddeusLeftHand, timeSquadThaddeus.address);
+await delay(1000); // waiting 10 seconds
+await mintItemsThaddeusRightHand(itemsThaddeusRightHand, timeSquadThaddeus.address);
+console.log('Thaddeus items minted');
 
 
-    const signers = (await ethers.getSigners());
-    const deployerAddress = signers[0].address;
+    /*
+    
     //const moonbaseAlphaUrl = process.env.MOONBASE_URL || 'https://rpc.testnet.moonbeam.network';
     //const provider = new ethers.providers.JsonRpcProvider(moonbaseAlphaUrl);
     //const timeSquadAria = new ethers.Contract(contractParentAddresses['Aria'], TimeSquadAria.interface.abi, provider);
@@ -101,6 +133,8 @@ async function main() {
     );
       await txAria.wait();
       console.log(txAria);
+
+      */
 }
 
 main().catch(error => {

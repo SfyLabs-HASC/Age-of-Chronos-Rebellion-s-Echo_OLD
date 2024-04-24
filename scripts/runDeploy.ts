@@ -113,40 +113,41 @@ async function main() {
   console.log('Parent Collections added to Singular Registry');
   await delay(10000) /// waiting 10 second.
 
-  let tx01 = await registry.addExternalCollection(itemsAriaArmor.address, C.SQUAD_ITEM_METADATA);
-  let tx02 = await registry.addExternalCollection(itemsAriaCap.address, C.SQUAD_ITEM_METADATA);
-  let tx03 = await registry.addExternalCollection(itemsAriaLeftHand.address, C.SQUAD_ITEM_METADATA);
-  let tx04 = await registry.addExternalCollection(itemsAriaRightHand.address, C.SQUAD_ITEM_METADATA);
+
+  let tx01 = await registry.addExternalCollection(itemsAriaArmor.address, C.SQUAD_ITEM_METADATA_ARIA_ARMOR);
+  let tx02 = await registry.addExternalCollection(itemsAriaCap.address, C.SQUAD_ITEM_METADATA_ARIA_CAP);
+  let tx03 = await registry.addExternalCollection(itemsAriaLeftHand.address, C.SQUAD_ITEM_METADATA_ARIA_LEFT_HAND);
+  let tx04 = await registry.addExternalCollection(itemsAriaRightHand.address, C.SQUAD_ITEM_METADATA_ARIA_RIGHT_HAND);
   await Promise.all([
     tx01.wait(), tx02.wait(), tx03.wait(), tx04.wait()
   ]);
   console.log('Aria Items Collections added to Singular Registry');
   await delay(10000) /// waiting 10 second.
 
-  let tx05 = await registry.addExternalCollection(itemsLunaArmor.address, C.SQUAD_ITEM_METADATA);
-  let tx06 = await registry.addExternalCollection(itemsLunaCap.address, C.SQUAD_ITEM_METADATA);
-  let tx07 = await registry.addExternalCollection(itemsLunaLeftHand.address, C.SQUAD_ITEM_METADATA);
-  let tx08 = await registry.addExternalCollection(itemsLunaRightHand.address, C.SQUAD_ITEM_METADATA);
+  let tx05 = await registry.addExternalCollection(itemsLunaArmor.address, C.SQUAD_ITEM_METADATA_LUNA_ARMOR);
+  let tx06 = await registry.addExternalCollection(itemsLunaCap.address, C.SQUAD_ITEM_METADATA_LUNA_CAP);
+  let tx07 = await registry.addExternalCollection(itemsLunaLeftHand.address, C.SQUAD_ITEM_METADATA_LUNA_LEFT_HAND);
+  let tx08 = await registry.addExternalCollection(itemsLunaRightHand.address, C.SQUAD_ITEM_METADATA_LUNA_RIGHT_HAND);
   await Promise.all([
     tx05.wait(), tx06.wait(), tx07.wait(), tx08.wait()
   ]);
   console.log('Luna Items Collections added to Singular Registry');
   await delay(10000) /// waiting 10 second.
 
-  let tx09 = await registry.addExternalCollection(itemsRykerArmor.address, C.SQUAD_ITEM_METADATA);
-  let tx10 = await registry.addExternalCollection(itemsRykerCap.address, C.SQUAD_ITEM_METADATA);
-  let tx11 = await registry.addExternalCollection(itemsRykerLeftHand.address, C.SQUAD_ITEM_METADATA);
-  let tx12 = await registry.addExternalCollection(itemsRykerRightHand.address, C.SQUAD_ITEM_METADATA);
+  let tx09 = await registry.addExternalCollection(itemsRykerArmor.address, C.SQUAD_ITEM_METADATA_RYKER_ARMOR);
+  let tx10 = await registry.addExternalCollection(itemsRykerCap.address, C.SQUAD_ITEM_METADATA_RYKER_CAP);
+  let tx11 = await registry.addExternalCollection(itemsRykerLeftHand.address, C.SQUAD_ITEM_METADATA_RYKER_LEFT_HAND);
+  let tx12 = await registry.addExternalCollection(itemsRykerRightHand.address, C.SQUAD_ITEM_METADATA_RYKER_RIGHT_HAND);
   await Promise.all([
     tx09.wait(), tx10.wait(), tx11.wait(), tx12.wait()
   ]);
   console.log('Ryker Items Collections added to Singular Registry');
   await delay(10000) /// waiting 10 second.
 
-  let tx13 = await registry.addExternalCollection(itemsThaddeusArmor.address, C.SQUAD_ITEM_METADATA);
-  let tx14 = await registry.addExternalCollection(itemsThaddeusCap.address, C.SQUAD_ITEM_METADATA);
-  let tx15 = await registry.addExternalCollection(itemsThaddeusLeftHand.address, C.SQUAD_ITEM_METADATA);
-  let tx16 = await registry.addExternalCollection(itemsThaddeusRightHand.address, C.SQUAD_ITEM_METADATA);
+  let tx13 = await registry.addExternalCollection(itemsThaddeusArmor.address, C.SQUAD_ITEM_METADATA_THADDEUS_ARMOR);
+  let tx14 = await registry.addExternalCollection(itemsThaddeusCap.address, C.SQUAD_ITEM_METADATA_THADDEUS_CAP);
+  let tx15 = await registry.addExternalCollection(itemsThaddeusLeftHand.address, C.SQUAD_ITEM_METADATA_THADDEUS_LEFT_HAND);
+  let tx16 = await registry.addExternalCollection(itemsThaddeusRightHand.address, C.SQUAD_ITEM_METADATA_THADDEUS_RIGHT_HAND);
 
   await Promise.all([
     tx13.wait(), tx14.wait(), tx15.wait(), tx16.wait()
@@ -202,42 +203,42 @@ async function main() {
   // Add item assets and mint them for Luna
 
   await addItemAssetsLunaArmor(itemsLunaArmor, timeSquadLuna.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsLunaCap(itemsLunaCap, timeSquadLuna.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsLunaLeftHand(itemsLunaLeftHand, timeSquadLuna.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsLunaRightHand(itemsLunaRightHand, timeSquadLuna.address);
   console.log('Luna item assets added');
   await delay(10000) /// waiting 10 second.
 
   await mintItemsLunaArmor(itemsLunaArmor, timeSquadLuna.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsLunaCap(itemsLunaCap, timeSquadLuna.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsLunaLeftHand(itemsLunaLeftHand, timeSquadLuna.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsLunaRightHand(itemsLunaRightHand, timeSquadLuna.address);
   console.log('Luna items minted');
   await delay(10000) /// waiting 10 second.
   
   // Add item assets and mint them for Ryker
   await addItemAssetsRykerArmor(itemsRykerArmor, timeSquadRyker.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsRykerCap(itemsRykerCap, timeSquadRyker.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsRykerLeftHand(itemsRykerLeftHand, timeSquadRyker.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsRykerRightHand(itemsRykerRightHand, timeSquadRyker.address);
   console.log('Ryker item assets added');
   await delay(10000) /// waiting 10 second.
   
   await mintItemsRykerArmor(itemsRykerArmor, timeSquadRyker.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsRykerCap(itemsRykerCap, timeSquadRyker.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsRykerLeftHand(itemsRykerLeftHand, timeSquadRyker.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsRykerRightHand(itemsRykerRightHand, timeSquadRyker.address);
   
   await delay(10000) /// waiting 10 second.
@@ -245,21 +246,21 @@ async function main() {
   
   // Add item assets and mint them for Thaddeus
   await addItemAssetsThaddeusArmor(itemsThaddeusArmor, timeSquadThaddeus.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsThaddeusCap(itemsThaddeusCap, timeSquadThaddeus.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsThaddeusLeftHand(itemsThaddeusLeftHand, timeSquadThaddeus.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await addItemAssetsThaddeusRightHand(itemsThaddeusRightHand, timeSquadThaddeus.address);
   console.log('Thaddeus item assets added');
   await delay(10000) /// waiting 10 second.
   
   await mintItemsThaddeusArmor(itemsThaddeusArmor, timeSquadThaddeus.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsThaddeusCap(itemsThaddeusCap, timeSquadThaddeus.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsThaddeusLeftHand(itemsThaddeusLeftHand, timeSquadThaddeus.address);
-  await delay(10000) /// waiting 10 second.
+  await delay(1000) /// waiting 10 second.
   await mintItemsThaddeusRightHand(itemsThaddeusRightHand, timeSquadThaddeus.address);
   console.log('Thaddeus items minted');
 
