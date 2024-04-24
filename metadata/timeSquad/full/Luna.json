@@ -1,38 +1,38 @@
 {
-  "name": "Luna #1",
-  "description": "Luna is a brave and resilient fighter who wears impenetrable armor. Her prowess in defense is unmatched, and she is capable of protecting herself and her companions from the most powerful blows.",
-  "externalUri": "https://www.ageofchronos.com/",
-  "external_url": "https://www.ageofchronos.com/",
-  "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/parent.png",
-  "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/parent.png",
-  "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/parent.png",
-  "preferThumb": true,
-  "license": "PERSONAL LICENSE (\"CBE-PERSONAL\")",
-  "licenseUri": "https://rmrk.app/license",
-  "attributes": [
-    {
-        "label": "Attack",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Attack"
-    },
-    {
-        "label": "Defence",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Defence"
-    },
-    {
-        "label": "Magic",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Magic"
-    },
-    {
-        "label": "Fortune",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Fortune"
-    }
-]
+    "name": "Luna #1",
+    "description": "Luna is a brave and resilient fighter who wears impenetrable armor. Her prowess in defense is unmatched, and she is capable of protecting herself and her companions from the most powerful blows.",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/parent.png",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/parent.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/luna/parent.png",
+    "preferThumb": false,
+    "license": "PERSONAL LICENSE (\"CBE-PERSONAL\")",
+    "licenseUri": "https://rmrk.app/license",
+    "attributes": [
+        {
+            "label": "Attack",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Attack"
+        },
+        {
+            "label": "Defence",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Defence"
+        },
+        {
+            "label": "Magic",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Magic"
+        },
+        {
+            "label": "Fortune",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Fortune"
+        }
+    ]
 }

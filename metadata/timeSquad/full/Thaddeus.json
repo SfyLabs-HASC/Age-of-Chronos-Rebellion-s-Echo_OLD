@@ -1,38 +1,38 @@
 {
-  "name": "Thaddeus #1",
-  "description": "Thaddeus is a fortunate adventurer who always seems to find the best way out. He can avoid traps and exploit unexpected opportunities.",
-  "externalUri": "https://www.ageofchronos.com/",
-  "external_url": "https://www.ageofchronos.com/",
-  "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/parent.png",
-  "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/parent.png",
-  "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/parent.png",
-  "preferThumb": true,
-  "license": "PERSONAL LICENSE (\"CBE-PERSONAL\")",
-  "licenseUri": "https://rmrk.app/license",
-  "attributes": [
-    {
-        "label": "Attack",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Attack"
-    },
-    {
-        "label": "Defence",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Defence"
-    },
-    {
-        "label": "Magic",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Magic"
-    },
-    {
-        "label": "Fortune",
-        "type": "number",
-        "value": "10",
-        "trait_type": "Fortune"
-    }
-]
+    "name": "Thaddeus #1",
+    "description": "Thaddeus is a fortunate adventurer who always seems to find the best way out. He can avoid traps and exploit unexpected opportunities.",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/parent.png",
+    "mediaUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/parent.png",
+    "thumbnailUri": "ipfs://QmcAns4a72wN8FGJLoFf489CeF7BLQcM77382WsCzEVufe/character/thaddeus/parent.png",
+    "preferThumb": false,
+    "license": "PERSONAL LICENSE (\"CBE-PERSONAL\")",
+    "licenseUri": "https://rmrk.app/license",
+    "attributes": [
+        {
+            "label": "Attack",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Attack"
+        },
+        {
+            "label": "Defence",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Defence"
+        },
+        {
+            "label": "Magic",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Magic"
+        },
+        {
+            "label": "Fortune",
+            "type": "number",
+            "value": "10",
+            "trait_type": "Fortune"
+        }
+    ]
 }

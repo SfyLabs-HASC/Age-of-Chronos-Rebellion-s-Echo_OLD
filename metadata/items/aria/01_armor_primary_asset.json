@@ -1,19 +1,19 @@
 {
-  "name": "Aria - Armor - oggetto1",
-  "description": "Aria armor descrizione first asset",
-  "externalUri": "https://www.ageofchronos.com/",
-  "external_url": "https://www.ageofchronos.com/",
-  "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/ARMOR.png",
-  "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/ARMOR.png",
-  "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/thumb/01_thumb.png",
-  "preferThumb": false,
-  "attributes": [
-    {
-        "label": "Attack",
-        "type": "number",
-        "value": 10,
-        "trait_type": "Generation",
-        "display_type": "number"
-    }
-]
+    "name": "Aria - Armor - oggetto1",
+    "description": "Aria armor descrizione first asset",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/ARMOR.png",
+    "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/ARMOR.png",
+    "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/thumb/01_thumb.png",
+    "preferThumb": true,
+    "attributes": [
+        {
+            "label": "Attack",
+            "type": "number",
+            "value": 10,
+            "trait_type": "Generation",
+            "display_type": "number"
+        }
+    ]
 }

@@ -6,7 +6,7 @@
     "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/thaddeus/item/RIGHT_HAND.png",
     "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/thaddeus/item/RIGHT_HAND.png",
     "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/thaddeus/thumb/04_thumb.png",
-    "preferThumb": false,
+    "preferThumb": true,
     "attributes": [
         {
             "label": "Attack",

@@ -6,7 +6,7 @@
     "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/ryker/item/LEFT_HAND.png",
     "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/ryker/item/LEFT_HAND.png",
     "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/ryker/thumb/03_thumb.png",
-    "preferThumb": false,
+    "preferThumb": true,
     "attributes": [
         {
             "label": "Attack",

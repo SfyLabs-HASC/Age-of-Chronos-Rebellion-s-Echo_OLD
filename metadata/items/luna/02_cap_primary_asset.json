@@ -6,7 +6,7 @@
     "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/luna/item/CAP.png",
     "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/luna/item/CAP.png",
     "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/luna/thumb/02_thumb.png",
-    "preferThumb": false,
+    "preferThumb": true,
     "attributes": [
         {
             "label": "Attack",

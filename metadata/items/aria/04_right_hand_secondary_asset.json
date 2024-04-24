@@ -1,10 +1,10 @@
 {
-  "name": "Aria - Right Hand - Oggetto4",
-  "description": "Aria left hand descrizione secondary asset",
-  "externalUri": "https://www.ageofchronos.com/",
-  "external_url": "https://www.ageofchronos.com/",
-  "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/RIGHT_HAND.png",
-  "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/RIGHT_HAND.png",
-  "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/thumb/04_thumb.png",
-  "preferThumb": true
+    "name": "Aria - Right Hand - Oggetto4",
+    "description": "Aria left hand descrizione secondary asset",
+    "externalUri": "https://www.ageofchronos.com/",
+    "external_url": "https://www.ageofchronos.com/",
+    "image": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/RIGHT_HAND.png",
+    "mediaUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/item/RIGHT_HAND.png",
+    "thumbnailUri": "ipfs://QmbDHSFyouAphuXhPvBqMn8ds4UnAuXLbHctUd8WdsoVWN/character/aria/thumb/04_thumb.png",
+    "preferThumb": false
 }
