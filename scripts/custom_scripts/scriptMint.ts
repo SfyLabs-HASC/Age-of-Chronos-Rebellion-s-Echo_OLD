@@ -45,16 +45,11 @@ async function main() {
         "Ryker": "",
         "Thaddeus": ""
     };
-
-    /*
-
-
-    Catalog Aria deployed to 0x50fa6d8f49462e930E0c1DC02794637518BA4dE9
+/*
+Catalog Aria deployed to 0x50fa6d8f49462e930E0c1DC02794637518BA4dE9
 Catalog Luna deployed to 0xFA84e7E025cc25667621acDc32610851ed68C659
 Catalog Ryker deployed to 0xE94ddDfEbFFf00BcAF84B7e5d634c172E2CdD7f2
 Catalog Thaddeus deployed to 0xCf4a4Cd446c0cFCE6A5D6449C3bd9b251e8aCaa2
-
-
 
 Deploying Contracts to moonbaseAlpha blockchain...
 timeSquadAria deployed to 0x8269C3fE7bef60Dbd7ADf8D2e64Ad8d94901716F
@@ -84,11 +79,11 @@ Items Thaddeus Cap deployed to 0x1d42A976056C256ACA54Da6daBaC12E8f8D0CFE1
 Items Thaddeus Left Hand deployed to 0xE9eAbc749948158025550d83bAed9814995C7FBB
 Items Thaddeus Right Hand deployed to 0x4BeeFD7de3D096c4Ab5318182AaDf02EEC262fc6
 items Deployati
+*/
 
 
 
-
-
+/*
 async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalogAria: string, mintTo: SignerWithAddress) {
   let txAria = await timeSquadAria.mintWithEquippableAsset(
     mintTo.address, 
@@ -105,12 +100,15 @@ async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalo
   );
   await txAria.wait();
 }
-    */
+*/
 
     // Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
     const timeSquadAria = await ethers.getContractAt("TimeSquadAria", contractParentAddresses['Aria'], signers[0]);
     const TimeSquadCatalogAria = await ethers.getContractAt("TimeSquadCatalogAria", '0x50fa6d8f49462e930E0c1DC02794637518BA4dE9', signers[0]);
 
+
+
+/*
 
 // Definire l'ID della parte e gli indirizzi equipaggiabili
 const partId = 1003; // Sostituisci con l'ID della parte corretto
@@ -127,14 +125,16 @@ try {
     console.error('Transaction failed:', error);
 }
 
-    /*
+*/
+
+    
 
     // Dati per la funzione mintWithEquippableAsset
     const equippableGroupId = 1;  // Assumi che questo sia un valore costante definito da te
-    const metadataURI = `ipfs://QmfXDJdz4T2P9wcg3coq2XA8JsdqbUTmUnWqx4EKyx3pCy`; // URI metadati
-    const tokenURI = `ipfs://QmVsQJB9mR5twbg12nEJtTk1fhX3g1ev6EuFyzNGJCKEKB`; // Token URI
-    //const metadataURI = `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`; // URI metadati
-    //const tokenURI = `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`; // Token URI
+    //const metadataURI = `ipfs://QmfXDJdz4T2P9wcg3coq2XA8JsdqbUTmUnWqx4EKyx3pCy`; // URI metadati
+    //const tokenURI = `ipfs://QmVsQJB9mR5twbg12nEJtTk1fhX3g1ev6EuFyzNGJCKEKB`; // Token URI
+    const metadataURI = `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`; // URI metadati
+    const tokenURI = `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`; // Token URI
     const partIds = [
         C.SQUAD_LEFT_HAND_SLOT_PART_ID,
         C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
@@ -157,7 +157,7 @@ try {
         console.error('Transaction failed:', error);
     }
 
-    */
+    
 }
 
 main().catch((error) => {
