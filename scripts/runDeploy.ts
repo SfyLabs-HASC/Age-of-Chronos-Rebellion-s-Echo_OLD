@@ -190,7 +190,43 @@ async function main() {
   await addItemAssetsAriaRightHand(itemsAriaRightHand, timeSquadAria.address);
   console.log('Aria item assets added');
   await delay(10000) /// waiting 10 second.
-
+//---------------
+/*
+Deploying Contracts to moonbaseAlpha blockchain...
+timeSquadAria deployed to 0xf1B170FD1CC20b05b0fda41a992Cdc5c84370812
+timeSquadLuna deployed to 0x6b2C6e02F31CfE2138c4f448FF5Ee2100DfEc57b
+timeSquadRyker deployed to 0x86f3C8b6DaA9690803b53977F35e7ec4C76088C9
+timeSquadThaddeus deployed to 0x6138DBee47AfdCDCC80864a383c60e54388c74b2
+parent Deployati
+Catalog Aria deployed to 0x9283A021ff78c69CC4a22dB4780341d64Be6f152
+Catalog Luna deployed to 0xE8c6ee10B161B1482D1eDaaFf71d44A8D3C87244
+Catalog Ryker deployed to 0x0C28ED86cFC9A4C44be521EbC301A5d7F23f7ac4
+Catalog Thaddeus deployed to 0x6Bf2Dc1B6711262709b099c9C89757285F257F28
+catalog Deployati
+Items Aria Armor deployed to 0x37fa2377439F860b653E1CD89891828162cDF110
+Items Aria Cap deployed to 0x1631695AE3d5710c3b48b8CD6D8E6b043A49af7E
+Items Aria Left Hand deployed to 0xA377E80E666a5320a4fFaD3ED21e8e8fAa1A804e
+Items Aria Right Hand deployed to 0x613650Ae8e8166FB1956cDa532Af1a730315431e
+Items Luna Armor deployed to 0xaA116315521AD643e702dA3c8EdC75Ab39e787B6
+Items Luna Cap deployed to 0xe22524F569Ac38C951431D130cdb9eFD581390bF
+Items Luna Left Hand deployed to 0x62B9f014c01Be2f24b158c8eB576CDc2DB0E10de
+Items Luna Right Hand deployed to 0xc1786f0a7E4e015B200597AdEBDFEddE4A392a64
+Items Ryker Armor deployed to 0x92D54268B8ff2E5231753A220A819ae55C48e8c7
+Items Ryker Cap deployed to 0xa2297c93e3928f88C7439131Cba573AfC65E8058
+Items Ryker Left Hand deployed to 0xB2DD3726Ea43c168675e1031C20209F92A05B84F
+Items Ryker Right Hand deployed to 0xe4780Cb0Eb9276CAC74Fb0B5370B40657D815401
+Items Thaddeus Armor deployed to 0x96C306655EC1B845dfc5ee474867689A25EcA7C1
+Items Thaddeus Cap deployed to 0x3AE45952612F4Ba5477C91f514bd109CB186b7A7
+Items Thaddeus Left Hand deployed to 0x31C6Cc152C4a5aFb6C1b672867d8E5ea14A9618a
+Items Thaddeus Right Hand deployed to 0x82dF84299b9136e9cD4914C52aAEa7fabcE75DCa
+items Deployati
+setAutoAcceptCollection fatto
+Parent Collections added to Singular Registry
+Aria Items Collections added to Singular Registry
+Luna Items Collections added to Singular Registry
+Ryker Items Collections added to Singular Registry
+Thaddeus Items Collections added to Singular Reg
+*/
   await mintItemsAriaArmor(itemsAriaArmor, timeSquadAria.address);
   await delay(1000) /// waiting 10 second.
   await mintItemsAriaCap(itemsAriaCap, timeSquadAria.address);

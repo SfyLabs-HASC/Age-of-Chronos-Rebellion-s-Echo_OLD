@@ -43,8 +43,9 @@ contract Child is RMRKAbstractEquippable, RMRKTokenURIPerToken {
         string memory tokenURI
     ) public payable returns (uint256) {
         require(mintingApproval[msg.sender], "User not authorized to mint");
+        require(mintingApproval[msg.sender], "User not authorized to mint");
 
-        (uint256 nextToken, uint256 totalSupplyOffset) = _prepareMint(numToMint);
+        (uint256 nextToken, uint256 totalSupplyOffset) = _prepareMint(1);
         _chargeMints(numToMint);
 
         for (uint256 i = nextToken; i < totalSupplyOffset; ) {

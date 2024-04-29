@@ -45,7 +45,7 @@ We provide a comprehensive test suite to ensure the functionality and integrity 
 To set up and test the "Age of Chronos" environment:
 
 1. Install dependencies using `yarn` or `npm install`.
-2. Compile contracts: `yarn hardhat compile` or `npx run compile`.
+2. Compile contracts: `yarn hardhat compile` or `npx hardhat compile`.
 3. Run tests: `npx test` or `npx run test`.
 4. Run prettier: `npx prettier`
 4. Configure your environment variables in `.env` based on `.env.example`.
