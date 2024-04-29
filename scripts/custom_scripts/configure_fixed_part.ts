@@ -111,11 +111,15 @@ async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalo
 }
     */
 
-    // Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
+    
+
+
+
+// Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
     const timeSquadAria = await ethers.getContractAt("TimeSquadAria", contractParentAddresses['Aria'], signers[0]);
     const TimeSquadCatalogAria = await ethers.getContractAt("TimeSquadCatalogAria", '0x50fa6d8f49462e930E0c1DC02794637518BA4dE9', signers[0]);
     
-    
+    /*
     const SLOT_PART_TYPE = 1;
     const FIXED_PART_TYPE = 2;
     const metadataURI = `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`; // URI metadati
@@ -139,13 +143,20 @@ async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalo
         console.error('Transaction failed:', error);
     }
 
+*/
 
-/*
 
 // Definire l'ID della parte e gli indirizzi equipaggiabili
-const partId = 1003; // Sostituisci con l'ID della parte corretto
+// SLOT PARTS, sono uguali per ogni catalog
+const SQUAD_LEFT_HAND_SLOT_PART_ID = 1001;
+const SQUAD_RIGHT_HAND_SLOT_PART_ID = 1002;
+const SQUAD_CAP_SLOT_PART_ID = 1003;
+const SQUAD_ARMOR_SLOT_PART_ID = 1004;
+const partId = SQUAD_LEFT_HAND_SLOT_PART_ID; // Sostituisci con l'ID della parte corretto
 const equippableAddresses = [
-    "0xDA97f6d5f68dED0018514b2D4266C79C2a451C29"  // ItemsAriaCap
+
+    "0x486D4ea5f1482D16cC07582972cA361da0365518"  // ItemsAriaLeft
+    //"0x8d63cd93FB87DAADFc008405cdd7Fd2132366759"  // ItemsAriaRigth
     // Aggiungi altri indirizzi se necessario
 ];
 
@@ -158,7 +169,7 @@ try {
 }
 
 
-*/
+
 
     /*
 

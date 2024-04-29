@@ -22,7 +22,7 @@ contract ItemsAriaArmor is RMRKEquippablePreMint {
     {}
 
     /*
-3. inserire due asset per ogni child, il primo è l'asset principale visualizzabile, 
+3. inserire due asset per ogni child, il primo è l'asset principale visualizzabile,
 il secondo è il thumbnail dell'immagine. aggiusta la funzione di smart contract di nestmintwithasset
  dove inserisci due asset, uno buono e l'altro thumbnail
  The ID of the asset is automatically assigned to be the next available asset ID.
