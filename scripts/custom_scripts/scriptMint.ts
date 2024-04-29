@@ -128,7 +128,7 @@ try {
 */
 
     
-
+/*
     // Dati per la funzione mintWithEquippableAsset
     const equippableGroupId = 1;  // Assumi che questo sia un valore costante definito da te
     //const metadataURI = `ipfs://QmfXDJdz4T2P9wcg3coq2XA8JsdqbUTmUnWqx4EKyx3pCy`; // URI metadati
@@ -139,7 +139,8 @@ try {
         C.SQUAD_LEFT_HAND_SLOT_PART_ID,
         C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
         C.SQUAD_CAP_SLOT_PART_ID,
-        C.SQUAD_ARMOR_SLOT_PART_ID
+        C.SQUAD_ARMOR_SLOT_PART_ID,
+        1
     ]; // IDs delle parti equipaggiabili
 
     try {
@@ -156,6 +157,30 @@ try {
     } catch (error) {
         console.error('Transaction failed:', error);
     }
+*/
+
+
+// Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
+const itemsAriaCapAddress = "0xDA97f6d5f68dED0018514b2D4266C79C2a451C29"; // Sostituisci con l'indirizzo effettivo
+const itemsAriaCap = await ethers.getContractAt("ItemsAriaCap", itemsAriaCapAddress, signers[0]);
+
+// Dati per la funzione nestMintWithAssets
+const TimeSquadAriaAddress = "0x8269c3fe7bef60dbd7adf8d2e64ad8d94901716f"; // Indirizzo del contratto principale
+const leftHandFirstAssetId = 1;
+const leftHandSecondAssetId = 2;
+
+try {
+    let tx = await itemsAriaCap.nestMintWithAssets(
+        TimeSquadAriaAddress, // A chi inviare
+        12, // destinationId del primo NFT parent
+        `${C.BASE_IPFS_URI}/items/aria/02_cap_primary_asset.json`, // TokenURI del NFT figlio
+        [leftHandFirstAssetId, leftHandSecondAssetId] // Assets IDs
+    );
+    await tx.wait();
+    console.log(`Transaction successful: ${tx.hash}`);
+} catch (error) {
+    console.error('Transaction failed:', error);
+}
 
     
 }
