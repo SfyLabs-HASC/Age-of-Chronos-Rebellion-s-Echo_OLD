@@ -1160,7 +1160,7 @@ async function mintItemsAriaLeftHand(itemsAriaLeftHand: ItemsAriaLeftHand, TimeS
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
     `${C.BASE_IPFS_URI}/items/aria/03_left_hand_primary_asset.json`, // TokenURI of the child NFT,
-    [leftHandFirstAssetId], // Assets
+    [leftHandFirstAssetId,leftHandSecondAssetId], // Assets
   );
   await tx.wait();
 }
@@ -1176,7 +1176,7 @@ async function mintItemsAriaRightHand(itemsAriaRightHand: ItemsAriaRightHand, Ti
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
     `${C.BASE_IPFS_URI}/items/aria/04_right_hand_primary_asset.json`, // TokenURI of the child NFT,
-    [rightHandFirstAssetId], // Assets
+    [rightHandFirstAssetId,rightHandSecondAssetId ], // Assets
   );
   await tx.wait();
 }
@@ -1193,7 +1193,7 @@ async function mintItemsLunaArmor(itemsLunaArmor: ItemsLunaArmor, TimeSquadLunaA
     TimeSquadLunaAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/luna/01_armor_primary_asset.json`,
-    [armorFirstAssetId],
+    [armorFirstAssetId,armorSecondAssetId],
   );
   await tx.wait();
 }
@@ -1209,7 +1209,7 @@ async function mintItemsLunaCap(itemsLunaCap: ItemsLunaCap, TimeSquadLunaAddress
     TimeSquadLunaAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/luna/02_cap_primary_asset.json`,
-    [capFirstAssetId],
+    [capFirstAssetId,capSecondAssetId],
   );
   await tx.wait();
 }
@@ -1225,7 +1225,7 @@ async function mintItemsLunaLeftHand(itemsLunaLeftHand: ItemsLunaLeftHand, TimeS
     TimeSquadLunaAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/luna/03_left_hand_primary_asset.json`, 
-    [leftHandFirstAssetId],
+    [leftHandFirstAssetId,leftHandSecondAssetId],
   );
   await tx.wait();
 }
@@ -1241,7 +1241,7 @@ async function mintItemsLunaRightHand(itemsLunaRightHand: ItemsLunaRightHand, Ti
     TimeSquadLunaAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/luna/04_right_hand_primary_asset.json`,
-    [rightHandFirstAssetId],
+    [rightHandFirstAssetId,rightHandSecondAssetId],
   );
   await tx.wait();
 }
@@ -1259,7 +1259,7 @@ async function mintItemsRykerArmor(itemsRykerArmor: ItemsRykerArmor, TimeSquadRy
     TimeSquadRykerAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/ryker/01_armor_primary_asset.json`,
-    [armorFirstAssetId],
+    [armorFirstAssetId,armorSecondAssetId],
   );
   await tx.wait();
 }
@@ -1275,7 +1275,7 @@ async function mintItemsRykerCap(itemsRykerCap: ItemsRykerCap, TimeSquadRykerAdd
     TimeSquadRykerAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/ryker/02_cap_primary_asset.json`,
-    [capFirstAssetId],
+    [capFirstAssetId,capSecondAssetId],
   );
   await tx.wait();
 }
@@ -1291,7 +1291,7 @@ async function mintItemsRykerLeftHand(itemsRykerLeftHand: ItemsRykerLeftHand, Ti
     TimeSquadRykerAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/ryker/03_left_hand_primary_asset.json`,
-    [leftHandFirstAssetId],
+    [leftHandFirstAssetId,leftHandSecondAssetId],
   );
   await tx.wait();
 }
@@ -1307,7 +1307,7 @@ async function mintItemsRykerRightHand(itemsRykerRightHand: ItemsRykerRightHand,
     TimeSquadRykerAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/ryker/04_right_hand_primary_asset.json`,
-    [rightHandFirstAssetId],
+    [rightHandFirstAssetId,rightHandSecondAssetId],
   );
   await tx.wait();
 }
@@ -1327,7 +1327,7 @@ async function mintItemsThaddeusArmor(itemsThaddeusArmor: ItemsThaddeusArmor, Ti
     TimeSquadThaddeusAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/thaddeus/01_armor_primary_asset.json`,
-    [armorFirstAssetId],
+    [armorFirstAssetId,armorSecondAssetId],
   );
   await tx.wait();
 }
@@ -1343,7 +1343,7 @@ async function mintItemsThaddeusCap(itemsThaddeusCap: ItemsThaddeusCap, TimeSqua
     TimeSquadThaddeusAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/thaddeus/02_cap_primary_asset.json`,
-    [capFirstAssetId],
+    [capFirstAssetId,capSecondAssetId],
   );
   await tx.wait();
 }
@@ -1359,7 +1359,7 @@ async function mintItemsThaddeusLeftHand(itemsThaddeusLeftHand: ItemsThaddeusLef
     TimeSquadThaddeusAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/thaddeus/03_left_hand_primary_asset.json`,
-    [leftHandFirstAssetId],
+    [leftHandFirstAssetId,leftHandSecondAssetId],
   );
   await tx.wait();
 }
@@ -1375,7 +1375,7 @@ async function mintItemsThaddeusRightHand(itemsThaddeusRightHand: ItemsThaddeusR
     TimeSquadThaddeusAddress, 
     1, 
     `${C.BASE_IPFS_URI}/items/thaddeus/04_right_hand_primary_asset.json`,
-    [rightHandFirstAssetId],
+    [rightHandFirstAssetId,rightHandSecondAssetId],
   );
   await tx.wait();
 }
