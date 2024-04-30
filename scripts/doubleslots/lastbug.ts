@@ -49,10 +49,10 @@ async function main() {
 
     const contractItemAddresses: { [key: string]: string } = {
         "AriaArmor": "0xe5c8cb06f38ae8bc3aa559e4332721ed45a419d0",
-        "AriaCap": "",
-        "AriaLeftHand": "",
-        "AriaRightHand": "0xd454Ee24254e90ac4Ac2404969d76FCa07A9c0f1",
-        "LunaArmor": "0x86044333167221E2E51433CFcB566D1034dd075a",
+        "AriaCap": "0x974D6004a9629998D3315e6172dDF618d07355eB",
+        "AriaLeftHand": "0x9E8de747bCfc1982d4aE96cdf5F09178325AD29e",
+        "AriaRightHand": "0x84dc4274C3E57364E589a97421E3DC834A355b9D",
+        "LunaArmor": "",
         "LunaCap": "0x5026F1eE7a28f7048aBeafEa9E17934c7f736d4C",
         "LunaLeftHand": "0x8D56c5A55E91A69f291bC4f1B2D858bf84403966",
         "LunaRightHand": "0x0f89B30fa13afc81e8321F124fCA47DaE3b51771",
@@ -68,7 +68,7 @@ async function main() {
 
     console.log(contractParentAddresses['Aria'])
     console.log(contractItemAddresses['AriaArmor'])
-/*
+
     try {
         // Dati per la funzione mintWithEquippableAsset
         const equippableGroupId = 1;  // Assumi che questo sia un valore costante definito da te
@@ -100,7 +100,7 @@ async function main() {
         console.error('Transaction failed:', error);
     }
 
-*/
+
     try {
         const armorFirstAssetId = 1;
         const armorSecondAssetId = 2;
@@ -109,9 +109,9 @@ async function main() {
         // Sending a armor NFT to the first parent squad, with 2 assets
         let tx = await itemsAriaArmor.nestMintWithAssets(
             contractParentAddresses['Aria'], // To
-            2, // destinationId il primo nft parent
+            4, // destinationId il primo nft parent
             `${C.BASE_IPFS_URI}/items/aria/01_armor_primary_asset.json`, // TokenURI del child nft,
-            [armorFirstAssetId, armorSecondAssetId] // Assets
+            [armorFirstAssetId] // Assets
         );
         await tx.wait();
 
