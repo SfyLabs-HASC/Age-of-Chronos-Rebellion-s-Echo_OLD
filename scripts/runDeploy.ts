@@ -42,7 +42,11 @@ import {
   mintItemsThaddeusArmor,
   mintItemsThaddeusCap,
   mintItemsThaddeusLeftHand,
-  mintItemsThaddeusRightHand
+  mintItemsThaddeusRightHand,
+  setEquippableAddressesLeftHand,
+  setEquippableAddressesRightHand,
+  setEquippableAddressesCap,
+  setEquippableAddressesArmor,
 } from './utils';
 
 async function main() {
@@ -172,11 +176,11 @@ async function main() {
 //per ARIA
 await setEquippableAddressesLeftHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
 await setEquippableAddressesRightHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
-await setEquippableAddressesCapHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
-await setEquippableAddressesArmorHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await setEquippableAddressesCap(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await setEquippableAddressesArmor(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
 await delay(10000) /// waiting 10 second.
 //per Luna
-await setEquippableAddressesLeftHandLuna(timeSquadCatalogLuna, [itemsLunaLeftHand.address]);
+await setEquippableAddressesLeftHand(timeSquadCatalogLuna, [itemsLunaLeftHand.address]);
 await setEquippableAddressesRightHand(timeSquadCatalogLuna, [itemsLunaRightHand.address]);
 await setEquippableAddressesCap(timeSquadCatalogLuna, [itemsLunaCap.address]);
 await setEquippableAddressesArmor(timeSquadCatalogLuna, [itemsLunaArmor.address]);

@@ -1428,6 +1428,10 @@ export {
   mintItemsThaddeusArmor,
   mintItemsThaddeusLeftHand,
   mintItemsThaddeusRightHand,
-  mintItemsThaddeusCap
+  mintItemsThaddeusCap,
+  setEquippableAddressesLeftHand,
+  setEquippableAddressesRightHand,
+  setEquippableAddressesCap,
+  setEquippableAddressesArmor
 };
 
