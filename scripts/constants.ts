@@ -42,7 +42,8 @@ const SQUAD_ITEM_ARMOR_SLOT_METADATA = BASE_IPFS_URI + '/catalog/slots/armor.jso
 const SQUAD_ITEM_BASE_METADATA_URI = BASE_IPFS_URI + '/items/';
 
 
-// FIXED PARTS non presenti
+// FIXED PARTS utile per il background del parent image
+const SQUAD_FIXED_PART_ID = 1;
 
 // SLOT PARTS, sono uguali per ogni catalog
 const SQUAD_LEFT_HAND_SLOT_PART_ID = 1001;
@@ -59,6 +60,7 @@ const Z_INDEX_LEFT_HAND_ITEMS = 6;
 const Z_INDEX_RIGHT_HAND_ITEMS = 8;
 const Z_INDEX_CAP_ITEMS = 4;
 const Z_INDEX_ARMOR_ITEMS = 2;
+const Z_INDEX_BACKGROUND = 1;
 
 
 // Equippable groups  todo forse qui il doppio bug?

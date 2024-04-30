@@ -166,9 +166,39 @@ async function main() {
   await configureCatalogThaddeus(timeSquadCatalogThaddeus, itemsThaddeusArmor.address);
   console.log('Catalogs configured');
   await delay(10000) /// waiting 10 second.
+  
+  
+  // Set equippable addresses
+//per ARIA
+await setEquippableAddressesLeftHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await setEquippableAddressesRightHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await setEquippableAddressesCapHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await setEquippableAddressesArmorHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await delay(10000) /// waiting 10 second.
+//per Luna
+await setEquippableAddressesLeftHandLuna(timeSquadCatalogLuna, [itemsLunaLeftHand.address]);
+await setEquippableAddressesRightHand(timeSquadCatalogLuna, [itemsLunaRightHand.address]);
+await setEquippableAddressesCap(timeSquadCatalogLuna, [itemsLunaCap.address]);
+await setEquippableAddressesArmor(timeSquadCatalogLuna, [itemsLunaArmor.address]);
+await delay(10000) /// waiting 10 second.
+await setEquippableAddressesLeftHand(timeSquadCatalogRyker, [itemsRykerLeftHand.address]);
+await setEquippableAddressesRightHand(timeSquadCatalogRyker, [itemsRykerRightHand.address]);
+await setEquippableAddressesCap(timeSquadCatalogRyker, [itemsRykerCap.address]);
+await setEquippableAddressesArmor(timeSquadCatalogRyker, [itemsRykerArmor.address]);
+await delay(10000) /// waiting 10 second.
+await setEquippableAddressesLeftHand(timeSquadCatalogThaddeus, [itemsThaddeusLeftHand.address]);
+await setEquippableAddressesRightHand(timeSquadCatalogThaddeus, [itemsThaddeusRightHand.address]);
+await setEquippableAddressesCap(timeSquadCatalogThaddeus, [itemsThaddeusCap.address]);
+await setEquippableAddressesArmor(timeSquadCatalogThaddeus, [itemsThaddeusArmor.address]);
+
+  
+
+
+console.log('Equippable addresses set for all catalogs');
+  await delay(10000); /// waiting 10 second.
+
+
   // Mint parent squads
-
-
   //TODO FIN QUI TUTTO OK!!!!
   await mintParentSquadAria(timeSquadAria, timeSquadCatalogAria.address, deployer);
   await delay(1000) /// waiting 10 second.
@@ -299,6 +329,7 @@ Thaddeus Items Collections added to Singular Reg
   await delay(1000) /// waiting 10 second.
   await mintItemsThaddeusRightHand(itemsThaddeusRightHand, timeSquadThaddeus.address);
   console.log('Thaddeus items minted');
+  console.log('FINE');
 
 }
 
