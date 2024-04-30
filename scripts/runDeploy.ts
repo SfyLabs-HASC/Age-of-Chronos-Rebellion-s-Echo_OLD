@@ -208,9 +208,9 @@ console.log('All catalogs configured.');
   // Set equippable addresses
 //per ARIA
 await setEquippableAddressesLeftHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
-await setEquippableAddressesRightHand(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
-await setEquippableAddressesCap(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
-await setEquippableAddressesArmor(timeSquadCatalogAria, [itemsAriaLeftHand.address]);
+await setEquippableAddressesRightHand(timeSquadCatalogAria, [itemsAriaRightHand.address]);
+await setEquippableAddressesCap(timeSquadCatalogAria, [itemsAriaCap.address]);
+await setEquippableAddressesArmor(timeSquadCatalogAria, [itemsAriaArmor.address]);
 await delay(10000) /// waiting 10 second.
 //per Luna
 await setEquippableAddressesLeftHand(timeSquadCatalogLuna, [itemsLunaLeftHand.address]);

@@ -60,6 +60,7 @@ async function deployContracts(): Promise<{
 
 }> {
   const deployerAddress = (await ethers.getSigners())[0].address;
+  console.log("deployer address: ",deployerAddress);
   
   const timeSquadAriaFactory = await ethers.getContractFactory('TimeSquadAria');
   const timeSquadLunaFactory = await ethers.getContractFactory('TimeSquadLuna');
@@ -795,6 +796,7 @@ async function mintParentSquadRyker(timeSquadRyker: TimeSquadRyker, timeSquadCat
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
       C.SQUAD_CAP_SLOT_PART_ID,
       C.SQUAD_ARMOR_SLOT_PART_ID,
+      1,
     ],
   );
   await txRyker.wait();
@@ -812,7 +814,8 @@ async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalo
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
       C.SQUAD_CAP_SLOT_PART_ID,
-      C.SQUAD_ARMOR_SLOT_PART_ID
+      C.SQUAD_ARMOR_SLOT_PART_ID,
+      1,
     ],
   );
   await txAria.wait();
@@ -830,7 +833,8 @@ async function mintParentSquadLuna(timeSquadLuna: TimeSquadLuna, timeSquadCatalo
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
       C.SQUAD_CAP_SLOT_PART_ID,
-      C.SQUAD_ARMOR_SLOT_PART_ID
+      C.SQUAD_ARMOR_SLOT_PART_ID,
+      1,
     ],
   );
   await txLuna.wait();
@@ -848,7 +852,8 @@ async function mintParentSquadThaddeus(timeSquadThaddeus: TimeSquadThaddeus, tim
       C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       C.SQUAD_RIGHT_HAND_SLOT_PART_ID,
       C.SQUAD_CAP_SLOT_PART_ID,
-      C.SQUAD_ARMOR_SLOT_PART_ID
+      C.SQUAD_ARMOR_SLOT_PART_ID,
+      1,
     ],
   );
   await txThaddeus.wait();
