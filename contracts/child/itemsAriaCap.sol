@@ -32,11 +32,8 @@ contract ItemsAriaCap is RMRKEquippablePreMint {
             assetForArmor,
             new uint64[](0)
         );
-        addEquippableAssetEntry(
-            slotForArmor,
-            address(0),
-            secondAssetForArmor,
-            new uint64[](0)
+        addAssetEntry(
+            secondAssetForArmor
         );
     }
 

@@ -1128,7 +1128,7 @@ async function mintItemsAriaArmor(itemsAriaArmor: ItemsAriaArmor, TimeSquadAriaA
     TimeSquadAriaAddress, // To
     1, // destinationId il primo nft parent
     `${C.BASE_IPFS_URI}/items/aria/01_armor_primary_asset.json`, // TokenURI del child nft,
-    [armorFirstAssetId], // Assets
+    [armorFirstAssetId,armorSecondAssetId], // Assets
   );
   await tx.wait();
 }
@@ -1144,7 +1144,7 @@ async function mintItemsAriaCap(itemsAriaCap: ItemsAriaCap, TimeSquadAriaAddress
     TimeSquadAriaAddress, // To
     1, // destinationId of the first parent NFT
     `${C.BASE_IPFS_URI}/items/aria/02_cap_primary_asset.json`, // TokenURI of the child NFT,
-    [capFirstAssetId], // Assets
+    [capFirstAssetId,capSecondAssetId], // Assets
   );
   await tx.wait();
 }

@@ -102,13 +102,13 @@ async function mintParentSquadAria(timeSquadAria: TimeSquadAria, timeSquadCatalo
 }
 */
 
-    // Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
+    
+
+/*
+// Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
     const timeSquadAria = await ethers.getContractAt("TimeSquadAria", contractParentAddresses['Aria'], signers[0]);
     const TimeSquadCatalogAria = await ethers.getContractAt("TimeSquadCatalogAria", '0x50fa6d8f49462e930E0c1DC02794637518BA4dE9', signers[0]);
 
-
-
-/*
 
 // Definire l'ID della parte e gli indirizzi equipaggiabili
 const partId = 1003; // Sostituisci con l'ID della parte corretto
@@ -161,18 +161,18 @@ try {
 
 
 // Assumi che ItemsAriaLeftHand sia già distribuito e conosci il suo indirizzo
-const itemsAriaCapAddress = "0xDA97f6d5f68dED0018514b2D4266C79C2a451C29"; // Sostituisci con l'indirizzo effettivo
+const itemsAriaCapAddress = "0x78aF99B66fba1040DCA1120A8dD088587CB43368"; // Sostituisci con l'indirizzo effettivo
 const itemsAriaCap = await ethers.getContractAt("ItemsAriaCap", itemsAriaCapAddress, signers[0]);
 
 // Dati per la funzione nestMintWithAssets
-const TimeSquadAriaAddress = "0x8269c3fe7bef60dbd7adf8d2e64ad8d94901716f"; // Indirizzo del contratto principale
+const TimeSquadAriaAddress = "0x9151D9e5cd3c0E591071299A0E5a12f59565b4B9"; // Indirizzo del contratto principale
 const leftHandFirstAssetId = 1;
 const leftHandSecondAssetId = 2;
 
 try {
     let tx = await itemsAriaCap.nestMintWithAssets(
         TimeSquadAriaAddress, // A chi inviare
-        12, // destinationId del primo NFT parent
+        1, // destinationId del primo NFT parent
         `${C.BASE_IPFS_URI}/items/aria/02_cap_primary_asset.json`, // TokenURI del NFT figlio
         [leftHandFirstAssetId, leftHandSecondAssetId] // Assets IDs
     );

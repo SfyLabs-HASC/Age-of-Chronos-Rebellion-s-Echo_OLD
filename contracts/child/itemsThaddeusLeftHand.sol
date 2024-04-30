@@ -32,11 +32,8 @@ contract ItemsThaddeusLeftHand is RMRKEquippablePreMint {
             assetForLeftHand,
             new uint64[](0)
         );
-        addEquippableAssetEntry(
-            slotForLeftHand,
-            address(0),
-            secondAssetForLeftHand,
-            new uint64[](0)
+        addAssetEntry(
+            secondAssetForLeftHand
         );
     }
 

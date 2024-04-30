@@ -33,11 +33,8 @@ contract ItemsThaddeusCap is RMRKEquippablePreMint {
             assetForCap,
             new uint64[](0)
         );
-        addEquippableAssetEntry(
-            slotForCap,
-            address(0),
-            secondAssetForCap,
-            new uint64[](0)
+        addAssetEntry(
+            secondAssetForCap
         );
         
     }
