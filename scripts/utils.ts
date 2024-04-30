@@ -553,17 +553,15 @@ await run('verify:verify', {
   };
   
 }
-
-// Configure TimeSquadCatalogAria
-async function configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: string) {
-  // Slots
-  let tx1:any = await catalog.addPartList([
+// Configure TimeSquadCatalogAria with multiple items
+async function configureCatalogAria(catalog: TimeSquadCatalogAria, armorAddress: string, capAddress: string, leftHandAddress: string, rightHandAddress: string) {
+  let tx1 = await catalog.addPartList([
     {
       partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_LEFT_HAND_ITEMS,
-        equippable: [itemAddress],
+        equippable: [leftHandAddress],
         metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
@@ -572,17 +570,16 @@ async function configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: 
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_RIGHT_HAND_ITEMS,
-        equippable: [itemAddress],
+        equippable: [rightHandAddress],
         metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
       },
     },
-
     {
       partId: C.SQUAD_CAP_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_CAP_ITEMS,
-        equippable: [itemAddress],
+        equippable: [capAddress],
         metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
       },
     },
@@ -591,7 +588,7 @@ async function configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: 
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_ARMOR_ITEMS,
-        equippable: [itemAddress],
+        equippable: [armorAddress],
         metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
@@ -604,20 +601,18 @@ async function configureCatalogAria(catalog: TimeSquadCatalogAria, itemAddress: 
         metadataURI: `${C.BASE_IPFS_URI}/timeSquad/full/Aria.json`,
       },
     }
-    
   ]);
-  await Promise.all([tx1.wait()]);
+  await tx1.wait();
 }
 
-// Configure TimeSquadCatalogLuna
-async function configureCatalogLuna(catalog: TimeSquadCatalogLuna, itemsAddress: string) {
+async function configureCatalogLuna(catalog: TimeSquadCatalogLuna, armorAddress: string, capAddress: string, leftHandAddress: string, rightHandAddress: string) {
   let tx1 = await catalog.addPartList([
     {
       partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_LEFT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [leftHandAddress],
         metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
@@ -626,17 +621,16 @@ async function configureCatalogLuna(catalog: TimeSquadCatalogLuna, itemsAddress:
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_RIGHT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [rightHandAddress],
         metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
       },
     },
-
     {
       partId: C.SQUAD_CAP_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_CAP_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [capAddress],
         metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
       },
     },
@@ -645,7 +639,7 @@ async function configureCatalogLuna(catalog: TimeSquadCatalogLuna, itemsAddress:
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_ARMOR_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [armorAddress],
         metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
@@ -659,18 +653,17 @@ async function configureCatalogLuna(catalog: TimeSquadCatalogLuna, itemsAddress:
       },
     }
   ]);
-  await Promise.all([tx1.wait()]);
+  await tx1.wait();
 }
 
-// Configure TimeSquadCatalogRyker
-async function configureCatalogRyker(catalog: TimeSquadCatalogRyker, itemsAddress: string) {
+async function configureCatalogRyker(catalog: TimeSquadCatalogRyker, armorAddress: string, capAddress: string, leftHandAddress: string, rightHandAddress: string) {
   let tx1 = await catalog.addPartList([
     {
       partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_LEFT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [leftHandAddress],
         metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
@@ -679,17 +672,16 @@ async function configureCatalogRyker(catalog: TimeSquadCatalogRyker, itemsAddres
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_RIGHT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [rightHandAddress],
         metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
       },
     },
-
     {
       partId: C.SQUAD_CAP_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_CAP_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [capAddress],
         metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
       },
     },
@@ -698,7 +690,7 @@ async function configureCatalogRyker(catalog: TimeSquadCatalogRyker, itemsAddres
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_ARMOR_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [armorAddress],
         metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
@@ -712,18 +704,17 @@ async function configureCatalogRyker(catalog: TimeSquadCatalogRyker, itemsAddres
       },
     }
   ]);
-  await Promise.all([tx1.wait()]);
+  await tx1.wait();
 }
 
-// Configure TimeSquadCatalogThaddeus
-async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, itemsAddress: string) {
+async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, armorAddress: string, capAddress: string, leftHandAddress: string, rightHandAddress: string) {
   let tx1 = await catalog.addPartList([
     {
       partId: C.SQUAD_LEFT_HAND_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_LEFT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [leftHandAddress],
         metadataURI: `${C.SQUAD_ITEM_LEFT_SLOT_METADATA}`,
       },
     },
@@ -732,17 +723,16 @@ async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, items
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_RIGHT_HAND_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [rightHandAddress],
         metadataURI: `${C.SQUAD_ITEM_RIGHT_SLOT_METADATA}`,
       },
     },
-
     {
       partId: C.SQUAD_CAP_SLOT_PART_ID,
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_CAP_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [capAddress],
         metadataURI: `${C.SQUAD_ITEM_CAP_SLOT_METADATA}`,
       },
     },
@@ -751,7 +741,7 @@ async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, items
       part: {
         itemType: C.PART_TYPE_SLOT,
         z: C.Z_INDEX_ARMOR_ITEMS,
-        equippable: [itemsAddress],
+        equippable: [armorAddress],
         metadataURI: `${C.SQUAD_ITEM_ARMOR_SLOT_METADATA}`,
       },
     },
@@ -765,9 +755,8 @@ async function configureCatalogThaddeus(catalog: TimeSquadCatalogThaddeus, items
       },
     }
   ]);
-  await Promise.all([tx1.wait()]);
+  await tx1.wait();
 }
-
 
 
 async function setEquippableAddressesLeftHand(catalog: TimeSquadCatalogAria, equippableAddresses: string[]) {

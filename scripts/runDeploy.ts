@@ -163,13 +163,46 @@ async function main() {
 
 
 
-  // Configure catalogs
-  await configureCatalogAria(timeSquadCatalogAria, itemsAriaArmor.address);
-  await configureCatalogLuna(timeSquadCatalogLuna, itemsLunaArmor.address);
-  await configureCatalogRyker(timeSquadCatalogRyker, itemsRykerArmor.address);
-  await configureCatalogThaddeus(timeSquadCatalogThaddeus, itemsThaddeusArmor.address);
-  console.log('Catalogs configured');
-  await delay(10000) /// waiting 10 second.
+  // Configure catalogs with each type of item
+await configureCatalogAria(
+  timeSquadCatalogAria,
+  itemsAriaArmor.address,
+  itemsAriaCap.address,
+  itemsAriaLeftHand.address,
+  itemsAriaRightHand.address
+);
+console.log('Aria catalog configured.');
+
+await configureCatalogLuna(
+  timeSquadCatalogLuna,
+  itemsLunaArmor.address,
+  itemsLunaCap.address,
+  itemsLunaLeftHand.address,
+  itemsLunaRightHand.address
+);
+console.log('Luna catalog configured.');
+
+await configureCatalogRyker(
+  timeSquadCatalogRyker,
+  itemsRykerArmor.address,
+  itemsRykerCap.address,
+  itemsRykerLeftHand.address,
+  itemsRykerRightHand.address
+);
+console.log('Ryker catalog configured.');
+
+await configureCatalogThaddeus(
+  timeSquadCatalogThaddeus,
+  itemsThaddeusArmor.address,
+  itemsThaddeusCap.address,
+  itemsThaddeusLeftHand.address,
+  itemsThaddeusRightHand.address
+);
+console.log('Thaddeus catalog configured.');
+
+await delay(10000); // Waiting 10 seconds after all catalog configurations.
+console.log('All catalogs configured.');
+
   
   
   // Set equippable addresses
