@@ -14,6 +14,7 @@ import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 contract Child is RMRKAbstractEquippable, RMRKTokenURIPerToken {
     // Events 
     // Variables
+    
     uint256 private _pricePerMint;
     // IERC721Enumerable
     mapping(address owner => mapping(uint256 index => uint256))

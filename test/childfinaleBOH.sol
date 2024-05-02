@@ -12,6 +12,7 @@ contract Child is RMRKAbstractEquippable, RMRKTokenURIPerToken {
     mapping(address => bool) public mintingApproval;
 
     // Constructor
+    
     constructor(
         string memory collectionMetadata,
         uint256 maxSupply,
