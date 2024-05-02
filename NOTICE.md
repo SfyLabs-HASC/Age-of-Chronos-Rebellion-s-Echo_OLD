@@ -14,6 +14,7 @@ to https://rmrk.app. Implementers may approach the RMRK team
 via contact@rmrk.app for alternative ways of expressing
 attribution.
 
+
 The above two conditions may be waived on a case by case basis
 by obtaining a written whitelabel permission from the RMRK team
 via contact through contact@rmrk.app
